@@ -8,9 +8,10 @@
 * HTTP/2
 * offline
 * JWT
+* add git pre-hook
 
 
-##Beck-End
+##Back-End
 * [Hapi](https://hapijs.com/)
 * [GraphQL](http://graphql.org/) & [Apollo](https://apollographql.com/)
 * [MongoDB](https://www.mongodb.com/) or [PostgreSQL](https://www.postgresql.org/)
