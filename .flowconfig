@@ -11,9 +11,8 @@
 
 [libs]
 ; The app's global variables are declared here
-tools/flow/definitions
+src/internals/flow/
 styled-components
-tools/flow/flow-typed
 
 [options]
 emoji=true
@@ -21,8 +20,6 @@ emoji=true
 module.system=haste
 module.system.node.resolve_dirname=src/be
 module.system.node.resolve_dirname=src/fe
-module.system.node.resolve_dirname=src/fe/styles
-module.system.node.resolve_dirname=src/types
 module.system.node.resolve_dirname=src
 
 esproposal.class_static_fields=enable
