@@ -1,0 +1,22 @@
+{
+  "name": "cas_fee_02",
+  "version": "1.0.0",
+  "description": "CAS FEE Project 2",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FlorinSenoner/cas_fee_02.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FlorinSenoner/cas_fee_02/issues"
+  },
+  "homepage": "https://github.com/FlorinSenoner/cas_fee_02#readme"
+}
