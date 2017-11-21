@@ -47,7 +47,7 @@
     * [Flow](https://flow.org/en/)
     * [Flow Runtime](https://codemix.github.io/flow-runtime/#/)
 * Tests:
-    * [Jasmine](https://jasmine.github.io/)
+    * [Jest](https://facebook.github.io/jest/)
     * [Enzyme](https://github.com/airbnb/enzyme)
     
 
