@@ -13,7 +13,7 @@ Eingeloggte User können:
 - Ein Update in Form einer Nachricht oder einem Bild zu einer Wette erfassen
 - Andere User einladen
 - Nicht registrierte User einladen (via link, mail, qr-code)
-- An einer Wette teilnehmen in dem er seinen Guess abgibt
+- An einer (inkl. seiner) Wette teilnehmen in dem er seinen Guess abgibt
 - Eine Liste sehen mit allen erstellten, abgelaufenen, eingeladenen, teilgeonmmenen Wetten
 - ~~Benachrigt werden wenn ein Update einer Wette eingegangen ist~~ (optional)
 - Ausloggen
@@ -48,3 +48,50 @@ Nicht registrierte User können:
 - value: abhängig vom WinCriteria der Bet
 - -> participant (User)
 - -> bet (Bet)
+
+### User
+- name
+- avatar
+- pw
+- email
+- dateJoined
+
+# Non functional requirements
+- fluides Design (mobile first)
+- ~~offline verfügbar~~ (optional)
+
+# Views
+Kurzer Beschrieb aller Views der App
+### Home
+- Fancy Bild mit Logo
+- Fetter Participate(Wettemer? Wettemer!) Button
+- Aktuellste Public Wetten
+- Login/Logout
+
+### Bets
+- Alle Wetten mit Filter Möglichkeit
+-- Einladungen
+-- Offene Wetten (als TN, als Admin)
+-- Abgeschlossene Wetten
+- Fancy Whitespace wenn keine Wetten vorhanden sind
+- Button um eine Wette zu erstellen
+
+### Create Bet
+- Formular zum Erfassen einer Wette
+- Fetter Wettemer? Button
+
+### Invite People
+Der Link führt immer zur Participation View
+- Möglichkeit bestehende User einzuladen
+- Via E-Mail nicht registrierte Personen einladen
+- QR Code der von anderen gescannt werden kann
+
+### Participation
+- Grobe Details der Wette (z.b <Name Admin> meint <Title Bet> Wettemer?)
+- Möglichkeit einen Guess abzugeben
+- Fetter Wettemer! Button
+  
+### View Bet
+- Aktueller Status der Wette
+- Alle Updates chronologisch sortiert
+- Participants und ihre Guesses
