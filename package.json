@@ -56,7 +56,16 @@
     "*.{js,json,css}": ["prettier --write", "git add"]
   },
   "babel": {
-    "plugins": ["styled-components"],
+    "plugins": [
+      [
+        "babel-plugin-styled-components",
+        {
+          "ssr": true,
+          "displayName": true,
+          "preprocess": true
+        }
+      ]
+    ],
     "presets": [
       [
         "env",
@@ -163,10 +172,12 @@
     "rimraf": "^2.6.2",
     "shelljs": "^0.7.8",
     "style-loader": "^0.19.0",
-    "stylelint": "^8.2.0",
+    "stylelint": "^8.3.1",
     "stylelint-config-standard": "^17.0.0",
     "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-custom-processor-loader": "^0.4.0",
     "stylelint-processor-styled-components": "^1.1.1",
+    "uglifyjs-webpack-plugin": "^1.1.1",
     "url-loader": "^0.6.2",
     "webpack": "^3.8.1",
     "webpack-dev-middleware": "^1.12.1",
