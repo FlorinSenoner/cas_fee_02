@@ -73,6 +73,7 @@
   },
   "settings": {
     "import/resolver": {
+      "babel-module": {},
       "webpack": {
         "config": "./src/internals/webpack/webpack.prod.babel.js"
       }

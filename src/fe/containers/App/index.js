@@ -8,10 +8,10 @@ import { Helmet } from 'react-helmet'
 import styled from 'styled-components'
 import { Switch, Route } from 'react-router-dom'
 
-import HomePage from '../HomePage/Loadable'
-import NotFoundPage from '../NotFoundPage/Loadable'
-import Header from '../../components/Header'
-import Footer from '../../components/Footer'
+import HomePage from 'fe/containers/HomePage/Loadable'
+import NotFoundPage from 'fe/containers/NotFoundPage/Loadable'
+import Header from 'fe/components/Header'
+import Footer from 'fe/components/Footer'
 
 const AppWrapper = styled.div`
   max-width: calc(768px + 16px * 2);
