@@ -8,8 +8,8 @@ const sagaMiddleware = createSagaMiddleware()
 
 export default function configureStore(initialState = {}, history) {
   // Create the store with two middlewares
-  // 1. sagaMiddleware: Makes redux-sagas work
-  // 2. routerMiddleware: Syncs the location/URL path to the state
+  // 1 - sagaMiddleware: Makes redux-sagas work
+  // 2 - routerMiddleware: Syncs the location/URL path to the state
   const middlewares = [sagaMiddleware, routerMiddleware(history)]
 
   const enhancers = [applyMiddleware(...middlewares)]
@@ -26,7 +26,7 @@ export default function configureStore(initialState = {}, history) {
       : compose
   /* eslint-enable */
 
-  // create redux reducer
+  // create redux store
   const store = createStore(
     createReducer(),
     fromJS(initialState),
@@ -39,7 +39,6 @@ export default function configureStore(initialState = {}, history) {
   store.injectedSagas = {} // Saga registry
 
   // Make reducers hot reloadable, see http://mxs.is/googmo
-  /* istanbul ignore next */
   if (module.hot) {
     module.hot.accept('./reducers', () => {
       store.replaceReducer(createReducer(store.injectedReducers))

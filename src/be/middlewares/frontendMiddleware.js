@@ -1,8 +1,6 @@
 /* eslint-disable global-require */
 
-/**
- * Front-end middleware
- */
+// Front-end middleware
 module.exports = (app, options) => {
   const isProd = process.env.NODE_ENV === 'production'
 
