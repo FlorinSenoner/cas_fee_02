@@ -1,6 +1,6 @@
 /**
- * This component is the entry to the App. Should only contain
- * code that's seen on all pages. (e.g. header, footer)
+ * This component is the entry to the App.
+ * It should only contain  code that's seen on all pages. (e.g. header, footer)
  */
 
 import React from 'react'
@@ -15,7 +15,7 @@ import Footer from '../../components/Footer'
 
 const AppWrapper = styled.div`
   max-width: calc(768px + 16px * 2);
-  margin: 0 auto;
+  margin: 0 auto !important;
   display: flex;
   min-height: 100%;
   padding: 0 16px;
