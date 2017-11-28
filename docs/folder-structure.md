@@ -3,32 +3,32 @@
 ##be
 * all the code related to the back-end (server)
 
-##fe
+## fe
 * all the code related to the front-end (app)
 
-####components
+#### components
 * react components without logic
 
-####containers
+#### containers
 * react components with logic
 
-####images
+#### images
 * images
 * logos
 * favicon
 
-####translations
+#### translations
 * translation files needed for i18n
 
-####utils
+#### utils
 * folder with various utilities
 
-####images
+#### images
 
-##internals
+## internals
 * all the code related to the setup/build process
 
-####webpack
+#### webpack
 * all the files related to webpack
     * production
     * development

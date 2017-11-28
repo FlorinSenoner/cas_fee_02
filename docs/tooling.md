@@ -1,6 +1,6 @@
 # 🛠 Tooling
 
-##Features
+## Features
 * Server Side Rendering (SEO friendly)
 * Hot Module Reloading
 * CSS in JS
@@ -11,8 +11,8 @@
 * add git pre-hook
 
 
-##Back-End
-* [Hapi](https://hapijs.com/)
+## Back-End
+* [Express](https://expressjs.com/) or [Hapi](https://hapijs.com/)
 * [GraphQL](http://graphql.org/) & [Apollo](https://apollographql.com/)
 * [MongoDB](https://www.mongodb.com/) or [PostgreSQL](https://www.postgresql.org/)
 * [Docker](https://www.docker.com/) (?)
@@ -21,23 +21,24 @@
 * [Socket.io 2.0](https://socket.io/) (?)
 
 
-##Front-End
+## Front-End
 * [Webpack](https://webpack.js.org/)
 * [Babel](https://babeljs.io/) (ES Next)
 * React and tools:
     * [React](https://reactjs.org/)
     * [Redux](https://redux.js.org/)
-    * [Immutable](https://github.com/facebook/immutable-js/)
     * [Redux-Saga](https://github.com/redux-saga/redux-saga)
     * [reselect](https://github.com/reactjs/reselect)
     * [recompose](https://github.com/acdlite/recompose)
     * [redux-form](https://github.com/erikras/redux-form/)
-    * [lodash/fp](https://github.com/lodash/lodash/wiki/FP-Guide)
     * [Luxon](https://github.com/moment/luxon)
+* Immutability:
+  * [lodash/fp](https://github.com/lodash/lodash/wiki/FP-Guide)
+  * [Immutable](https://github.com/facebook/immutable-js/) (?)
 * CSS in JS:
     * [Styled Components](https://styled-components.com/)
     * [Polished](https://polished.js.org/docs/)
-    * [Tachyon](http://tachyons.io/) (?)
+    * ~~[Tachyon](http://tachyons.io/) (?)~~
 * Code quality:
     * [ESlint](https://eslint.org/) & [Airbnb styleguide](https://github.com/airbnb/javascript)
     * [Prettier](https://github.com/prettier/prettier)
@@ -46,6 +47,7 @@
 * Type system:
     * [Flow](https://flow.org/en/)
     * [Flow Runtime](https://codemix.github.io/flow-runtime/#/)
+    * [TypeScript](https://typescriptlang.org/) (?)
 * Tests:
     * [Jest](https://facebook.github.io/jest/)
     * [Enzyme](https://github.com/airbnb/enzyme)

@@ -1,4 +1,10 @@
 # IntelliJ project files
-.idea/
-.build/
-node_modules/
+.DS_Store
+.idea
+
+# Don't check auto-generated files into git
+coverage
+build
+node_modules
+stats.json
+npm-debug.log
