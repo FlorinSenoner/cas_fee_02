@@ -1,8 +1,5 @@
 /**
- * WEBPACK DLL GENERATOR
- *
- * This profile is used to cache webpack's module
- * contexts for external library and framework type
+ * Cache webpack's module contexts for 3rd party
  * dependencies which will usually not change often enough
  * to warrant building them from scratch every time we use
  * the webpack process.
