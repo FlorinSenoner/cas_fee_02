@@ -1,3 +1,5 @@
+/** @format */
+
 {
   "name": "wettemer",
   "version": "1.0.0",
@@ -69,7 +71,7 @@
         }
       ],
       [
-        "babel-plugin-styled-components",
+        "styled-components",
         {
           "ssr": true,
           "displayName": true,

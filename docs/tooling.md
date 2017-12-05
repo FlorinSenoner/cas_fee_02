@@ -1,18 +1,7 @@
 # 🛠 Tooling
 
-## Features
-* Server Side Rendering (SEO friendly)
-* Hot Module Reloading
-* CSS in JS
-* Accessibility (aria)
-* HTTP/2
-* offline
-* JWT
-* add git pre-hook
-
-
-## Back-End
-* [Express](https://expressjs.com/) or [Hapi](https://hapijs.com/)
+##  Back-End
+* [Express](https://expressjs.com/) ~~or [Hapi](https://hapijs.com/)~
 * [GraphQL](http://graphql.org/) & [Apollo](https://apollographql.com/)
 * [MongoDB](https://www.mongodb.com/) or [PostgreSQL](https://www.postgresql.org/)
 * [Docker](https://www.docker.com/) (?)
@@ -38,23 +27,23 @@
 * CSS in JS:
     * [Styled Components](https://styled-components.com/)
     * [Polished](https://polished.js.org/docs/)
-    * ~~[Tachyon](http://tachyons.io/) (?)~~
+    * ~~[Tachyon](http://tachyons.io/)~~
 * Code quality:
     * [ESlint](https://eslint.org/) & [Airbnb styleguide](https://github.com/airbnb/javascript)
     * [Prettier](https://github.com/prettier/prettier)
     * [Stylelint](https://github.com/stylelint/stylelint)
 * [i18n](https://github.com/mashpie/i18n-node)
 * Type system:
-    * [Flow](https://flow.org/en/)
-    * [Flow Runtime](https://codemix.github.io/flow-runtime/#/)
-    * [TypeScript](https://typescriptlang.org/) (?)
+    * [TypeScript](https://typescriptlang.org/)
+    * ~~[Flow](https://flow.org/en/)~
+    * ~–[Flow Runtime](https://codemix.github.io/flow-runtime/#/)~
 * Tests:
     * [Jest](https://facebook.github.io/jest/)
     * [Enzyme](https://github.com/airbnb/enzyme)
     
 
 
-## 🔮 Inspiration
+## 🧠 Inspiration
 * [Relay](https://github.com/facebook/relay)
 * [TKFramework](https://github.com/tubackkhoa/tkframework)
 * [React Redux Universal Hot](https://github.com/erikras/react-redux-universal-hot-example)
