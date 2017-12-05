@@ -7,7 +7,7 @@
   "syntax": "scss",
   "rules": {
     "at-rule-no-vendor-prefix": true,
-    "max-nesting-depth": 2,
+    "max-nesting-depth": 1,
     "string-quotes": "single",
     "declaration-no-important": true,
     "selector-pseudo-class-no-unknown": [
