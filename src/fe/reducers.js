@@ -3,7 +3,7 @@ import { combineReducers } from 'redux-immutable'
 import { LOCATION_CHANGE } from 'react-router-redux'
 
 import globalReducer from 'fe/containers/App/reducer'
-import languageProviderReducer from 'fe/containers/LanguageProvider/reducer'
+import languageProviderReducer from 'fe/containers/LocaleSwitcher/reducer'
 
 // Initial routing state, make route immutable
 const routeInitialState = fromJS({

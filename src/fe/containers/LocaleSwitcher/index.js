@@ -6,9 +6,9 @@ import { connect } from 'react-redux'
 import { createSelector } from 'reselect'
 
 import { appLocales } from 'fe/i18n'
-import { changeLocale } from 'fe/containers/LanguageProvider/actions'
-import { makeSelectLocale } from 'fe/containers/LanguageProvider/selectors'
 import Dropdown from 'fe/components/Dropdown'
+import { makeSelectLocale } from './selectors'
+import { changeLocale } from './actions'
 import Wrapper from './Wrapper'
 import messages from './messages'
 

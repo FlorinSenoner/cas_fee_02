@@ -6,4 +6,4 @@
  * this avoids naming-collisions
  */
 
-export const CHANGE_LOCALE = 'app/LanguageToggle/CHANGE_LOCALE'
+export const CHANGE_LOCALE = 'app/LocaleSwitcher/CHANGE_LOCALE'
