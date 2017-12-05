@@ -1,4 +1,6 @@
 /**
+ * @format
+ *
  * Loads the component for the HomePage asynchronously
  */
 

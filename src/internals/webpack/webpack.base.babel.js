@@ -1,3 +1,5 @@
+/** @format */
+
 // common webpack config
 
 const path = require('path')

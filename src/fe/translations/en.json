@@ -1,3 +1,7 @@
+/** @format */
+
 {
-  "app.components.HomePage.header": "This is the HomePage component!"
+  "app.components.HomePage.header": "This is the HomePage component!",
+  "app.containers.LocaleToggle.de": "German",
+  "app.containers.LocaleToggle.en": "English"
 }

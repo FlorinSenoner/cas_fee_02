@@ -1,4 +1,6 @@
 /**
+ * @format
+ *
  * This is the Entry file for the application
  */
 

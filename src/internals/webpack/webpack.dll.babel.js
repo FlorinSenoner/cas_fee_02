@@ -3,6 +3,8 @@
  * dependencies which will usually not change often enough
  * to warrant building them from scratch every time we use
  * the webpack process.
+ *
+ * @format
  */
 
 const { join } = require('path')

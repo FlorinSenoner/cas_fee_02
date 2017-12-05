@@ -1,3 +1,5 @@
+/** @format */
+
 import Loadable from 'react-loadable'
 
 import LoadingIndicator from 'fe/components/LoadingIndicator'

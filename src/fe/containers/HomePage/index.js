@@ -1,6 +1,7 @@
+/** @format */
+
 import React from 'react'
-import { injectIntl } from 'react-intl'
-import PropTypes from 'prop-types'
+import { injectIntl, intlShape } from 'react-intl'
 import messages from './messages'
 
 const HomePage = ({ intl: { formatMessage } }) => (
@@ -10,9 +11,8 @@ const HomePage = ({ intl: { formatMessage } }) => (
 )
 
 HomePage.propTypes = {
-  intl: PropTypes.shape({
-    formatMessage: PropTypes.func.isRequired,
-  }),
+  // eslint-disable-next-line react/no-typos
+  intl: intlShape.isRequired,
 }
 
 const enhance = injectIntl

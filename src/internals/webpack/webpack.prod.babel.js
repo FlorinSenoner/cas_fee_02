@@ -1,3 +1,5 @@
+/** @format */
+
 // prod webpack config
 
 const path = require('path')

@@ -1,3 +1,5 @@
+/** @format */
+
 import { CHANGE_LOCALE } from './constants'
 
 export const changeLocale = languageLocale => ({

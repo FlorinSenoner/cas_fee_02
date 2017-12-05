@@ -1,3 +1,7 @@
+/** @format */
+
 {
-  "app.components.HomePage.header": "das isch d Homepage"
+  "app.components.HomePage.header": "das isch d Homepage",
+  "app.containers.LocaleToggle.de": "Deutsch",
+  "app.containers.LocaleToggle.en": "Englisch"
 }

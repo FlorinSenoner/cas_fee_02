@@ -1,3 +1,5 @@
+/** @format */
+
 const { resolve } = require('path')
 const pullAll = require('lodash/fp/pullAll')
 const uniq = require('lodash/fp/uniq')

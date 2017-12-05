@@ -1,4 +1,5 @@
-/*
+/**
+ * @format
  *
  * LanguageProvider
  *
@@ -30,8 +31,6 @@ const mapStateToProps = createSelector(makeSelectLocale(), locale => ({
   locale,
 }))
 
-const mapDispatchToProps = dispatch => ({ dispatch })
-
-const enhance = connect(mapStateToProps, mapDispatchToProps)
+const enhance = connect(mapStateToProps, null)
 
 export default enhance(LanguageProvider)
