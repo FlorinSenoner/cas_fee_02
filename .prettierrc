@@ -5,6 +5,6 @@
   "trailingComma": "all",
   "bracketSpacing": true,
   "jsxBracketSameLine": true,
-  "insertPragma": false,
+  "insertPragma": true,
   "requirePragma": false,
 }

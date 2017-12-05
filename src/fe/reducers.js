@@ -1,3 +1,5 @@
+/** @format */
+
 import { fromJS } from 'immutable'
 import { combineReducers } from 'redux-immutable'
 import { LOCATION_CHANGE } from 'react-router-redux'

@@ -1,3 +1,5 @@
+/** @format */
+
 import { fromJS } from 'immutable'
 
 // The initial state of the App
