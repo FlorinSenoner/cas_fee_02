@@ -44,7 +44,7 @@
 
 
 ## 🧠 Inspiration
-* [Relay](https://github.com/facebook/relay)
+* ~~[Relay](https://github.com/facebook/relay)~~
 * [TKFramework](https://github.com/tubackkhoa/tkframework)
 * [React Redux Universal Hot](https://github.com/erikras/react-redux-universal-hot-example)
 * [React Universal Component 2.0](https://github.com/faceyspacey/react-universal-component)
@@ -55,3 +55,5 @@
 * [Modern JS Cheatsheet](https://mbeaudru.github.io/modern-js-cheatsheet/)
 * [Front-End-Checklist](https://github.com/thedaviddias/Front-End-Checklist)
 * [API Security Checklist](https://github.com/shieldfy/API-Security-Checklist)
+* ~~React-Native & React for Web + GraphQL + Relay~~
+* React-Native & React for Web + GraphQL + Apollo
