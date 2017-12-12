@@ -1,3 +1,5 @@
+/** @format */
+
 import { fromJS } from 'immutable'
 
 import { DEFAULT_LOCALE } from 'fe/containers/App/constants'
