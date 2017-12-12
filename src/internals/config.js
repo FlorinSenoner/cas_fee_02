@@ -22,6 +22,7 @@ const Wettemer = {
         'ip',
         'minimist',
         'sanitize.css',
+        'mongodb',
       ],
 
       // Specify any additional dependencies (e.g. lodash, babel-polyfill) since
