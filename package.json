@@ -20,7 +20,7 @@
     "build": "cross-env NODE_ENV=production webpack --config src/internals/webpack/webpack.prod.babel.js --color -p --progress --hide-modules --display-optimization-bailout",
     "build:clean": "rimraf ./build",
     "build:dll": "node ./src/internals/scripts/dependencies.js",
-    "start": "cross-env NODE_ENV=development node src/be",
+    "start": "nodemon --exec cross-env NODE_ENV=development node src/be",
     "start:tunnel": "cross-env NODE_ENV=development ENABLE_TUNNEL=true node server",
     "start:production": "npm run test && npm run build && npm run start:prod",
     "start:prod": "cross-env NODE_ENV=production node server",
@@ -114,7 +114,7 @@
       "ip",
       "minimist",
       "sanitize.css",
-      "mongodb"
+      "mongoose"
     ],
     "include": [
       "babel-polyfill",
@@ -136,7 +136,7 @@
     "ip": "^1.1.5",
     "lodash": "^4.17.4",
     "minimist": "^1.2.0",
-    "mongodb": "^3.0.0-rc0",
+    "mongoose": "^4.13.7",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -197,6 +197,7 @@
     "jest-cli": "^21.2.1",
     "lint-staged": "^6.0.0",
     "ngrok": "^2.2.24",
+    "nodemon": "^1.12.5",
     "pre-commit": "^1.2.2",
     "prettier": "^1.9.0",
     "react-apollo": "^2.0.4",
