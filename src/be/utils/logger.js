@@ -13,7 +13,7 @@ const divider = chalk.gray('\n-----------------------------------')
 const logger = {
   // Called whenever there's an error on the server we want to print
   error: err => {
-    console.error(chalk.red(err))
+    console.error(`❌  ${chalk.redBright(err)} ❌`)
   },
 
   // Called when express.js app starts on given port w/o errors
@@ -26,13 +26,13 @@ const logger = {
     }
 
     console.log(`
-${chalk.bold('Access URLs:')}${divider}
-Localhost: ${chalk.magenta(`http://${host}:${port}`)}
-      LAN: ${chalk.magenta(`http://${ip.address()}:${port}`) +
-        (tunnelStarted
-          ? `\n    Proxy: ${chalk.magenta(tunnelStarted)}`
-          : '')}${divider}
-${chalk.blue(`Press ${chalk.italic('CTRL-C')} to stop`)}
+      ${chalk.bold('Access URLs:')}${divider}
+      Localhost: ${chalk.magenta(`http://${host}:${port}`)}
+            LAN: ${chalk.magenta(`http://${ip.address()}:${port}`) +
+              (tunnelStarted
+                ? `\n    Proxy: ${chalk.magenta(tunnelStarted)}`
+                : '')}${divider}
+      ${chalk.blue(`Press ${chalk.italic('CTRL-C')} to stop`)}
     `)
   },
 }
