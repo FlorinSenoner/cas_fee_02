@@ -8,3 +8,5 @@ build
 node_modules
 stats.json
 npm-debug.log
+
+variables.env
