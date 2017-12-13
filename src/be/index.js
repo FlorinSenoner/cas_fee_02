@@ -22,7 +22,9 @@ const logger = require('./utils/logger')
 const argv = require('./utils/argv')
 const port = require('./utils/port')
 
+const User = require('./modelsMongoose/User')
 const schema = require('./schemaGraphQL')
+const { authenticate } = require('./schemaGraphQL/authentication')
 
 const setup = require('./middlewares/frontendMiddleware')
 
@@ -46,9 +48,23 @@ const customHost = argv.host || process.env.HOST
 const host = customHost || null // Let http.Server use its default IPv6/4 host
 const prettyHost = customHost || 'localhost'
 
+const buildOptions = async req => {
+  const user = await authenticate(req, User)
+  return {
+    context: user, // This context object is passed to all resolvers.
+    schema,
+  }
+}
+
 // add be API, add custom backend-specific middleware
-app.use('/graphql', bodyParser.json(), graphqlExpress({ schema, context: {} }))
-app.use('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }))
+app.use('/graphql', bodyParser.json(), graphqlExpress(buildOptions))
+app.use(
+  '/graphiql',
+  graphiqlExpress({
+    endpointURL: '/graphql',
+    passHeader: `'Authorization': 'bearer token-test@gmail.com'`,
+  }),
+)
 
 // In production we need to pass these values in instead of relying on webpack
 setup(app, { outputPath: resolve(process.cwd(), 'build'), publicPath: '/' })

@@ -153,6 +153,7 @@
     "reselect": "^3.0.1",
     "sanitize.css": "^5.0.0",
     "styled-components": "^2.2.4",
+    "validator": "^9.2.0",
     "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
