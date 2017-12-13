@@ -9,8 +9,6 @@ module.exports = {
 
   Mutation: {
     createLink: async (root, { url, description }, user) => {
-      // eslint-disable-next-line no-underscore-dangle
-      console.log('User: ', user._id)
       const newLink = {
         url,
         description,
@@ -44,10 +42,8 @@ module.exports = {
     // eslint-disable-next-line no-underscore-dangle
     id: root => root._id || root.id,
 
-    postedBy: async ({ postedById }) => {
-      console.log(postedById)
-      return User.findOne({ _id: postedById }).exec()
-    },
+    postedBy: async ({ postedById }) =>
+      User.findOne({ _id: postedById }).exec(),
   },
 
   User: {
