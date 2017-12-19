@@ -24,6 +24,7 @@ const port = require('./utils/port')
 
 const User = require('./modelsMongoose/User')
 const schema = require('./schemaGraphQL')
+const buildDataloaders = require('./schemaGraphQL/dataloaders')
 const { authenticate } = require('./schemaGraphQL/authentication')
 
 const setup = require('./middlewares/frontendMiddleware')
@@ -38,10 +39,10 @@ const app = express()
 // Connect to database
 const mongoDB = process.env.DATABASE
 mongoose.connect(mongoDB, { useMongoClient: true })
-
 // Use native promises
 mongoose.Promise = global.Promise
 mongoose.connection.on('error', err => logger.error(err.message))
+mongoose.set('debug', process.env.DEBUG_DATABASE === 'true')
 
 // get the intended host and port number, use localhost and port 3000 if not provided
 const customHost = argv.host || process.env.HOST
@@ -51,7 +52,11 @@ const prettyHost = customHost || 'localhost'
 const buildOptions = async req => {
   const user = await authenticate(req, User)
   return {
-    context: user, // This context object is passed to all resolvers.
+    // This context object is passed to all resolvers.
+    context: {
+      dataloaders: buildDataloaders(),
+      user,
+    },
     schema,
   }
 }
