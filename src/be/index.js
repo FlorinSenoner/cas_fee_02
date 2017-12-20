@@ -22,9 +22,13 @@ const logger = require('./utils/logger')
 const argv = require('./utils/argv')
 const port = require('./utils/port')
 
+const { execute, subscribe } = require('graphql')
+const { createServer } = require('http')
+const { SubscriptionServer } = require('subscriptions-transport-ws')
 const User = require('./modelsMongoose/User')
 const schema = require('./schemaGraphQL')
 const buildDataloaders = require('./schemaGraphQL/dataloaders')
+const formatError = require('./schemaGraphQL/formatError')
 const { authenticate } = require('./schemaGraphQL/authentication')
 
 const setup = require('./middlewares/frontendMiddleware')
@@ -35,6 +39,7 @@ const ngrok =
   (isDev && process.env.ENABLE_TUNNEL) || argv.tunnel ? require('ngrok') : false
 const { resolve } = require('path')
 const app = express()
+const server = createServer(app)
 
 // Connect to database
 const mongoDB = process.env.DATABASE
@@ -44,7 +49,7 @@ mongoose.Promise = global.Promise
 mongoose.connection.on('error', err => logger.error(err.message))
 mongoose.set('debug', process.env.DEBUG_DATABASE === 'true')
 
-// get the intended host and port number, use localhost and port 3000 if not provided
+// get the intended host and port number, use localhost and port 8888 if not provided
 const customHost = argv.host || process.env.HOST
 const host = customHost || null // Let http.Server use its default IPv6/4 host
 const prettyHost = customHost || 'localhost'
@@ -57,6 +62,7 @@ const buildOptions = async req => {
       dataloaders: buildDataloaders(),
       user,
     },
+    formatError,
     schema,
   }
 }
@@ -68,17 +74,24 @@ app.use(
   graphiqlExpress({
     endpointURL: '/graphql',
     passHeader: `'Authorization': 'bearer token-test@gmail.com'`,
+    subscriptionsEndpoint: `ws://localhost:${port}/subscriptions`,
   }),
 )
 
 // In production we need to pass these values in instead of relying on webpack
 setup(app, { outputPath: resolve(process.cwd(), 'build'), publicPath: '/' })
 
-// Start your app.
-app.listen(port, host, err => {
+// Start app
+server.listen(port, host, err => {
   if (err) {
     return logger.error(err.message)
   }
+
+  // start subscription server
+  SubscriptionServer.create(
+    { execute, subscribe, schema },
+    { server, path: '/subscriptions' },
+  )
 
   // Connect to ngrok in dev mode
   if (ngrok) {

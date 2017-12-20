@@ -7,6 +7,7 @@
   * create wireframes
   * define media queries, fonts and global CSS setup
   * add react ErrorBoundary component
+  * document all commands
 
 * normal
   * stylelint rules

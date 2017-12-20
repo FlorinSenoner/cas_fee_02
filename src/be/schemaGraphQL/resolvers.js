@@ -1,9 +1,25 @@
 /** @format */
 
 const mongoose = require('mongoose')
+const pubsub = require('./pubsub')
+const isURL = require('validator/lib/isURL')
+
 const Link = require('../modelsMongoose/Link')
 const User = require('../modelsMongoose/User')
 const Vote = require('../modelsMongoose/Vote')
+
+class ValidationError extends Error {
+  constructor(message, field) {
+    super(message)
+    this.field = field
+  }
+}
+
+const assertValidLink = url => {
+  if (!isURL(url)) {
+    throw new ValidationError('Link validation error: invalid url.', 'url')
+  }
+}
 
 module.exports = {
   Query: {
@@ -12,13 +28,14 @@ module.exports = {
 
   Mutation: {
     createLink: async (root, { url, description }, { user }) => {
+      assertValidLink(url)
       const newLink = {
         url,
         description,
         // eslint-disable-next-line no-underscore-dangle
         postedById: user && user._id,
       }
-      console.log(newLink)
+      pubsub.publish('Link', { Link: { mutation: 'CREATED', node: newLink } })
       return new Link(newLink).save()
     },
 
@@ -47,6 +64,12 @@ module.exports = {
         linkId: new mongoose.mongo.ObjectId(linkId),
       }
       return new Vote(newVote).save()
+    },
+  },
+
+  Subscription: {
+    Link: {
+      subscribe: () => pubsub.asyncIterator('Link'),
     },
   },
 

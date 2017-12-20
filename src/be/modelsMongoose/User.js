@@ -1,7 +1,7 @@
 /** @format */
 
 const mongoose = require('mongoose')
-const validator = require('validator')
+const isEmail = require('validator/lib/isEmail')
 
 const userSchema = new mongoose.Schema({
   name: {
@@ -16,7 +16,7 @@ const userSchema = new mongoose.Schema({
     // workaround: Implicit async custom validators (custom validators that take 2 arguments) are deprecated in mongoose >= 4.9.0
     validate: [
       {
-        validator: value => validator.isEmail(value),
+        validator: value => isEmail(value),
         msg: 'Invalid Email Address',
       },
     ],
