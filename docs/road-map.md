@@ -7,7 +7,6 @@
   * create wireframes
   * define media queries, fonts and global CSS setup
   * add react ErrorBoundary component
-  * document all commands
 
 * normal
   * stylelint rules
@@ -20,6 +19,7 @@
 * low
   * move to TypeScript
   * better // more git pre-hooks
+  * document all commands (use bash to call them in the terminal)
   
   
 ## 🛣 down the road
