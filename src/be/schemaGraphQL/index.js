@@ -60,13 +60,13 @@ const typeDefs = `
   }
 
   type Query {
-    allLinks(filter: LinkFilter): [Link!]!
+    allLinks(filter: LinkFilter, skip: Int, limit: Int): [Link!]!
   }
   
   input LinkFilter {
     OR: [LinkFilter!]
-    descriptionContains: String
-    urlContains: String
+    description: String
+    url: String
   }
   
   type Mutation {
