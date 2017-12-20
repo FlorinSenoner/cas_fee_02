@@ -60,7 +60,13 @@ const typeDefs = `
   }
 
   type Query {
-    allLinks: [Link!]!
+    allLinks(filter: LinkFilter): [Link!]!
+  }
+  
+  input LinkFilter {
+    OR: [LinkFilter!]
+    descriptionContains: String
+    urlContains: String
   }
   
   type Mutation {

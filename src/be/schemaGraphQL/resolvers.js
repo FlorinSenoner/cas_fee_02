@@ -21,9 +21,29 @@ const assertValidLink = url => {
   }
 }
 
+const buildFilters = ({ OR = [], descriptionContains, urlContains }) => {
+  const filter = descriptionContains || urlContains ? {} : null
+  if (descriptionContains) {
+    filter.description = { $regex: `.*${descriptionContains}.*` }
+  }
+  if (urlContains) {
+    filter.url = { $regex: `.*${urlContains}.*` }
+  }
+
+  let filters = filter ? [filter] : []
+  // eslint-disable-next-line
+  for (let i = 0; i < OR.length; i++) {
+    filters = filters.concat(buildFilters(OR[i]))
+  }
+  return filters
+}
+
 module.exports = {
   Query: {
-    allLinks: async () => Link.find().exec(),
+    allLinks: async (root, { filter }) => {
+      const query = filter ? { $or: buildFilters(filter) } : {}
+      return Link.find(query).exec()
+    },
   },
 
   Mutation: {
