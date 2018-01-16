@@ -89,8 +89,7 @@ module.exports = {
   Link: {
     // eslint-disable-next-line no-underscore-dangle
     id: root => root._id || root.id,
-    postedBy: async ({ postedById }, data, { dataloaders: { userLoader } }) =>
-      userLoader.load(postedById),
+    postedBy: async ({ postedById }, data, { dataloaders: { userLoader } }) => userLoader.load(postedById),
     votes: async ({ _id }) => Vote.find({ linkId: _id }).exec(),
   },
 
@@ -103,8 +102,7 @@ module.exports = {
   Vote: {
     // eslint-disable-next-line no-underscore-dangle
     id: root => root._id || root.id,
-    user: async ({ userId }, data, { dataloaders: { userLoader } }) =>
-      userLoader.load(userId),
+    user: async ({ userId }, data, { dataloaders: { userLoader } }) => userLoader.load(userId),
     link: async ({ linkId }) => Link.findOne({ _id: linkId }).exec(),
   },
 }
