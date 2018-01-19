@@ -18,10 +18,16 @@ Eingeloggte User können:
 - ~~Benachrigt werden wenn ein Update einer Wette eingegangen ist~~ (optional)
 - Ausloggen
 
+# Optionals
+- Comments:
+    - User können Bets kommentieren und ebenfalls Bilder dazu hochladen
+- Friends:
+    - User können wählen, dass sie nur von ihren Freunden eingeladen werden können
+    - User sehen bei welchen Wetten ihre Freunde teilnehmen
+
 Nicht registrierte User können:
 - Einloggen / Registrieren
 - Eine Übersicht, über alle public Wetten sehen
-- 
 
 # Domain Objects
 ### Bet
@@ -33,9 +39,23 @@ Nicht registrierte User können:
 - dateCreated
 - dateFinished: Kann auch offen sein z.b. 31.12.9999
 - gain: ~~Wenn nichts als Gewinn spezifiziert wird, gewinnt man Honorpoints~~ (optional)
+- -> image (BetImage) (Titel/Anzeigebild)
+- -> updates (BetUpdate)
 - -> winCriteria (WinCriteria)
 - -> guesses (Guess)
 - -> admin (User)
+
+### BetImage
+- filename
+- description
+- uploadedDate
+
+### ~~BetUpdate (optional)~~
+Eine Bet kann immer wieder updated werden. Dies wird dann an alle Nutzer kommuniziert.
+- title
+- message
+- -> image (BetImage)
+- ~~video (highly optional)~~
 
 ### WinCriteria
 (enum)
@@ -55,9 +75,11 @@ Nicht registrierte User können:
 - pw
 - email
 - dateJoined
+- ~~-> friends (User) (optional)~~
 
 # Non functional requirements
 - fluides Design (mobile first)
+- life updates without the user having to reload
 - ~~offline verfügbar~~ (optional)
 
 # Views
@@ -68,7 +90,10 @@ Kurzer Beschrieb aller Views der App
 - Aktuellste Public Wetten
 - Login/Logout
 
-### Bets
+### Bets Dashboard
+Wie schafft man ein nices Dashboard, weleches alle Bet-Types vereinheitlicht und trotzdem sehr einfach zu bedienen ist.
+-> Für den Anfang verwenden wir am einfachsten eine einfache Liste
+
 - Alle Wetten mit Filter Möglichkeit
 -- Einladungen
 -- Offene Wetten (als TN, als Admin)
