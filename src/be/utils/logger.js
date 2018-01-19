@@ -5,9 +5,7 @@
 const chalk = require('chalk')
 const ip = require('ip')
 
-const divider = chalk.greenBright(
-  '\n--------------------------------------------',
-)
+const divider = chalk.greenBright('\n--------------------------------------------')
 
 /**
  * Logger middleware, you can customize it to make messages more personal
@@ -32,10 +30,7 @@ ${chalk.bold('Access URLs:')}${divider}
   Localhost: ${chalk.magenta(`http://${host}:${port}`)}
    GraphiQL: ${chalk.magenta(`http://${host}:${port}/graphiql`)}
         LAN: ${chalk.magenta(`http://${ip.address()}:${port}`) +
-          (tunnelStarted
-            ? `\n    Proxy: ${chalk.magenta(tunnelStarted)}`
-            : '')}${divider}
-      ${chalk.blue(`Type "${chalk.italic('rs')}" to restart the server`)}
+          (tunnelStarted ? `\n    Proxy: ${chalk.magenta(tunnelStarted)}` : '')}${divider}
       ${chalk.blue(`Press ${chalk.italic('CTRL-C')} to stop`)}
     `)
   },

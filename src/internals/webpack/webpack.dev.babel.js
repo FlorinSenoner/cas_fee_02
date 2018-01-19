@@ -84,10 +84,7 @@ function dependencyHandlers() {
     ]
   }
 
-  const dllPath = path.resolve(
-    process.cwd(),
-    dllPlugin.path || 'node_modules/wettemer-dlls',
-  )
+  const dllPath = path.resolve(process.cwd(), dllPlugin.path || 'node_modules/wettemer-dlls')
 
   // If DLLs aren't defined, get all production dependencies listed in package.json
   // Reminder: Exclude any server side dependencies by listing them in dllConfig.exclude
@@ -95,9 +92,7 @@ function dependencyHandlers() {
     const manifestPath = path.resolve(dllPath, 'wettemerDeps.json')
 
     if (!fs.existsSync(manifestPath)) {
-      logger.error(
-        'The DLL manifest is missing. Please run `npm run build:dll`',
-      )
+      logger.error('The DLL manifest is missing. Please run `npm run build:dll`')
       process.exit(0)
     }
 
@@ -110,18 +105,12 @@ function dependencyHandlers() {
   }
 
   // If DLLs are defined, automatically create a DLLReferencePlugin for each of them
-  const dllManifests = Object.keys(dllPlugin.dlls).map(name =>
-    path.join(dllPath, `/${name}.json`),
-  )
+  const dllManifests = Object.keys(dllPlugin.dlls).map(name => path.join(dllPath, `/${name}.json`))
 
   return dllManifests.map(manifestPath => {
     if (!fs.existsSync(path)) {
       if (!fs.existsSync(manifestPath)) {
-        logger.error(
-          `The following Webpack DLL manifest is missing: ${path.basename(
-            manifestPath,
-          )}`,
-        )
+        logger.error(`The following Webpack DLL manifest is missing: ${path.basename(manifestPath)}`)
         logger.error(`Expected to find it in ${dllPath}`)
         logger.error('Please run: npm run build:dll')
 

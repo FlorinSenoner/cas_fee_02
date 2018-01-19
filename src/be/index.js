@@ -35,8 +35,7 @@ const setup = require('./middlewares/frontendMiddleware')
 
 const isDev = process.env.NODE_ENV !== 'production'
 
-const ngrok =
-  (isDev && process.env.ENABLE_TUNNEL) || argv.tunnel ? require('ngrok') : false
+const ngrok = (isDev && process.env.ENABLE_TUNNEL) || argv.tunnel ? require('ngrok') : false
 const { resolve } = require('path')
 const app = express()
 const server = createServer(app)
@@ -88,10 +87,7 @@ server.listen(port, host, err => {
   }
 
   // start subscription server
-  SubscriptionServer.create(
-    { execute, subscribe, schema },
-    { server, path: '/subscriptions' },
-  )
+  SubscriptionServer.create({ execute, subscribe, schema }, { server, path: '/subscriptions' })
 
   // Connect to ngrok in dev mode
   if (ngrok) {
