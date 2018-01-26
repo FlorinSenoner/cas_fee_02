@@ -34,16 +34,21 @@ Nicht registrierte User können:
 - title
 - description
 - visibility: private oder public
-- state: running oder done
-- participationUntil: Datum wenn bis zu einem gewissen Zeitpunkt noch gewettet werden kann oder nichts wenn immer gewettet/teilgenommen werden kann.
 - dateCreated
-- dateFinished: Kann auch offen sein z.b. 31.12.9999
+- dateEnd: Bis zu diesem Datum dürfen Guesses abgegeben werden. (Optional mit default 31.12.9999)
+- dateDone: Hier hat der Admin die Wette beendet
 - gain: ~~Wenn nichts als Gewinn spezifiziert wird, gewinnt man Honorpoints~~ (optional)
+- -> state (BetState)
 - -> image (BetImage) (Titel/Anzeigebild)
 - -> updates (BetUpdate)
 - -> winCriteria (WinCriteria)
 - -> guesses (Guess)
 - -> admin (User)
+
+### BetState
+- running: Wette läuft und Participants können ihren Guess abgeben
+- expired: Die Zeit der Wette ist abgelaufen. Es kann keinen Guess mehr abgegeben werden.
+- done: Die Wette wurde vom Admin beendet.
 
 ### BetImage
 - filename
@@ -61,8 +66,10 @@ Eine Bet kann immer wieder updated werden. Dies wird dann an alle Nutzer kommuni
 (enum)
 - passOrFail: Etwas ist eingetroffen oder nicht
 - date: Etwas ist an einem bestimmten Datum eingetreten
-- score: Endresultat eines Spiels
 - number: Irgendeine Zahl
+- ~~score: Endresultat eines Spiels~~ (optional)
+- ~~string: Irgend ein Text (z.B. nächster Bundesrat)~~ (optional)
+- ~~selection: Admin erstellt Auswahl an Möglichkeiten~~ (optional)
 
 ### Guess
 - value: abhängig vom WinCriteria der Bet
@@ -70,6 +77,7 @@ Eine Bet kann immer wieder updated werden. Dies wird dann an alle Nutzer kommuni
 - -> bet (Bet)
 
 ### User
+Ein User kann Admin sein, wenn er eine Wette erstellt hat und/oder Participant, wenn er an einer Wette teilnimmt.
 - name
 - avatar
 - pw
@@ -88,9 +96,10 @@ Kurzer Beschrieb aller Views der App
 - Fancy Bild mit Logo
 - Fetter Participate(Wettemer? Wettemer!) Button
 - Aktuellste Public Wetten
-- Login/Logout
+- Singin/Signup
+- ~~Sprache~~ (optional)
 
-### Bets Dashboard
+### Dashboard
 Wie schafft man ein nices Dashboard, weleches alle Bet-Types vereinheitlicht und trotzdem sehr einfach zu bedienen ist.
 -> Für den Anfang verwenden wir am einfachsten eine einfache Liste
 
@@ -101,22 +110,30 @@ Wie schafft man ein nices Dashboard, weleches alle Bet-Types vereinheitlicht und
 - Fancy Whitespace wenn keine Wetten vorhanden sind
 - Button um eine Wette zu erstellen
 
-### Create Bet
+### Create
 - Formular zum Erfassen einer Wette
-- Fetter Wettemer? Button
+    - Title (Input)
+    - Description (Multiline)
+    - Public (On/Off Switch für Visibility)
+    - DateEnd (Datepicker)
+    - WinCriteria (Select)
+    - Your Guess (depending on WinCriteria) (Optinal mit default none)
+- Weiterbutton zu Invite
 
-### Invite People
-Der Link führt immer zur Participation View
-- Möglichkeit bestehende User einzuladen
-- Via E-Mail nicht registrierte Personen einladen
-- QR Code der von anderen gescannt werden kann
-
-### Participation
-- Grobe Details der Wette (z.b <Name Admin> meint <Title Bet> Wettemer?)
-- Möglichkeit einen Guess abzugeben
-- Fetter Wettemer! Button
+### Invite
+- Autofill Feld mit Add Button
+- OK Button (startet die Wette falls sie es nicht bereits ist)
+- ~~Via E-Mail nicht registrierte Personen einladen~~ (optional)
+- ~~QR Code der von anderen gescannt werden kann~~ (optional)
   
-### View Bet
-- Aktueller Status der Wette
-- Alle Updates chronologisch sortiert
+### View/Edit
+- Titel
+- Description
+- Status
+- Visibility
 - Participants und ihre Guesses
+- End Bet Button -> Popup Dialog in dem man das Resultat festhalten kann
+- Inivite more People Button (Admin) -> Invite
+
+### SignUp/In
+- SignUp/In Formular mit OAuth für Google/Facebook
