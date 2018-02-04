@@ -8,7 +8,6 @@
     "es6": true
   },
   "plugins": [
-    "redux-saga",
     "react",
     "jsx-a11y",
     "prettier"
@@ -46,7 +45,10 @@
     "import/prefer-default-export": 0,
     "jsx-a11y/aria-props": 2,
     "jsx-a11y/heading-has-content": 0,
-    "jsx-a11y/anchor-is-valid": 2,
+    "jsx-a11y/anchor-is-valid": [ "error", {
+      "components": [ "Link" ],
+      "aspects": [ "noHref", "invalidHref", "preferButton" ]
+    }],
     "jsx-a11y/label-has-for": 2,
     "jsx-a11y/mouse-events-have-key-events": 2,
     "jsx-a11y/role-has-required-aria-props": 2,
@@ -67,16 +69,11 @@
     "react/require-default-props": 0,
     "react/require-extension": 0,
     "react/self-closing-comp": 0,
-    "redux-saga/no-yield-in-race": 2,
-    "redux-saga/yield-effects": 2,
     "require-yield": 0
   },
   "settings": {
     "import/resolver": {
-      "babel-module": {},
-      "webpack": {
-        "config": "./src/internals/webpack/webpack.prod.babel.js"
-      }
+      "babel-module": {}
     }
   }
 }

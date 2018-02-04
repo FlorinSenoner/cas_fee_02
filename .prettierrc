@@ -5,6 +5,4 @@
   "trailingComma": "all",
   "bracketSpacing": true,
   "jsxBracketSameLine": true,
-  "insertPragma": true,
-  "requirePragma": true,
 }
