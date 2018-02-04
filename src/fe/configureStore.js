@@ -19,9 +19,7 @@ export default function configureStore(initialState = {}, history) {
   // connect to Redux DevTools Extension
   /* eslint-disable no-underscore-dangle */
   const composeEnhancers =
-    process.env.NODE_ENV !== 'production' &&
-    typeof window === 'object' &&
-    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+    process.env.NODE_ENV !== 'production' && typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
       ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
           shouldHotReload: false,
         })
@@ -29,11 +27,7 @@ export default function configureStore(initialState = {}, history) {
   /* eslint-enable */
 
   // create redux store
-  const store = createStore(
-    createReducer(),
-    fromJS(initialState),
-    composeEnhancers(...enhancers),
-  )
+  const store = createStore(createReducer(), fromJS(initialState), composeEnhancers(...enhancers))
 
   // Extensions
   store.runSaga = sagaMiddleware.run

@@ -14,16 +14,7 @@ const Wettemer = {
   dllPlugin: {
     defaults: {
       // exclude dependencies which are not intended for the browser
-      exclude: [
-        'chalk',
-        'compression',
-        'cross-env',
-        'express',
-        'ip',
-        'minimist',
-        'sanitize.css',
-        'mongoose',
-      ],
+      exclude: ['chalk', 'compression', 'cross-env', 'express', 'ip', 'minimist', 'sanitize.css', 'mongoose'],
 
       // Specify any additional dependencies (e.g. lodash, babel-polyfill) since
       // a lot of dependencies depend  on them and they get picked up by webpack
@@ -35,10 +26,8 @@ const Wettemer = {
 
     entry(pkg) {
       const dependencyNames = Object.keys(pkg.dependencies)
-      const exclude =
-        pkg.dllPlugin.exclude || Wettemer.dllPlugin.defaults.exclude
-      const include =
-        pkg.dllPlugin.include || Wettemer.dllPlugin.defaults.include
+      const exclude = pkg.dllPlugin.exclude || Wettemer.dllPlugin.defaults.exclude
+      const include = pkg.dllPlugin.include || Wettemer.dllPlugin.defaults.include
       const includeDependencies = uniq(dependencyNames.concat(include))
 
       return {
