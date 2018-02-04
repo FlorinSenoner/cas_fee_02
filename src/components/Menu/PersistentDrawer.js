@@ -34,8 +34,8 @@ const PersistentDrawer = ({ classes, open, handelClose }) => (
     anchor="left"
     open={open}>
     <div>
-      <div className={classes.drawerHeader}>
-        <IconButton onClick={handelClose}>
+      <div className={classes.drawerHeader} role="button" tabIndex={0} onClick={handelClose} onKeyDown={handelClose}>
+        <IconButton>
           <ChevronLeftIcon />
         </IconButton>
       </div>
