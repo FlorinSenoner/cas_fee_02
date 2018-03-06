@@ -9,7 +9,7 @@ import DefaultPage from '../../components/DefaultPage'
 const Home = ({ changePage }) => (
   <DefaultPage>
     <h1>Home</h1>
-    <Button raised color="secondary" onClick={() => changePage('/dashboard')}>
+    <Button variant="raised" color="secondary" onClick={() => changePage('/dashboard')}>
       dashboard
     </Button>
   </DefaultPage>

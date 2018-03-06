@@ -27,7 +27,7 @@ const styles = theme => ({
 
 const PersistentDrawer = ({ classes, open, handelClose }) => (
   <Drawer
-    type="persistent"
+    variant="persistent"
     classes={{
       paper: classes.drawerPaper,
     }}

@@ -2,10 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { push } from 'react-router-redux'
 import { connect } from 'react-redux'
-import { compose } from 'recompose'
-import { withStyles } from 'material-ui/styles'
-import AddIcon from 'material-ui-icons/Add'
 import Button from 'material-ui/Button'
+import { withStyles } from 'material-ui/styles'
+import { compose } from 'recompose'
+
 import DefaultPage from '../../components/DefaultPage'
 
 const styles = theme => ({
@@ -14,26 +14,17 @@ const styles = theme => ({
   },
 })
 
-const Dashboard = ({ changePage, classes }) => (
+const CreateBet = ({ changePage }) => (
   <DefaultPage>
-    <h1>Dashboard</h1>
+    <h1>Create a bet</h1>
     <Button variant="raised" color="primary" onClick={() => changePage('/')}>
       go home
-    </Button>
-    <Button
-      variant="fab"
-      color="secondary"
-      aria-label="create bet"
-      className={classes.button}
-      onClick={() => changePage('/create')}>
-      <AddIcon />
     </Button>
   </DefaultPage>
 )
 
-Dashboard.propTypes = {
+CreateBet.propTypes = {
   changePage: PropTypes.func.isRequired,
-  classes: PropTypes.object.isRequired,
 }
 
 const mapDispatchToProps = {
@@ -42,4 +33,4 @@ const mapDispatchToProps = {
 
 const enhance = compose(withStyles(styles), connect(null, mapDispatchToProps))
 
-export default enhance(Dashboard)
+export default enhance(CreateBet)

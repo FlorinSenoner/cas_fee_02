@@ -49,7 +49,7 @@ const NavBar = ({ classes, open, handleOpen }) => (
         className={classNames(classes.menuButton, open && classes.hide)}>
         <MenuIcon />
       </IconButton>
-      <Typography type="title" color="inherit" noWrap>
+      <Typography variant="title" color="inherit" noWrap>
         Wettemer
       </Typography>
     </Toolbar>
