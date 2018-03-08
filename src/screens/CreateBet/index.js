@@ -7,6 +7,7 @@ import { withStyles } from 'material-ui/styles'
 import { compose } from 'recompose'
 
 import DefaultPage from '../../components/DefaultPage'
+import CreateBetForm from '../../components/CreateBet/Form'
 
 const styles = theme => ({
   button: {
@@ -17,6 +18,7 @@ const styles = theme => ({
 const CreateBet = ({ changePage, classes }) => (
   <DefaultPage>
     <h1>Create a bet</h1>
+    <CreateBetForm />
     <Button variant="raised" color="primary" onClick={() => changePage('/')} className={classes.button}>
       go home
     </Button>
