@@ -10,7 +10,7 @@ import NavBar from './NavBar'
 const styles = theme => ({
   root: {
     width: '100%',
-    height: 430,
+    height: '100vh',
     zIndex: 1,
     overflow: 'hidden',
   },
