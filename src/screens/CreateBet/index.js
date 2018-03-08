@@ -14,16 +14,17 @@ const styles = theme => ({
   },
 })
 
-const CreateBet = ({ changePage }) => (
+const CreateBet = ({ changePage, classes }) => (
   <DefaultPage>
     <h1>Create a bet</h1>
-    <Button variant="raised" color="primary" onClick={() => changePage('/')}>
+    <Button variant="raised" color="primary" onClick={() => changePage('/')} className={classes.button}>
       go home
     </Button>
   </DefaultPage>
 )
 
 CreateBet.propTypes = {
+  classes: PropTypes.object.isRequired,
   changePage: PropTypes.func.isRequired,
 }
 

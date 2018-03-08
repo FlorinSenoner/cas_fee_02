@@ -12,19 +12,24 @@ const styles = theme => ({
   button: {
     margin: theme.spacing.unit,
   },
+  btnCreate: {
+    position: 'absolute',
+    bottom: '1rem',
+    right: '1rem',
+  },
 })
 
 const Dashboard = ({ changePage, classes }) => (
   <DefaultPage>
     <h1>Dashboard</h1>
-    <Button variant="raised" color="primary" onClick={() => changePage('/')}>
+    <Button variant="raised" color="primary" onClick={() => changePage('/')} className={classes.button}>
       go home
     </Button>
     <Button
       variant="fab"
       color="secondary"
       aria-label="create bet"
-      className={classes.button}
+      className={classes.btnCreate}
       onClick={() => changePage('/create')}>
       <AddIcon />
     </Button>
