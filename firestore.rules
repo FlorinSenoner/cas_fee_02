@@ -1,21 +1,29 @@
 service cloud.firestore {
   match /databases/{database}/documents {
-    function isPublicOrUserData() {
-      return isUserData() || resource.data.visibility == 'public';
-    }
-
-    function isUserData() {
-      return request.auth.uid == resource.data.userid;
-    }
-
-    function isAuthenticated() {
-      return request.auth.uid != null;
-    }
-
-    match /messages/{document=**} {
-      allow read: if isPublicOrUserData();
-      allow delete: if isUserData();
-      allow create: if isAuthenticated();
+    match /{document=**} {
+      allow read, write: if true;
     }
   }
 }
+
+//service cloud.firestore {
+//  match /databases/{database}/documents {
+//    function isPublicOrUserData() {
+//      return isUserData() || resource.data.visibility == 'public';
+//    }
+//
+//    function isUserData() {
+//      return request.auth.uid == resource.data.userid;
+//    }
+//
+//    function isAuthenticated() {
+//      return request.auth.uid != null;
+//    }
+//
+//    match /messages/{document=**} {
+//      allow read: if isPublicOrUserData();
+//      allow delete: if isUserData();
+//      allow create: if isAuthenticated();
+//    }
+//  }
+//}

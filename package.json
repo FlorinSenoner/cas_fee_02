@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "firebase": "^4.11.0",
     "history": "^4.7.2",
     "material-ui": "next",
     "material-ui-icons": "next",
