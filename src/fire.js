@@ -10,6 +10,11 @@ const config = {
   storageBucket: 'wettemer.appspot.com',
   messagingSenderId: '34791821550',
 }
+
+/**
+ * OFFLINE MODE: TO ACTIVATE READ HERE
+ * https://cloud.google.com/firestore/docs/manage-data/enable-offline
+ */
 const app = firebase.initializeApp(config)
 const db = firebase.firestore(app)
 const auth = firebase.auth()
