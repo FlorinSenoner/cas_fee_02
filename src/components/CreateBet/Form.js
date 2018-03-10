@@ -6,6 +6,7 @@ import Input from 'material-ui/Input'
 import Button from 'material-ui/Button'
 import { withStyles } from 'material-ui/styles'
 import { compose } from 'recompose'
+import { addBet } from '../../services/bet.service'
 
 const styles = theme => ({
   button: {
@@ -29,7 +30,8 @@ class CreateBetForm extends Component {
 
   addBet() {
     // TODO
-    console.log('sali', this.state)
+    console.log('Got Form with state: ', this.state)
+    addBet(this.state.bet)
   }
 
   handleTitleChange = event => {

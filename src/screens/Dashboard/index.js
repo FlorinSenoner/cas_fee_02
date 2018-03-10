@@ -1,50 +1,51 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import { push } from 'react-router-redux'
 import { connect } from 'react-redux'
-import { compose } from 'recompose'
-import { withStyles } from 'material-ui/styles'
-import AddIcon from 'material-ui-icons/Add'
-import Button from 'material-ui/Button'
+import PropTypes from 'prop-types'
+
 import DefaultPage from '../../components/DefaultPage'
+import BetsList from '../../components/Dashboard/BetsList'
+import CreateBtn from '../../components/Dashboard/CreateBtn'
+import { onBetsUpdate } from '../../services/bet.service'
+import { betsUpdate } from '../../actions'
 
-const styles = theme => ({
-  button: {
-    margin: theme.spacing.unit,
-  },
-  btnCreate: {
-    position: 'absolute',
-    bottom: '1rem',
-    right: '1rem',
-  },
-})
+class Dashboard extends React.Component {
+  static propTypes = {
+    betsUpdate: PropTypes.func.isRequired,
+  }
 
-const Dashboard = ({ changePage, classes }) => (
-  <DefaultPage>
-    <h1>Dashboard</h1>
-    <Button variant="raised" color="primary" onClick={() => changePage('/')} className={classes.button}>
-      go home
-    </Button>
-    <Button
-      variant="fab"
-      color="secondary"
-      aria-label="create bet"
-      className={classes.btnCreate}
-      onClick={() => changePage('/create')}>
-      <AddIcon />
-    </Button>
-  </DefaultPage>
-)
+  constructor() {
+    super()
+    this.updateBets = this.updateBets.bind(this)
+  }
 
-Dashboard.propTypes = {
-  changePage: PropTypes.func.isRequired,
-  classes: PropTypes.object.isRequired,
+  componentDidMount() {
+    onBetsUpdate(this.updateBets)
+  }
+
+  updateBets(querySnapshot) {
+    console.log('App, index.js: updating bets with snapshot: ', querySnapshot)
+    const bets = []
+    querySnapshot.forEach(doc => {
+      bets.push({ ...doc.data(), id: doc.id })
+    })
+    this.props.betsUpdate(bets)
+  }
+
+  render() {
+    return (
+      <DefaultPage>
+        <h1>Dashboard</h1>
+        <BetsList />
+        <CreateBtn />
+      </DefaultPage>
+    )
+  }
 }
 
-const mapDispatchToProps = {
-  changePage: push,
+const mapDispatchToProps = dispatch => {
+  return {
+    betsUpdate: bets => dispatch(betsUpdate(bets)),
+  }
 }
 
-const enhance = compose(withStyles(styles), connect(null, mapDispatchToProps))
-
-export default enhance(Dashboard)
+export default connect(null, mapDispatchToProps)(Dashboard)

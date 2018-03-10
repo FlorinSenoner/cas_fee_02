@@ -1,0 +1,1 @@
+export const BETS_CHANGED = 'BETS_CHANGED'

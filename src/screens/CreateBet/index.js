@@ -18,10 +18,10 @@ const styles = theme => ({
 const CreateBet = ({ changePage, classes }) => (
   <DefaultPage>
     <h1>Create a bet</h1>
-    <Button variant="raised" color="primary" onClick={() => changePage('/')} className={classes.button}>
-      go home
-    </Button>
     <CreateBetForm />
+    <Button variant="raised" color="primary" onClick={() => changePage('/dashboard')} className={classes.button}>
+      cancel
+    </Button>
   </DefaultPage>
 )
 
