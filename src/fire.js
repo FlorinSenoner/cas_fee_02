@@ -18,4 +18,5 @@ const config = {
 const app = firebase.initializeApp(config)
 const db = firebase.firestore(app)
 const auth = firebase.auth()
+export const isAuthenticated = () => !!auth.currentUser
 export { auth, db }

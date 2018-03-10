@@ -7,11 +7,13 @@ import './App.css'
 import Dashboard from '../Dashboard'
 import NotFound from '../NotFound'
 import CreateBet from '../CreateBet'
+import SignInScreen from '../SignIn'
 
 class App extends React.Component {
   render() {
     return (
       <Reboot>
+        {/*<SignInScreen callback={}/>*/}
         <Switch>
           <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/create" component={CreateBet} />
