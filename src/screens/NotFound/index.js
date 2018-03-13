@@ -9,7 +9,7 @@ import DefaultPage from '../../components/DefaultPage'
 const NotFound = ({ changePage }) => (
   <DefaultPage>
     <h1>404</h1>
-    <Button raised color="secondary" onClick={() => changePage('/')}>
+    <Button variant="raised" color="secondary" onClick={() => changePage('/')}>
       return home
     </Button>
   </DefaultPage>
