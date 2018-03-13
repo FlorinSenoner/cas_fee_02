@@ -32,7 +32,8 @@ const PersistentDrawer = ({ classes, open, handelClose }) => (
       paper: classes.drawerPaper,
     }}
     anchor="left"
-    open={open}>
+    open={open}
+  >
     <div>
       <div className={classes.drawerHeader} role="button" tabIndex={0} onClick={handelClose} onKeyDown={handelClose}>
         <IconButton>

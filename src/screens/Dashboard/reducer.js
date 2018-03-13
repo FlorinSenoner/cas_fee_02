@@ -1,9 +1,9 @@
-import { BETS_CHANGED } from '../constants/action-types'
+import { BETS_CHANGED } from './constants'
 
 const initialState = {
   bets: [],
 }
-const bets = (state = initialState, action) => {
+const dashboard = (state = initialState, action) => {
   console.log('sali reducer. Action: ', action.type)
   switch (action.type) {
     case BETS_CHANGED:
@@ -15,4 +15,4 @@ const bets = (state = initialState, action) => {
   }
 }
 
-export default bets
+export default dashboard

@@ -1,14 +1,10 @@
-import React from 'react'
+import React, { Component } from 'react'
 import firebase from 'firebase'
 import PropTypes from 'prop-types'
 import { FirebaseAuth } from 'react-firebaseui'
 import { auth } from '../../fire'
 
-class SignInScreen extends React.Component {
-  static propTypes = {
-    callback: PropTypes.func.isRequired,
-  }
-
+class SignInScreen extends Component {
   constructor(props) {
     console.log('props: ', props)
     super()
@@ -30,6 +26,10 @@ class SignInScreen extends React.Component {
       </div>
     )
   }
+}
+
+SignInScreen.propTypes = {
+  callback: PropTypes.func.isRequired,
 }
 
 export default SignInScreen

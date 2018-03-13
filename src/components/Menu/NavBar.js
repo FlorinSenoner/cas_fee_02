@@ -40,13 +40,15 @@ const NavBar = ({ classes, open, handleOpen }) => (
     position="fixed"
     className={classNames(classes.appBar, {
       [classes.appBarShift]: open,
-    })}>
+    })}
+  >
     <Toolbar disableGutters={!open}>
       <IconButton
         color="inherit"
         aria-label="open drawer"
         onClick={handleOpen}
-        className={classNames(classes.menuButton, open && classes.hide)}>
+        className={classNames(classes.menuButton, open && classes.hide)}
+      >
         <MenuIcon />
       </IconButton>
       <Typography variant="title" color="inherit" noWrap>

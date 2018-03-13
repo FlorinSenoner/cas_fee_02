@@ -2,7 +2,7 @@ import { createStore, applyMiddleware, compose } from 'redux'
 import { routerMiddleware } from 'react-router-redux'
 import thunk from 'redux-thunk'
 import createHistory from 'history/createBrowserHistory'
-import rootReducer from './reducers/index'
+import rootReducer from './reducer'
 
 export const history = createHistory()
 

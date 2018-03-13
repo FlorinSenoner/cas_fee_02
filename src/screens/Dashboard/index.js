@@ -1,29 +1,40 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
 import DefaultPage from '../../components/DefaultPage'
-import BetsList from '../../components/Dashboard/BetsList'
-import CreateBtn from '../../components/Dashboard/CreateBtn'
+import BetsList from './BetsList'
 import { onBetsUpdate } from '../../services/bet.service'
-import { betsUpdate } from '../../actions'
+import { betsUpdate } from './actions'
+import CreateBtn from './CreateBtn'
 
-class Dashboard extends React.Component {
-  static propTypes = {
-    betsUpdate: PropTypes.func.isRequired,
-  }
+// const mockBets = [
+//   {
+//     title: 'lalalala',
+//     id: 1,
+//   },
+//   {
+//     title: 'boooo',
+//     id: 2,
+//   },
+//   {
+//     title: 'sali',
+//     id: 3,
+//   },
+//   {
+//     title: 'wettemer',
+//     id: 4,
+//   },
+// ]
 
-  constructor() {
-    super()
-    this.updateBets = this.updateBets.bind(this)
-  }
-
+class Dashboard extends Component {
   componentDidMount() {
     onBetsUpdate(this.updateBets)
+    // this.props.betsUpdate(mockBets)
   }
 
-  updateBets(querySnapshot) {
-    console.log('App, index.js: updating bets with snapshot: ', querySnapshot)
+  updateBets = querySnapshot => {
+    console.log('App, CreateBetForm.js: updating bets with snapshot: ', querySnapshot)
     const bets = []
     querySnapshot.forEach(doc => {
       bets.push({ ...doc.data(), id: doc.id })
@@ -42,10 +53,14 @@ class Dashboard extends React.Component {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    betsUpdate: bets => dispatch(betsUpdate(bets)),
-  }
+Dashboard.propTypes = {
+  betsUpdate: PropTypes.func.isRequired,
 }
 
-export default connect(null, mapDispatchToProps)(Dashboard)
+const mapDispatchToProps = dispatch => ({
+  betsUpdate: bets => dispatch(betsUpdate(bets)),
+})
+
+const enhance = connect(null, mapDispatchToProps)
+
+export default enhance(Dashboard)

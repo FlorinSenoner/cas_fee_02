@@ -6,7 +6,7 @@ import Input from 'material-ui/Input'
 import Button from 'material-ui/Button'
 import { withStyles } from 'material-ui/styles'
 import { compose } from 'recompose'
-import { addBet } from '../../../services/bet.service'
+import { addBet } from '../../services/bet.service'
 
 const styles = theme => ({
   button: {
@@ -55,7 +55,8 @@ class CreateBetForm extends Component {
           variant="raised"
           color="primary"
           className={this.props.classes.button}
-          onClick={this.addBet}>
+          onClick={this.addBet}
+        >
           Create
         </Button>
       </div>

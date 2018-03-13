@@ -25,7 +25,8 @@ const CreateBtn = ({ classes, changePage }) => (
     color="secondary"
     aria-label="create bet"
     className={classes.btnCreate}
-    onClick={() => changePage('/create')}>
+    onClick={() => changePage('/create')}
+  >
     <AddIcon />
   </Button>
 )
@@ -39,6 +40,6 @@ const mapDispatchToProps = {
   changePage: push,
 }
 
-const enhance = compose(withStyles(styles, { withTheme: true }), connect(null, mapDispatchToProps))
+const enhance = compose(connect(null, mapDispatchToProps), withStyles(styles, { withTheme: true }))
 
 export default enhance(CreateBtn)

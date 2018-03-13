@@ -7,7 +7,7 @@ import { withStyles } from 'material-ui/styles'
 import { compose } from 'recompose'
 
 import DefaultPage from '../../components/DefaultPage'
-import CreateBetForm from './Form'
+import CreateBetForm from './CreateBetForm'
 
 const styles = theme => ({
   button: {

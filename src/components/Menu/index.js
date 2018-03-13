@@ -53,7 +53,8 @@ const Menu = ({ classes, isDrawerOpen, setIsDrawerOpen, children }) => (
       <main
         className={classNames(classes.content, {
           [classes.contentShift]: isDrawerOpen,
-        })}>
+        })}
+      >
         {children}
       </main>
     </div>
