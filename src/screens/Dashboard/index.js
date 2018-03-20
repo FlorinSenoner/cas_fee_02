@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
@@ -8,29 +8,13 @@ import { onBetsUpdate } from '../../services/bet.service'
 import { betsUpdate } from './actions'
 import CreateBtn from './CreateBtn'
 
-// const mockBets = [
-//   {
-//     title: 'lalalala',
-//     id: 1,
-//   },
-//   {
-//     title: 'boooo',
-//     id: 2,
-//   },
-//   {
-//     title: 'sali',
-//     id: 3,
-//   },
-//   {
-//     title: 'wettemer',
-//     id: 4,
-//   },
-// ]
+class Dashboard extends PureComponent {
+  static propTypes = {
+    betsUpdate: PropTypes.func.isRequired,
+  }
 
-class Dashboard extends Component {
   componentDidMount() {
     onBetsUpdate(this.updateBets)
-    // this.props.betsUpdate(mockBets)
   }
 
   updateBets = querySnapshot => {
@@ -51,10 +35,6 @@ class Dashboard extends Component {
       </DefaultPage>
     )
   }
-}
-
-Dashboard.propTypes = {
-  betsUpdate: PropTypes.func.isRequired,
 }
 
 const mapDispatchToProps = dispatch => ({

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { push } from 'react-router-redux'
 import { connect } from 'react-redux'
@@ -14,24 +14,22 @@ const styles = theme => ({
   },
 })
 
-class CreateBetForm extends Component {
+class CreateBetForm extends PureComponent {
   static propTypes = {
     classes: PropTypes.object.isRequired,
-  }
-  constructor() {
-    super()
-    this.state = {
-      bet: {
-        title: '',
-      },
-    }
-    this.addBet = this.addBet.bind(this)
+    changePage: PropTypes.func.isRequired,
   }
 
-  addBet() {
-    // TODO
+  state = {
+    bet: {
+      title: '',
+    },
+  }
+
+  addBet = () => {
     console.log('Got Form with state: ', this.state)
     addBet(this.state.bet)
+    this.props.changePage('/dashboard')
   }
 
   handleTitleChange = event => {
@@ -47,16 +45,10 @@ class CreateBetForm extends Component {
           onChange={this.handleTitleChange}
           className={this.props.classes.input}
           inputProps={{
-            'aria-label': 'Title',
+            'aria-label': 'bet title',
           }}
         />
-        <Button
-          type="submit"
-          variant="raised"
-          color="primary"
-          className={this.props.classes.button}
-          onClick={this.addBet}
-        >
+        <Button variant="raised" color="primary" className={this.props.classes.button} onClick={this.addBet}>
           Create
         </Button>
       </div>
