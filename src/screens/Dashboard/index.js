@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
 import DefaultPage from '../../components/DefaultPage'
-import BetsList from './BetsList'
+import BetsList from './BetList'
 import { onBetsUpdate } from '../../services/bet.service'
 import { betsUpdate } from './actions'
 import CreateBtn from './CreateBtn'

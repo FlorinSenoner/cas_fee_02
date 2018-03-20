@@ -1,11 +1,24 @@
 import { db } from '../fire'
 
-export const addBet = bet => {
+export const addBetService = bet => {
   db
     .collection('bets')
-    .add(bet)
+    .add({ ...bet, timestamp: new Date() })
     .then(docRef => {
       console.log('Added Bet: ', docRef.id)
+    })
+}
+
+export const deleteBetService = betId => {
+  db
+    .collection('bets')
+    .doc(betId)
+    .delete()
+    .then(() => {
+      console.log('Bet successfully deleted!')
+    })
+    .catch(error => {
+      console.error('Error removing bet: ', error)
     })
 }
 
