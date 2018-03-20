@@ -3,18 +3,18 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { compose } from 'recompose'
 import { withStyles } from 'material-ui/styles'
-import Typography from 'material-ui/Typography'
 import IconButton from 'material-ui/IconButton'
-import Card, { CardHeader, CardActions, CardContent } from 'material-ui/Card'
+import Card, { CardHeader } from 'material-ui/Card'
+import { format } from 'date-fns'
 import MoreVertIcon from 'material-ui-icons/MoreVert'
 import Avatar from 'material-ui/Avatar'
 import Menu, { MenuItem } from 'material-ui/Menu'
+
 import { deleteBetService } from '../../../services/bet.service'
 
 const styles = {
   card: {
     minWidth: 275,
-    margin: '24px',
   },
   deleteBet: {
     color: 'crimson',
@@ -53,9 +53,7 @@ class BetCard extends PureComponent {
           }
           component="h3"
           title={bet.title}
-          subheader={`Day: ${new Date(bet.timestamp.getTime()).getMonth()} Month: ${new Date(
-            bet.timestamp.getTime(),
-          ).getMonth()}`}
+          subheader={`created: ${format(bet.timestamp, 'dddd, DD MMM, YYYY')}`}
         />
         <Menu id="simple-menu" anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={this.handleClose}>
           <MenuItem onClick={this.handleClose}>Edit</MenuItem>
