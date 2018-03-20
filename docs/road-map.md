@@ -1,38 +1,29 @@
 # 🗺 Road Map
 
-
 ## 🚀 up next
-* high
-  * add tests
-  * create wireframes
-  * define media queries, fonts and global CSS setup
-  * add react ErrorBoundary component
+* add tests
+* define media queries, fonts and global CSS setup
+* add react ErrorBoundary component
+* code splitting
 
-* normal
-  * stylelint rules
-  * eslint rules
-  * add documentation for all commands
-  * define initial DB structure and connect to firebase
-  * favicon
-  * define aria + aria linting
-  
-* low
-  * move to TypeScript
-  * better // more git pre-hooks
-  * document all commands (use bash to call them in the terminal)
-  
-  
-## 🛣 down the road
+## 🏎 down the road
+* stylelint rules
 * JWT
-* offline
-* styleguide (styled components in Sketch)
-* HTTP/2
-* GrapgQL & Apollo
-
-
-## 🔮 maybe
+* eslint rules
+* add documentation for all commands
+* favicon
+* define aria + aria linting
 * Docker
+
+  
+## 🛵 maybe
+* move to TypeScript
+* better // more git pre-hooks
+* document all commands (use bash to call them in the terminal)
 * Vagrant
 * nginx
 * Elastic Search
 * Redis
+* HTTP/2
+* GrapgQL & Apollo
+  
