@@ -1,3 +1,3 @@
-import { LOGIN_SUCCESSFUL } from './constants'
+import { USER_CHANGED } from './constants'
 
-export const loginSuccessful = authObject => ({ type: LOGIN_SUCCESSFUL, payload: authObject })
+export const userChanged = authObject => ({ type: USER_CHANGED, payload: authObject })

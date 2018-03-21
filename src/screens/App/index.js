@@ -6,7 +6,7 @@ import { replace } from 'react-router-redux'
 import { compose } from 'recompose'
 import PropTypes from 'prop-types'
 import { isAuthenticated, auth } from '../../fire'
-import { loginSuccessful } from '../SignIn/actions'
+import { userChanged } from '../SignIn/actions'
 
 import './App.css'
 
@@ -29,10 +29,9 @@ PrivateRoute.propTypes = {
 class App extends React.PureComponent {
   componentDidMount() {
     auth.onAuthStateChanged(user => {
-      console.log('AAAUTH STATE HAS CHANGED')
       this.props.userChanged(user)
       if (user) {
-        this.props.changePage(this.props.location.pathname)
+        this.props.replace(this.props.location.pathname)
       }
     })
   }
@@ -54,11 +53,13 @@ class App extends React.PureComponent {
 
 App.propTypes = {
   user: propTypesUser.isRequired,
-  changePage: PropTypes.func.isRequired,
+  replace: PropTypes.func.isRequired,
+  userChanged: PropTypes.func.isRequired,
+  location: PropTypes.object.isRequired,
 }
 
 const mapStateToProps = state => ({ user: state.signIn.user })
-const mapDispatchToProps = { changePage: replace, userChanged: loginSuccessful }
+const mapDispatchToProps = { replace, userChanged }
 
 const enhance = compose(withRouter, connect(mapStateToProps, mapDispatchToProps))
 

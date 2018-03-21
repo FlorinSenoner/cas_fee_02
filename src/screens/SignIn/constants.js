@@ -1,1 +1,1 @@
-export const LOGIN_SUCCESSFUL = 'LOGIN_SUCCESSFUL'
+export const USER_CHANGED = 'USER_CHANGED'
