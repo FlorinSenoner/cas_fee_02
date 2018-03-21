@@ -22,12 +22,12 @@ const Form = ({ submitting, handleSubmit, classes }) => (
   <form onSubmit={handleSubmit}>
     <div>
       <Field
-        name="title"
+        name="Title"
+        label="Title"
         inputProps={{
           'aria-label': 'Title',
         }}
         component={MuiTextField}
-        placeholder="Title"
         className={classes.textField}
       />
       <Button type="submit" disabled={submitting} variant="raised" color="primary" className={classes.button}>
