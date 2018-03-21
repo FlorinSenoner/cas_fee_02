@@ -1,7 +1,11 @@
 import pick from 'lodash/fp/pick'
 import { USER_CHANGED } from './constants'
 
-const initialState = {}
+const initialState = {
+  user: {
+    email: '',
+  },
+}
 
 const signIn = (state = initialState, action) => {
   console.log('signin reducer. Action: ', action.type)

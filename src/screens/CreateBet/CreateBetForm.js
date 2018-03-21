@@ -34,7 +34,7 @@ class CreateBetForm extends Component {
       dateCreated: new Date(),
       admin: this.props.user.email,
       visibility: ['private', 'public'][Math.round(Math.random())],
-      participant: ['bla@gmail.com', 'test@gmail.com'],
+      participant: [{ id: 'bla@gmail.com', guess: 'asdsaas' }, { id: 'test@gmail.com', guess: 'adasdasd' }],
     })
     this.props.changePage('/')
   }

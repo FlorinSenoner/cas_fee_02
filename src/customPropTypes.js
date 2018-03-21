@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 export const propTypesBet = PropTypes.shape({
   title: PropTypes.string.isRequired,
   author: PropTypes.string,
-  dateCreated: PropTypes.string.isRequired,
-  visibility: PropTypes.oneOfType(['private', 'public']),
+  dateCreated: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]).isRequired,
+  visibility: PropTypes.oneOf(['private', 'public']),
   participant: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
