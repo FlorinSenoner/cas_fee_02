@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import firebase from 'firebase'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
@@ -6,7 +6,7 @@ import { FirebaseAuth } from 'react-firebaseui'
 import { auth } from '../../fire'
 import { loginSuccessful } from './actions'
 
-class SignInScreen extends Component {
+class SignInScreen extends PureComponent {
   uiConfig = {
     signInFlow: 'popup',
     callbacks: {

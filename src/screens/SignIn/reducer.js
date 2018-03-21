@@ -1,8 +1,11 @@
 import { LOGIN_SUCCESSFUL } from './constants'
 
 const initialState = {
-  user: {},
+  user: {
+    test: 'ueser',
+  },
 }
+
 const signIn = (state = initialState, action) => {
   console.log('signin reducer. Action: ', action.type)
   switch (action.type) {

@@ -3,6 +3,7 @@ import { BETS_CHANGED } from './constants'
 const initialState = {
   bets: [],
 }
+
 const dashboard = (state = initialState, action) => {
   console.log('dashboard reducer. Action: ', action.type)
   switch (action.type) {

@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { push } from 'react-router-redux'
 import { connect } from 'react-redux'
@@ -14,7 +14,7 @@ const styles = theme => ({
   },
 })
 
-class CreateBetForm extends PureComponent {
+class CreateBetForm extends Component {
   static propTypes = {
     classes: PropTypes.object.isRequired,
     changePage: PropTypes.func.isRequired,
