@@ -1,16 +1,13 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import firebase from 'firebase'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
 import { FirebaseAuth } from 'react-firebaseui'
 import { auth } from '../../fire'
-import { loginSuccessful } from './actions'
 
-class SignInScreen extends PureComponent {
+class SignInScreen extends React.PureComponent {
   uiConfig = {
     signInFlow: 'popup',
     callbacks: {
-      signInSuccess: this.props.loginSuccessful,
+      signInSuccess: () => false, // to tell react-firebaseui that we take care of the successful login
     },
     signInOptions: [
       firebase.auth.EmailAuthProvider.PROVIDER_ID,
@@ -33,15 +30,4 @@ class SignInScreen extends PureComponent {
   }
 }
 
-SignInScreen.propTypes = {
-  loginSuccessful: PropTypes.func.isRequired,
-}
-
-const mapDispatchToProps = dispatch => ({
-  loginSuccessful: authObject => {
-    dispatch(loginSuccessful(authObject))
-    return false // to tell react-firebaseui that we take care of the successful login
-  },
-})
-
-export default connect(null, mapDispatchToProps)(SignInScreen)
+export default SignInScreen

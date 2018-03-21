@@ -16,7 +16,7 @@ const config = {
  * https://cloud.google.com/firestore/docs/manage-data/enable-offline
  */
 const app = firebase.initializeApp(config)
-const db = firebase.firestore(app)
 const auth = firebase.auth()
+const db = firebase.firestore(app)
 export const isAuthenticated = () => !!auth.currentUser
 export { auth, db }
