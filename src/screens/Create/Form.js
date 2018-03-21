@@ -22,7 +22,7 @@ const Form = ({ submitting, handleSubmit, classes }) => (
   <form onSubmit={handleSubmit}>
     <div>
       <Field
-        name="Title"
+        name="title"
         label="Title"
         inputProps={{
           'aria-label': 'Title',
