@@ -42,8 +42,12 @@ Nicht registrierte User können:
 - -> image (BetImage) (Titel/Anzeigebild)
 - -> updates (BetUpdate)
 - -> winCriteria (WinCriteria)
-- -> guesses (Guess)
+- -> participants (Participant)
 - -> admin (User)
+
+### Participant
+- -> user (User)
+- -> guess (some value)
 
 ### BetState
 - running: Wette läuft und Participants können ihren Guess abgeben
@@ -70,11 +74,6 @@ Eine Bet kann immer wieder updated werden. Dies wird dann an alle Nutzer kommuni
 - ~~score: Endresultat eines Spiels~~ (optional)
 - ~~string: Irgend ein Text (z.B. nächster Bundesrat)~~ (optional)
 - ~~selection: Admin erstellt Auswahl an Möglichkeiten~~ (optional)
-
-### Guess
-- value: abhängig vom WinCriteria der Bet
-- -> participant (User)
-- -> bet (Bet)
 
 ### User
 Ein User kann Admin sein, wenn er eine Wette erstellt hat und/oder Participant, wenn er an einer Wette teilnimmt.
