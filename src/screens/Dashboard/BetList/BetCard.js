@@ -11,7 +11,7 @@ import Avatar from 'material-ui/Avatar'
 import Menu, { MenuItem } from 'material-ui/Menu'
 
 import { propTypesBet } from '../../../customPropTypes'
-import { deleteBetService } from '../../../services/bet.service'
+import { deleteBet } from '../../../services/bet.service'
 
 const styles = {
   card: {
@@ -37,7 +37,7 @@ class BetCard extends PureComponent {
 
   deleteBet = () => {
     this.handleClose()
-    deleteBetService(this.props.bet.id)
+    deleteBet(this.props.bet.id)
   }
 
   render() {
