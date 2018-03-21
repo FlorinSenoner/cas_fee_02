@@ -11,6 +11,7 @@ import Dashboard from '../Dashboard'
 import NotFound from '../NotFound'
 import CreateBet from '../CreateBet'
 import SignInScreen from '../SignIn'
+
 const PrivateRoute = ({ component: Component, user, ...rest }) => (
   <Route
     {...rest}
@@ -28,6 +29,12 @@ const PrivateRoute = ({ component: Component, user, ...rest }) => (
     }
   />
 )
+
+PrivateRoute.propTypes = {
+  component: PropTypes.func.isRequired,
+  user: PropTypes.object,
+  location: PropTypes.object,
+}
 
 const App = ({ user }) => (
   <Reboot>
