@@ -1,8 +1,10 @@
 # 📝 Changelog
 
 ## next version
-* finalize language-switcher
-  
+#### v0.2.0
+* offline
+* define initial DB structure and connect to firebase
+* create wireframes
 
 ## past releases
 #### v0.1.0
