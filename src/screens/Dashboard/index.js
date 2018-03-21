@@ -20,7 +20,7 @@ class Dashboard extends PureComponent {
   }
 
   updateBets = querySnapshot => {
-    console.log('App, CreateBetForm.js: updating bets with snapshot: ', querySnapshot)
+    console.log('App, Form.js: updating bets with snapshot: ', querySnapshot)
     const bets = []
     querySnapshot.forEach(doc => {
       bets.push({ ...doc.data(), id: doc.id })

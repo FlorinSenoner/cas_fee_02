@@ -12,7 +12,7 @@ import './App.css'
 
 import Dashboard from '../Dashboard'
 import NotFound from '../NotFound'
-import CreateBet from '../CreateBet'
+import CreateBet from '../Create'
 import SignInScreen from '../SignIn'
 import { propTypesUser } from '../../customPropTypes'
 

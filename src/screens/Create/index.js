@@ -8,7 +8,7 @@ import { compose } from 'recompose'
 
 import { propTypesUser } from '../../customPropTypes'
 import DefaultPage from '../../components/DefaultPage'
-import CreateBetForm from './CreateBetForm'
+import CreateBetForm from './Form'
 
 const styles = theme => ({
   button: {

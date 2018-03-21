@@ -4,6 +4,6 @@ export const mapError = ({ meta: { touched, error, warning } = {}, input, ...pro
         ...props,
         ...input,
         error: Boolean(error || warning),
-        helpertext: error || warning,
+        helperText: error || warning,
       }
     : { ...input, ...props }

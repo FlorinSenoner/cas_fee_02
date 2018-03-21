@@ -52,19 +52,35 @@ class CreateBetForm extends Component {
   }
 
   render() {
+    const { pristine, submitting, valid } = this.props
     return (
-      <form onSubmit={this.createBet}>
+      <form
+        onSubmit={
+          valid
+            ? this.createBet
+            : e => {
+                e.preventDefault()
+              }
+        }
+      >
+        {console.log(valid, '#########')}
         <div>
           <Field
-            name="Bet Title"
+            name="title"
             inputProps={{
-              'aria-label': 'Bet Title',
+              'aria-label': 'Title',
             }}
             component={MuiTextField}
             placeholder="Title"
             onChange={this.handleTitleChange}
           />
-          <Button type="submit" variant="raised" color="primary" className={this.props.classes.button}>
+          <Button
+            type="submit"
+            disabled={submitting}
+            variant="raised"
+            color="primary"
+            className={this.props.classes.button}
+          >
             Create
           </Button>
         </div>
@@ -77,9 +93,19 @@ const mapDispatchToProps = {
   changePage: push,
 }
 
+const validate = values => {
+  const errors = {}
+  if (!values.title) {
+    errors.title = 'Field is required'
+  }
+  return errors
+}
+
 const enhance = compose(
   reduxForm({
-    form: 'CreateBetForm', // a unique identifier for this form
+    // a unique identifier for this form
+    form: 'CreateBetForm',
+    validate,
   }),
   withStyles(styles),
   connect(null, mapDispatchToProps),
