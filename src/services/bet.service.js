@@ -31,9 +31,16 @@ export const deleteBet = betId => {
     })
 }
 
-export const addParticipant = (betId, participant) => {
-  console.log(`TODO. add participant ${participant} to the bet ${betId}`)
-}
+export const addParticipant = (betId, participants, participant) =>
+  db
+    .collection('bets')
+    .doc(betId)
+    .set(
+      {
+        participants: [...participants, { id: participant }],
+      },
+      { merge: true },
+    )
 
 export const onBetsUpdate = callback => {
   db.collection('bets').onSnapshot(callback)

@@ -18,6 +18,12 @@ const styles = theme => ({
 })
 
 class CreateBet extends React.Component {
+  static propTypes = {
+    classes: PropTypes.object.isRequired,
+    user: propTypesUser.isRequired,
+    changePage: PropTypes.func.isRequired,
+  }
+
   handleSubmit = values => {
     addBet(
       {
@@ -42,12 +48,6 @@ class CreateBet extends React.Component {
       </DefaultPage>
     )
   }
-}
-
-CreateBet.propTypes = {
-  classes: PropTypes.object.isRequired,
-  user: propTypesUser.isRequired,
-  changePage: PropTypes.func.isRequired,
 }
 
 const mapStateToProps = state => ({

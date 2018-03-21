@@ -1,88 +1,69 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
-import { push } from 'react-router-redux'
-import { connect } from 'react-redux'
 import Button from 'material-ui/Button'
 import { withStyles } from 'material-ui/styles'
 import { compose } from 'recompose'
 import { Field, reduxForm } from 'redux-form'
+import find from 'lodash/fp/find'
 
+import { propTypesParticipant } from '../../customPropTypes'
 import MuiTextField from '../../components/Input/MuiTextField'
-
-import { addBet } from '../../services/bet.service'
-import { propTypesUser } from '../../customPropTypes'
 
 const styles = theme => ({
   button: {
     margin: theme.spacing.unit,
   },
+  textField: {
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
+    width: 200,
+  },
 })
 
-class InviteForm extends Component {
-  static propTypes = {
-    classes: PropTypes.object.isRequired,
-    changePage: PropTypes.func.isRequired,
-    user: propTypesUser.isRequired,
-  }
+const Form = ({ submitting, handleSubmit, classes, participants }) => (
+  <form onSubmit={handleSubmit}>
+    <div>
+      <Field
+        name="participant"
+        label="Participant"
+        inputProps={{
+          'aria-label': 'Participant',
+        }}
+        component={MuiTextField}
+        className={classes.textField}
+      />
+      <Button type="submit" disabled={submitting} variant="raised" color="primary" className={classes.button}>
+        Create
+      </Button>
+    </div>
+  </form>
+)
 
-  state = theme => ({
-    bet: {
-      title: '',
-    },
-    textField: {
-      marginLeft: theme.spacing.unit,
-      marginRight: theme.spacing.unit,
-      width: 200,
-    },
-  })
-
-  handleSubmit = () => {
-    addBet({
-      ...this.state.bet,
-      dateCreated: new Date(),
-      admin: this.props.user.email,
-      visibility: ['private', 'public'][Math.round(Math.random())],
-      participant: [{ id: 'bla@gmail.com', guess: 'asdsaas' }, { id: 'test@gmail.com', guess: 'adasdasd' }],
-    })
-    this.props.changePage('/')
-  }
-
-  handleTitleChange = event => {
-    this.setState({ bet: { ...this.state.bet, title: event.target.value } })
-  }
-
-  render() {
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <div>
-          <Field
-            name="Bet Title"
-            inputProps={{
-              'aria-label': 'Bet Title',
-            }}
-            component={MuiTextField}
-            placeholder="Title"
-            onChange={this.handleTitleChange}
-          />
-          <Button type="submit" variant="raised" color="primary" className={this.props.classes.button}>
-            Create
-          </Button>
-        </div>
-      </form>
-    )
-  }
+Form.propTypes = {
+  submitting: PropTypes.bool.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+  classes: PropTypes.object.isRequired,
+  participants: PropTypes.arrayOf(propTypesParticipant.isRequired),
 }
 
-const mapDispatchToProps = {
-  changePage: push,
+const validate = (values, props) => {
+  const errors = {}
+  if (!values.participant) {
+    errors.participant = 'Field is required'
+  }
+  if (find({ id: values.participant })(props.participants)) {
+    errors.participant = 'participant already added'
+  }
+  return errors
 }
 
 const enhance = compose(
   reduxForm({
-    form: 'InviteForm', // a unique identifier for this form
+    // a unique identifier for this form
+    form: 'InviteForm',
+    validate,
   }),
   withStyles(styles),
-  connect(null, mapDispatchToProps),
 )
 
-export default enhance(InviteForm)
+export default enhance(Form)

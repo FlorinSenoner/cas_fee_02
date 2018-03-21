@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { push } from 'react-router-redux'
 import { connect } from 'react-redux'
@@ -6,7 +6,6 @@ import Button from 'material-ui/Button'
 import { withStyles } from 'material-ui/styles'
 import { compose } from 'recompose'
 
-import { propTypesBet } from '../../customPropTypes'
 import DefaultPage from '../../components/DefaultPage'
 import InviteForm from './InviteForm'
 import Participant from './Participant'
@@ -18,56 +17,65 @@ const styles = theme => ({
   },
 })
 
-const handleSubmit = (betId, participant) => {
-  addParticipant(betId, participant)
+class Invite extends React.Component {
+  static propTypes = {
+    classes: PropTypes.object.isRequired,
+    changePage: PropTypes.func.isRequired,
+    match: PropTypes.object.isRequired,
+  }
+
+  render() {
+    const { changePage, classes, match } = this.props
+    return (
+      <DefaultPage>
+        {console.log('Match? ', match)}
+        <h1>Invite some people</h1>
+        <InviteWithBet
+          betId={match.params.id}
+          render={(bet, handleSubmit) => (
+            <Fragment>
+              <InviteForm participants={bet.participants} onSubmit={handleSubmit} />
+              {bet.participants &&
+                bet.participants.map(participant => <Participant key={participant.id} user={participant} />)}
+            </Fragment>
+          )}
+        />
+
+        <Button variant="raised" color="primary" onClick={() => changePage('/')} className={classes.button}>
+          done
+        </Button>
+      </DefaultPage>
+    )
+  }
 }
-
-const Invite = ({ changePage, classes, match }) => (
-  <DefaultPage>
-    {console.log('Match? ', match)}
-    <h1>Invite some people</h1>
-    <InviteWithBet
-      betId={match.params.id}
-      render={bet => (
-        <div>
-          <InviteForm bet={bet} onSubmit={handleSubmit} />
-          {bet.participants &&
-            bet.participants.map(participant => <Participant key={participant.id} user={participant} />)}
-        </div>
-      )}
-    />
-
-    <Button variant="raised" color="primary" onClick={() => changePage('/')} className={classes.button}>
-      cancel
-    </Button>
-  </DefaultPage>
-)
 
 class InviteWithBet extends React.PureComponent {
   state = { bet: {} }
 
-  componentDidMount() {
-    getBet(this.props.betId)
-      .then(doc => {
-        if (doc.exists) {
-          this.setState({ ...this.state, bet: doc.data() })
-        } else {
-          console.log('No document found with id ', this.props.betId)
-        }
-      })
-      .catch(error => {
-        console.log('Error getting bet', error)
-      })
+  async componentWillMount() {
+    try {
+      const doc = await getBet(this.props.betId)
+      if (doc.exists) {
+        this.setState({ ...this.state, bet: doc.data() })
+      } else {
+        console.log('No document found with id ', this.props.betId)
+      }
+    } catch (error) {
+      console.log('Error getting bet', error)
+    }
+  }
+
+  handleSubmit = async values => {
+    await addParticipant(this.props.betId, this.state.bet.participants, values.participant)
+    this.setState({
+      ...this.state,
+      bet: { ...this.state.bet, participants: [...this.state.bet.participants, { id: values.participant }] },
+    })
   }
 
   render() {
-    return <div>{this.props.render(this.state.bet)}</div>
+    return <div>{this.props.render(this.state.bet, this.handleSubmit)}</div>
   }
-}
-
-Invite.propTypes = {
-  classes: PropTypes.object.isRequired,
-  changePage: PropTypes.func.isRequired,
 }
 
 const mapStateToProps = state => ({

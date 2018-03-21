@@ -7,7 +7,7 @@ export const propTypesUser = PropTypes.shape({
 
 export const propTypesParticipant = PropTypes.shape({
   id: PropTypes.string.isRequired,
-  guess: PropTypes.string.isRequired,
+  guess: PropTypes.string,
 })
 
 export const propTypesBet = PropTypes.shape({
