@@ -10,6 +10,7 @@ import MoreVertIcon from 'material-ui-icons/MoreVert'
 import Avatar from 'material-ui/Avatar'
 import Menu, { MenuItem } from 'material-ui/Menu'
 
+import { propTypesBet } from '../../../customPropTypes'
 import { deleteBetService } from '../../../services/bet.service'
 
 const styles = {
@@ -68,11 +69,7 @@ class BetCard extends PureComponent {
 }
 
 BetCard.propTypes = {
-  bet: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    subTitle: PropTypes.string,
-  }).isRequired,
+  bet: propTypesBet.isRequired,
   classes: PropTypes.object.isRequired,
 }
 

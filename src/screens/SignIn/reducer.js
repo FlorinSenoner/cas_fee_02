@@ -1,7 +1,9 @@
 import { LOGIN_SUCCESSFUL } from './constants'
 
 const initialState = {
-  user: {},
+  user: {
+    email: '',
+  },
 }
 
 const signIn = (state = initialState, action) => {

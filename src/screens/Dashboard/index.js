@@ -12,7 +12,7 @@ import { onBetsUpdate } from '../../services/bet.service'
 class Dashboard extends PureComponent {
   static propTypes = {
     betsUpdate: PropTypes.func.isRequired,
-    bets: PropTypes.arrayOf(propTypesBet.isRequired).isRequired,
+    bets: PropTypes.arrayOf(propTypesBet).isRequired,
   }
 
   componentDidMount() {
