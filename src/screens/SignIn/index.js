@@ -12,7 +12,11 @@ class SignInScreen extends PureComponent {
     callbacks: {
       signInSuccess: this.props.loginSuccessful,
     },
-    signInOptions: [firebase.auth.GoogleAuthProvider.PROVIDER_ID, firebase.auth.FacebookAuthProvider.PROVIDER_ID],
+    signInOptions: [
+      firebase.auth.EmailAuthProvider.PROVIDER_ID,
+      firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+      firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+    ],
   }
 
   render() {

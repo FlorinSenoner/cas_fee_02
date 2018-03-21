@@ -28,7 +28,7 @@ class CreateBetForm extends Component {
 
   addBet = () => {
     addBetService(this.state.bet)
-    this.props.changePage('/dashboard')
+    this.props.changePage('/')
   }
 
   handleTitleChange = event => {

@@ -4,6 +4,7 @@ import { Reboot } from 'material-ui'
 import { connect } from 'react-redux'
 import { compose } from 'recompose'
 import PropTypes from 'prop-types'
+import { isAuthenticated } from '../../fire'
 
 import './App.css'
 
@@ -13,21 +14,7 @@ import CreateBet from '../CreateBet'
 import SignInScreen from '../SignIn'
 
 const PrivateRoute = ({ component: Component, user, ...rest }) => (
-  <Route
-    {...rest}
-    render={props =>
-      Object.keys(user).length ? (
-        <Component {...props} />
-      ) : (
-        <Redirect
-          to={{
-            pathname: '/login',
-            state: { from: props.location },
-          }}
-        />
-      )
-    }
-  />
+  <Route {...rest} render={props => (isAuthenticated() ? <Component {...props} /> : <SignInScreen />)} />
 )
 
 PrivateRoute.propTypes = {
@@ -38,9 +25,9 @@ PrivateRoute.propTypes = {
 
 const App = ({ user }) => (
   <Reboot>
+    {console.log('Am I allowed? ', isAuthenticated())}
     <Switch>
-      <Route exact path="/login" component={SignInScreen} />
-      <PrivateRoute exact path="/dashboard" user={user} component={Dashboard} />
+      <PrivateRoute exact path="/" user={user} component={Dashboard} />
       <PrivateRoute exact path="/create" component={CreateBet} />
       <Route component={NotFound} />
     </Switch>

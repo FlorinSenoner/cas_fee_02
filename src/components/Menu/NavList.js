@@ -7,7 +7,7 @@ import { connect } from 'react-redux'
 
 const NavList = ({ changePage }) => (
   <List component="nav">
-    <ListItem button onClick={() => changePage('/dashboard')}>
+    <ListItem button onClick={() => changePage('/')}>
       <ListItemIcon>
         <DashboardIcon />
       </ListItemIcon>
