@@ -46,7 +46,7 @@ class BetCard extends PureComponent {
     return (
       <Card component="li" className={classes.card} elevation={4}>
         <CardHeader
-          avatar={<Avatar aria-label="Recipe">{bet.title.charAt(0).toUpperCase()}</Avatar>}
+          avatar={bet.title && <Avatar aria-label="Recipe">{bet.title.charAt(0).toUpperCase()}</Avatar>}
           action={
             <IconButton aria-owns={anchorEl ? 'simple-menu' : null} aria-haspopup="true" onClick={this.handleClick}>
               <MoreVertIcon />
