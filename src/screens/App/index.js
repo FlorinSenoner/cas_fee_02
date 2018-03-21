@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, Route, Redirect, withRouter } from 'react-router-dom'
+import { Switch, Route, withRouter } from 'react-router-dom'
 import { Reboot } from 'material-ui'
 import { connect } from 'react-redux'
 import { compose } from 'recompose'
@@ -12,14 +12,15 @@ import Dashboard from '../Dashboard'
 import NotFound from '../NotFound'
 import CreateBet from '../CreateBet'
 import SignInScreen from '../SignIn'
+import { propTypesUser } from '../../customPropTypes'
 
 const PrivateRoute = ({ component: Component, user, ...rest }) => (
-  <Route {...rest} render={props => (isAuthenticated() ? <Component {...props} /> : <SignInScreen />)} />
+  <Route {...rest} render={props => (true ? <Component {...props} /> : <SignInScreen />)} />
 )
 
 PrivateRoute.propTypes = {
   component: PropTypes.func.isRequired,
-  user: PropTypes.object,
+  user: propTypesUser.isRequired,
   location: PropTypes.object,
 }
 
@@ -35,7 +36,7 @@ const App = ({ user }) => (
 )
 
 App.propTypes = {
-  user: PropTypes.object.isRequired,
+  user: propTypesUser.isRequired,
 }
 
 const mapStateToProps = state => ({ user: state.signIn.user })

@@ -3,7 +3,7 @@ import { db } from '../fire'
 export const addBetService = bet => {
   db
     .collection('bets')
-    .add({ ...bet, timestamp: new Date() })
+    .add(bet)
     .then(docRef => {
       console.log('Added Bet: ', docRef.id)
     })

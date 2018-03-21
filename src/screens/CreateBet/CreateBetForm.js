@@ -6,7 +6,9 @@ import Input from 'material-ui/Input'
 import Button from 'material-ui/Button'
 import { withStyles } from 'material-ui/styles'
 import { compose } from 'recompose'
+
 import { addBetService } from '../../services/bet.service'
+import { propTypesUser } from '../../customPropTypes'
 
 const styles = theme => ({
   button: {
@@ -27,7 +29,13 @@ class CreateBetForm extends Component {
   }
 
   addBet = () => {
-    addBetService(this.state.bet)
+    addBetService({
+      ...this.state.bet,
+      dateCreated: new Date(),
+      admin: this.props.user.email,
+      visibility: ['private', 'public'][Math.round(Math.random())],
+      participant: ['bla@gmail.com', 'test@gmail.com'],
+    })
     this.props.changePage('/')
   }
 
@@ -53,6 +61,10 @@ class CreateBetForm extends Component {
       </div>
     )
   }
+}
+
+CreateBetForm.propTypes = {
+  user: propTypesUser.isRequired,
 }
 
 const mapDispatchToProps = {

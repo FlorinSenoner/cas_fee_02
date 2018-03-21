@@ -53,7 +53,7 @@ class BetCard extends PureComponent {
           }
           component="h3"
           title={bet.title}
-          subheader={`created: ${format(bet.timestamp, 'dddd, DD MMM, YYYY')}`}
+          subheader={`created: ${format(bet.dateCreated, 'dddd, DD MMM, YYYY')}`}
         />
         <Menu id="simple-menu" anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={this.handleClose}>
           <MenuItem onClick={this.handleClose}>Edit</MenuItem>
