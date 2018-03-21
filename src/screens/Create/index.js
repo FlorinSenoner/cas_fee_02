@@ -9,6 +9,7 @@ import { compose } from 'recompose'
 import { propTypesUser } from '../../customPropTypes'
 import DefaultPage from '../../components/DefaultPage'
 import CreateBetForm from './Form'
+import { addBetService } from '../../services/bet.service'
 
 const styles = theme => ({
   button: {
@@ -16,15 +17,30 @@ const styles = theme => ({
   },
 })
 
-const CreateBet = ({ changePage, classes, user }) => (
-  <DefaultPage>
-    <h1>Create a bet</h1>
-    <CreateBetForm user={user} />
-    <Button variant="raised" color="primary" onClick={() => changePage('/')} className={classes.button}>
-      cancel
-    </Button>
-  </DefaultPage>
-)
+class CreateBet extends React.Component {
+  handleSubmit = values => {
+    addBetService({
+      title: values.title,
+      dateCreated: new Date(),
+      admin: this.props.user.email,
+      visibility: ['private', 'public'][Math.round(Math.random())],
+      participant: [{ id: 'bla@gmail.com', guess: 'asdsaas' }, { id: 'test@gmail.com', guess: 'adasdasd' }],
+    })
+    this.props.changePage('/')
+  }
+  render() {
+    const { changePage, classes } = this.props
+    return (
+      <DefaultPage>
+        <h1>Create a bet</h1>
+        <CreateBetForm onSubmit={this.handleSubmit} />
+        <Button variant="raised" color="primary" onClick={() => changePage('/')} className={classes.button}>
+          cancel
+        </Button>
+      </DefaultPage>
+    )
+  }
+}
 
 CreateBet.propTypes = {
   classes: PropTypes.object.isRequired,
