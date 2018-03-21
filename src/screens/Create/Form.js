@@ -23,11 +23,11 @@ const Form = ({ submitting, handleSubmit, classes }) => (
     <div>
       <Field
         name="title"
+        label="Title"
         inputProps={{
           'aria-label': 'Title',
         }}
         component={MuiTextField}
-        placeholder="Title"
         className={classes.textField}
       />
       <Button type="submit" disabled={submitting} variant="raised" color="primary" className={classes.button}>
