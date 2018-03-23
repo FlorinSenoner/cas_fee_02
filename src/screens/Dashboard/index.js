@@ -17,7 +17,7 @@ class Dashboard extends PureComponent {
     myBets: PropTypes.arrayOf(propTypesBet).isRequired,
     invites: PropTypes.arrayOf(propTypesBet).isRequired,
     guesses: PropTypes.arrayOf(propTypesBet).isRequired,
-    userId: PropTypes.number.isRequired,
+    userId: PropTypes.string.isRequired,
   }
 
   static extractBets(querySnapshot) {
