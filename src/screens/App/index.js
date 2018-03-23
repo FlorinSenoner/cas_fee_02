@@ -32,8 +32,8 @@ class App extends React.PureComponent {
     auth.onAuthStateChanged(user => {
       if (user) {
         this.props.userChanged(user)
-        this.props.replace(this.props.location.pathname)
       }
+      this.props.replace(this.props.location.pathname)
     })
   }
 
