@@ -4,7 +4,6 @@ import Button from 'material-ui/Button'
 import { withStyles } from 'material-ui/styles'
 import { compose } from 'recompose'
 import { Field, reduxForm } from 'redux-form'
-import find from 'lodash/fp/find'
 
 import { propTypesParticipant } from '../../customPropTypes'
 import MuiTextField from '../../components/Input/MuiTextField'
@@ -51,7 +50,7 @@ const validate = (values, props) => {
   if (!values.participant) {
     errors.participant = 'Field is required'
   }
-  if (find({ id: values.participant })(props.participants)) {
+  if (props.participants.some(participant => participant.email === values.participant.email)) {
     errors.participant = 'participant already added'
   }
   return errors
