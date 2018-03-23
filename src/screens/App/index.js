@@ -30,8 +30,8 @@ PrivateRoute.propTypes = {
 class App extends React.PureComponent {
   componentDidMount() {
     auth.onAuthStateChanged(user => {
-      this.props.userChanged(user)
       if (user) {
+        this.props.userChanged(user)
         this.props.replace(this.props.location.pathname)
       }
     })
