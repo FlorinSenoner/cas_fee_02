@@ -1,13 +1,19 @@
-import { BETS_CHANGED } from './constants'
+import { MY_BETS_CHANGED, INVITES_CHANGED, GUESSES_CHANGED } from './constants'
 
 const initialState = {
-  bets: [],
+  invites: [],
+  myBets: [],
+  guesses: [],
 }
 
 const dashboard = (state = initialState, action) => {
   switch (action.type) {
-    case BETS_CHANGED:
-      return { ...state, bets: action.payload }
+    case MY_BETS_CHANGED:
+      return { ...state, myBets: action.payload }
+    case INVITES_CHANGED:
+      return { ...state, invites: action.payload }
+    case GUESSES_CHANGED:
+      return { ...state, guesses: action.payload }
     default:
       return state
   }

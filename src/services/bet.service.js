@@ -23,30 +23,30 @@ export const deleteBet = betId => {
     })
 }
 
-export const addParticipant = (betId, participant) => {
+export const addParticipants = (betId, participants) => {
   db
     .collection('bets')
     .doc(betId)
-    .collection('participants')
-    .doc(participant.uid)
-    .set(participant)
+    .set({ participants }, { merge: true })
 }
 
-export const onBetUpdate = (id, callback) =>
+export const onMyBetsUpdate = (uid, callback) => {
   db
     .collection('bets')
-    .doc(id)
-    .onSnapshot(doc => callback(doc.data()))
-
-export const onParticipantsUpdate = (id, callback) => {
-  db
-    .collection('bets')
-    .doc(id)
-    .collection('participants')
+    .where('admin', '==', uid)
     .onSnapshot(callback)
 }
 
-export const onBetsUpdate = callback => {
-  // TODO query einschränken auf wo ich admin oder participant bin
-  db.collection('bets').onSnapshot(callback)
+export const onInvitesUpdate = (uid, callback) => {
+  db
+    .collection('bets')
+    .where(`participants.${uid}`, '==', 0)
+    .onSnapshot(callback)
+}
+
+export const onGuessesUpdate = (uid, callback) => {
+  db
+    .collection('bets')
+    .where(`participants.${uid}`, '>', 0)
+    .onSnapshot(callback)
 }

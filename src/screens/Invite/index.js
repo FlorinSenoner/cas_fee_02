@@ -10,8 +10,8 @@ import { reset } from 'redux-form'
 import DefaultPage from '../../components/DefaultPage'
 import InviteForm from './InviteForm'
 import Participant from './Participant'
-import { addParticipant, onBetUpdate, onParticipantsUpdate } from '../../services/bet.service'
-import { getUserByEmail } from '../../services/user.service'
+import { addParticipants } from '../../services/bet.service'
+import { getUserByEmail, addParticipation, getParticipants } from '../../services/user.service'
 
 const styles = theme => ({
   button: {
@@ -54,21 +54,23 @@ class Invite extends React.Component {
 class InviteWithBet extends React.PureComponent {
   state = { bet: { participants: [] } }
 
-  componentDidMount() {
-    onParticipantsUpdate(this.props.betId, querySnapshot => {
+  async componentDidMount() {
+    getParticipants(this.props.betId, querySnapshot => {
       const participants = []
       querySnapshot.forEach(doc => participants.push(doc.data()))
       this.setState({ ...this.state, bet: { ...this.state.bet, participants } })
-    })
-    onBetUpdate(this.props.betId, bet => {
-      this.setState({ ...this.state, bet: { ...this.state.bet, ...bet } })
     })
   }
 
   handleSubmit = async values => {
     try {
       const participant = await getUserByEmail(values.participant)
-      await addParticipant(this.props.betId, participant)
+      const newPart = {}
+      newPart[participant.uid] = 0
+      await addParticipants(this.props.betId, { ...this.state.bet.participants, ...newPart })
+      const someVar = {}
+      someVar[this.props.betId] = 0
+      await addParticipation(participant.uid, { ...participant.participations, ...someVar })
       this.props.resetForm('InviteForm')
     } catch (error) {
       console.error('Error adding participant!', error)

@@ -4,7 +4,7 @@ export const updateUser = user => {
   db
     .collection('users')
     .doc(user.uid)
-    .set(user)
+    .set(user, { merge: true })
     .then(() => console.log('user updated'))
 }
 
@@ -22,3 +22,17 @@ export const getUserByEmail = email =>
       throw new Error(`No user with email ${email} found`)
     })
     .catch(error => console.error(error))
+
+export const getParticipants = (betId, callback) => {
+  db
+    .collection('users')
+    .where(`participations.${betId}`, '>=', 0)
+    .onSnapshot(callback)
+}
+
+export const addParticipation = (uid, participations) => {
+  db
+    .collection('users')
+    .doc(uid)
+    .set({ participations }, { merge: true })
+}
