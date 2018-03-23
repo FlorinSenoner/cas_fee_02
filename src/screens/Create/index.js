@@ -29,9 +29,8 @@ class CreateBet extends React.Component {
       {
         title: values.title,
         dateCreated: new Date(),
-        admin: this.props.user.email,
+        admin: this.props.user.uid,
         visibility: ['private', 'public'][Math.round(Math.random())],
-        participants: [{ id: 'bla@gmail.com', guess: 'asdsaas' }, { id: 'test@gmail.com', guess: 'adasdasd' }],
       },
       this.props.changePage,
     )

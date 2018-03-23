@@ -10,14 +10,6 @@ export const addBet = (bet, changePage) => {
     })
 }
 
-export const getBet = id => {
-  console.log('Getting bet :)')
-  return db
-    .collection('bets')
-    .doc(id)
-    .get()
-}
-
 export const deleteBet = betId => {
   db
     .collection('bets')
@@ -31,17 +23,30 @@ export const deleteBet = betId => {
     })
 }
 
-export const addParticipant = (betId, participants, participant) =>
+export const addParticipant = (betId, participant) => {
   db
     .collection('bets')
     .doc(betId)
-    .set(
-      {
-        participants: [...participants, { id: participant }],
-      },
-      { merge: true },
-    )
+    .collection('participants')
+    .doc(participant.uid)
+    .set(participant)
+}
+
+export const onBetUpdate = (id, callback) =>
+  db
+    .collection('bets')
+    .doc(id)
+    .onSnapshot(doc => callback(doc.data()))
+
+export const onParticipantsUpdate = (id, callback) => {
+  db
+    .collection('bets')
+    .doc(id)
+    .collection('participants')
+    .onSnapshot(callback)
+}
 
 export const onBetsUpdate = callback => {
+  // TODO query einschränken auf wo ich admin oder participant bin
   db.collection('bets').onSnapshot(callback)
 }

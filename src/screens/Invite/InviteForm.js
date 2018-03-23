@@ -24,15 +24,15 @@ const Form = ({ submitting, handleSubmit, classes, participants }) => (
     <div>
       <Field
         name="participant"
-        label="Participant"
+        label="email address"
         inputProps={{
-          'aria-label': 'Participant',
+          'aria-label': 'Participant email',
         }}
         component={MuiTextField}
         className={classes.textField}
       />
       <Button type="submit" disabled={submitting} variant="raised" color="primary" className={classes.button}>
-        Create
+        Invite
       </Button>
     </div>
   </form>
@@ -42,7 +42,7 @@ Form.propTypes = {
   submitting: PropTypes.bool.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   classes: PropTypes.object.isRequired,
-  participants: PropTypes.arrayOf(propTypesParticipant.isRequired),
+  participants: PropTypes.arrayOf(propTypesParticipant),
 }
 
 const validate = (values, props) => {
@@ -50,19 +50,12 @@ const validate = (values, props) => {
   if (!values.participant) {
     errors.participant = 'Field is required'
   }
-  if (props.participants.some(participant => participant.email === values.participant.email)) {
+  if (props.participants && props.participants.some(participant => participant.email === values.participant)) {
     errors.participant = 'participant already added'
   }
   return errors
 }
 
-const enhance = compose(
-  reduxForm({
-    // a unique identifier for this form
-    form: 'InviteForm',
-    validate,
-  }),
-  withStyles(styles),
-)
+const enhance = compose(reduxForm({ form: 'InviteForm', validate }), withStyles(styles))
 
 export default enhance(Form)

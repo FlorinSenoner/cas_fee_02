@@ -2,6 +2,7 @@ import { USER_CHANGED, SIGNOUT } from './constants'
 
 const initialState = {
   user: {
+    uid: '',
     email: '',
   },
 }

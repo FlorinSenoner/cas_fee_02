@@ -11,7 +11,7 @@ class Participant extends PureComponent {
     const { user } = this.props
     return (
       <div>
-        <h3>{user.id}</h3>
+        <h3>{user.email}</h3>
       </div>
     )
   }

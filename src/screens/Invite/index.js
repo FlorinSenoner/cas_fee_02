@@ -10,7 +10,8 @@ import { reset } from 'redux-form'
 import DefaultPage from '../../components/DefaultPage'
 import InviteForm from './InviteForm'
 import Participant from './Participant'
-import { addParticipant, getBet } from '../../services/bet.service'
+import { addParticipant, onBetUpdate, onParticipantsUpdate } from '../../services/bet.service'
+import { getUserByEmail } from '../../services/user.service'
 
 const styles = theme => ({
   button: {
@@ -30,7 +31,6 @@ class Invite extends React.Component {
     const { changePage, classes, match, resetForm } = this.props
     return (
       <DefaultPage>
-        {console.log('Match? ', match)}
         <h1>Invite some people</h1>
         <InviteWithBet
           betId={match.params.id}
@@ -38,8 +38,7 @@ class Invite extends React.Component {
           render={(bet, handleSubmit) => (
             <Fragment>
               <InviteForm participants={bet.participants} onSubmit={handleSubmit} />
-              {bet.participants &&
-                bet.participants.map(participant => <Participant key={participant.id} user={participant} />)}
+              {bet.participants.map(participant => <Participant key={participant.uid} user={participant} />)}
             </Fragment>
           )}
         />
@@ -53,29 +52,27 @@ class Invite extends React.Component {
 }
 
 class InviteWithBet extends React.PureComponent {
-  state = { bet: {} }
+  state = { bet: { participants: [] } }
 
-  async componentWillMount() {
-    try {
-      const doc = await getBet(this.props.betId)
-      if (doc.exists) {
-        this.setState({ ...this.state, bet: doc.data() })
-      } else {
-        console.log('No document found with id ', this.props.betId)
-      }
-    } catch (error) {
-      console.log('Error getting bet', error)
-    }
+  componentDidMount() {
+    onParticipantsUpdate(this.props.betId, querySnapshot => {
+      const participants = []
+      querySnapshot.forEach(doc => participants.push(doc.data()))
+      this.setState({ ...this.state, bet: { ...this.state.bet, participants } })
+    })
+    onBetUpdate(this.props.betId, bet => {
+      this.setState({ ...this.state, bet: { ...this.state.bet, ...bet } })
+    })
   }
 
   handleSubmit = async values => {
-    // console.log(this.props.reset)
-    await addParticipant(this.props.betId, this.state.bet.participants, values.participant)
-    this.setState({
-      ...this.state,
-      bet: { ...this.state.bet, participants: [...this.state.bet.participants, { id: values.participant }] },
-    })
-    this.props.resetForm('InviteForm')
+    try {
+      const participant = await getUserByEmail(values.participant)
+      await addParticipant(this.props.betId, participant)
+      this.props.resetForm('InviteForm')
+    } catch (error) {
+      console.error('Error adding participant!', error)
+    }
   }
 
   render() {

@@ -1,12 +1,15 @@
 import PropTypes from 'prop-types'
 
 export const propTypesUser = PropTypes.shape({
+  uid: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
   displayName: PropTypes.string,
+  photoURL: PropTypes.string,
+  emailVerified: PropTypes.boolean,
 })
 
 export const propTypesParticipant = PropTypes.shape({
-  id: PropTypes.string.isRequired,
+  ...propTypesUser,
   guess: PropTypes.string,
 })
 

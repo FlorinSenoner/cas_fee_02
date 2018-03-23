@@ -51,13 +51,6 @@ const validate = values => {
   return errors
 }
 
-const enhance = compose(
-  reduxForm({
-    // a unique identifier for this form
-    form: 'CreateBetForm',
-    validate,
-  }),
-  withStyles(styles),
-)
+const enhance = compose(reduxForm({ form: 'CreateBetForm', validate }), withStyles(styles))
 
 export default enhance(Form)
