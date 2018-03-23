@@ -20,34 +20,26 @@ class Dashboard extends PureComponent {
     userId: PropTypes.number.isRequired,
   }
 
+  static extractBets(querySnapshot) {
+    return querySnapshot.docs.map(doc => ({ ...doc.data(), id: doc.id }))
+  }
+
   componentDidMount() {
     onMyBetsUpdate(this.props.userId, this.updateMyBets)
     onInvitesUpdate(this.props.userId, this.updateInvites)
     onGuessesUpdate(this.props.userId, this.updateGuesses)
   }
 
-  // TODO remove duplication!!!!
   updateMyBets = querySnapshot => {
-    const bets = []
-    querySnapshot.forEach(doc => {
-      bets.push({ ...doc.data(), id: doc.id })
-    })
-    this.props.myBetsUpdate(bets)
+    this.props.myBetsUpdate(Dashboard.extractBets(querySnapshot))
   }
+
   updateGuesses = querySnapshot => {
-    const bets = []
-    querySnapshot.forEach(doc => {
-      bets.push({ ...doc.data(), id: doc.id })
-    })
-    this.props.guessesUpdate(bets)
+    this.props.guessesUpdate(Dashboard.extractBets(querySnapshot))
   }
 
   updateInvites = querySnapshot => {
-    const bets = []
-    querySnapshot.forEach(doc => {
-      bets.push({ ...doc.data(), id: doc.id })
-    })
-    this.props.invitesUpdate(bets)
+    this.props.invitesUpdate(Dashboard.extractBets(querySnapshot))
   }
 
   render() {
