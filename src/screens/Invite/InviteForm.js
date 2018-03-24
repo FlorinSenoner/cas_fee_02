@@ -50,7 +50,7 @@ const validate = (values, props) => {
   if (!values.participant) {
     errors.participant = 'Field is required'
   }
-  if (props.participants && props.participants.some(participant => participant.email === values.participant)) {
+  if (props.participants.some(participant => participant.email === values.participant)) {
     errors.participant = 'participant already added'
   }
   return errors

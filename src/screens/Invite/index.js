@@ -37,8 +37,8 @@ class Invite extends React.Component {
           resetForm={resetForm}
           render={(bet, handleSubmit) => (
             <Fragment>
-              <InviteForm participants={bet.participants} onSubmit={handleSubmit} />
-              {bet.participants.map(participant => <Participant key={participant.uid} user={participant} />)}
+              <InviteForm participants={bet.participantUsers} onSubmit={handleSubmit} />
+              {bet.participantUsers.map(participant => <Participant key={participant.uid} user={participant} />)}
             </Fragment>
           )}
         />
@@ -52,13 +52,14 @@ class Invite extends React.Component {
 }
 
 class InviteWithBet extends React.PureComponent {
-  state = { bet: { participants: [] } }
+  state = { bet: { participantUsers: [] } }
 
   async componentDidMount() {
     getParticipants(this.props.betId, querySnapshot => {
-      const participants = []
-      querySnapshot.forEach(doc => participants.push(doc.data()))
-      this.setState({ ...this.state, bet: { ...this.state.bet, participants } })
+      this.setState({
+        ...this.state,
+        bet: { ...this.state.bet, participantUsers: querySnapshot.docs.map(doc => doc.data()) },
+      })
     })
   }
 
