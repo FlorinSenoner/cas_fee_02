@@ -5,7 +5,6 @@ import { withStyles } from 'material-ui/styles'
 import { compose } from 'recompose'
 import { Field, reduxForm } from 'redux-form'
 
-import { propTypesParticipant } from '../../customPropTypes'
 import MuiTextField from '../../components/Input/MuiTextField'
 
 const styles = theme => ({
@@ -19,7 +18,7 @@ const styles = theme => ({
   },
 })
 
-const Form = ({ submitting, handleSubmit, classes, participants }) => (
+const InviteForm = ({ submitting, handleSubmit, classes }) => (
   <form onSubmit={handleSubmit}>
     <div>
       <Field
@@ -38,11 +37,10 @@ const Form = ({ submitting, handleSubmit, classes, participants }) => (
   </form>
 )
 
-Form.propTypes = {
+InviteForm.propTypes = {
   submitting: PropTypes.bool.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   classes: PropTypes.object.isRequired,
-  participants: PropTypes.arrayOf(propTypesParticipant),
 }
 
 const validate = (values, props) => {
@@ -58,4 +56,4 @@ const validate = (values, props) => {
 
 const enhance = compose(reduxForm({ form: 'InviteForm', validate }), withStyles(styles))
 
-export default enhance(Form)
+export default enhance(InviteForm)

@@ -8,15 +8,10 @@ export const propTypesUser = PropTypes.shape({
   emailVerified: PropTypes.boolean,
 })
 
-export const propTypesParticipant = PropTypes.shape({
-  ...propTypesUser,
-  guess: PropTypes.string,
-})
-
 export const propTypesBet = PropTypes.shape({
   title: PropTypes.string.isRequired,
   author: PropTypes.string,
   dateCreated: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]).isRequired,
   visibility: PropTypes.oneOf(['private', 'public']),
-  participants: PropTypes.arrayOf(propTypesParticipant),
+  participants: PropTypes.object,
 })
