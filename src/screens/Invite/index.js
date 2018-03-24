@@ -9,7 +9,7 @@ import { reset } from 'redux-form'
 
 import DefaultPage from '../../components/DefaultPage'
 import InviteForm from './InviteForm'
-import Participant from './Participant'
+import Participants from './Participants'
 import { addParticipants } from '../../services/bet.service'
 import { getUserByEmail, addParticipation, getParticipants } from '../../services/user.service'
 
@@ -38,7 +38,7 @@ class Invite extends React.Component {
           render={(bet, handleSubmit) => (
             <Fragment>
               <InviteForm participants={bet.participantUsers} onSubmit={handleSubmit} />
-              {bet.participantUsers.map(participant => <Participant key={participant.uid} user={participant} />)}
+              <Participants users={bet.participantUsers} />
             </Fragment>
           )}
         />
