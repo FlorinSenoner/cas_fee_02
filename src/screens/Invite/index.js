@@ -66,10 +66,10 @@ class InviteWithBet extends React.PureComponent {
     try {
       const participant = await getUserByEmail(values.participant)
       const newPart = {}
-      newPart[participant.uid] = 0
+      newPart[participant.uid] = ''
       await addParticipants(this.props.betId, { ...this.state.bet.participants, ...newPart })
       const someVar = {}
-      someVar[this.props.betId] = 0
+      someVar[this.props.betId] = ''
       await addParticipation(participant.uid, { ...participant.participations, ...someVar })
       this.props.resetForm('InviteForm')
     } catch (error) {

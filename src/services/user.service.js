@@ -26,7 +26,7 @@ export const getUserByEmail = email =>
 export const getParticipants = (betId, callback) => {
   db
     .collection('users')
-    .where(`participations.${betId}`, '>=', 0)
+    .where(`participations.${betId}`, '>=', '')
     .onSnapshot(callback)
 }
 

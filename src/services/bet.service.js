@@ -40,13 +40,13 @@ export const onMyBetsUpdate = (uid, callback) => {
 export const onInvitesUpdate = (uid, callback) => {
   db
     .collection('bets')
-    .where(`participants.${uid}`, '==', 0)
+    .where(`participants.${uid}`, '==', '')
     .onSnapshot(callback)
 }
 
 export const onGuessesUpdate = (uid, callback) => {
   db
     .collection('bets')
-    .where(`participants.${uid}`, '>', 0)
+    .where(`participants.${uid}`, '>', '')
     .onSnapshot(callback)
 }
