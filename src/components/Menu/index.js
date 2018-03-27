@@ -2,10 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { withStyles } from 'material-ui/styles'
 import classNames from 'classnames'
-import { compose, withState } from 'recompose'
+import { compose, withState, withHandlers } from 'recompose'
 
 import PersistentDrawer, { drawerWidth } from './PersistentDrawer'
 import NavBar from './NavBar'
+import { omitProps } from '../../utils'
 
 const styles = theme => ({
   root: {
@@ -46,11 +47,11 @@ const styles = theme => ({
   },
 })
 
-const Menu = ({ classes, isDrawerOpen, setIsDrawerOpen, children }) => (
+const Menu = ({ classes, isDrawerOpen, openDrawer, closeDrawer, children }) => (
   <div className={classes.root}>
     <div className={classes.appFrame}>
-      <NavBar open={isDrawerOpen} handleOpen={() => setIsDrawerOpen(true)} />
-      <PersistentDrawer open={isDrawerOpen} handelClose={() => setIsDrawerOpen(false)} />
+      <NavBar open={isDrawerOpen} handleOpen={openDrawer} />
+      <PersistentDrawer open={isDrawerOpen} handelClose={closeDrawer} />
       <main
         className={classNames(classes.content, {
           [classes.contentShift]: isDrawerOpen,
@@ -65,10 +66,19 @@ const Menu = ({ classes, isDrawerOpen, setIsDrawerOpen, children }) => (
 Menu.propTypes = {
   classes: PropTypes.object.isRequired,
   isDrawerOpen: PropTypes.bool.isRequired,
-  setIsDrawerOpen: PropTypes.func.isRequired,
+  openDrawer: PropTypes.func.isRequired,
+  closeDrawer: PropTypes.func.isRequired,
   children: PropTypes.node.isRequired,
 }
 
-const enhance = compose(withState('isDrawerOpen', 'setIsDrawerOpen', false), withStyles(styles, { withTheme: true }))
+const enhance = compose(
+  withState('isDrawerOpen', 'setIsDrawerOpen', false),
+  withHandlers({
+    openDrawer: props => () => props.setIsDrawerOpen(true),
+    closeDrawer: props => () => props.setIsDrawerOpen(false),
+  }),
+  omitProps(['setIsDrawerOpen']),
+  withStyles(styles, { withTheme: true }),
+)
 
 export default enhance(Menu)
