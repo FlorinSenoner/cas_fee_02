@@ -6,8 +6,6 @@ import store, { history } from './store'
 import './index.css'
 import App from './screens/App'
 
-import registerServiceWorker from './registerServiceWorker'
-
 const target = document.getElementById('root')
 
 render(
@@ -20,5 +18,3 @@ render(
   </Provider>,
   target,
 )
-
-registerServiceWorker()
