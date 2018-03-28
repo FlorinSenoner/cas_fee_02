@@ -24,22 +24,22 @@ export const deleteBet = betId => {
     })
 }
 
-export const getBetById = async betId => {
-  try {
-    const doc = await db
-      .collection('bets')
-      .doc(betId)
-      .get()
-    if (doc.exists) {
-      return doc.data()
-    }
-    console.log('No document found with id ', this.props.betId)
-    return false
-  } catch (error) {
-    console.log('Error getting bet', error)
-    return false
-  }
-}
+// export const getBetById = async betId => {
+//   try {
+//     const doc = await db
+//       .collection('bets')
+//       .doc(betId)
+//       .get()
+//     if (doc.exists) {
+//       return doc.data()
+//     }
+//     console.log('No document found with id ', this.props.betId)
+//     return false
+//   } catch (error) {
+//     console.log('Error getting bet', error)
+//     return false
+//   }
+// }
 
 export const addParticipant = (betId, uid) => {
   const participants = {}

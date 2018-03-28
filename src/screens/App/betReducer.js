@@ -1,4 +1,4 @@
-import { MY_BETS_CHANGED, INVITES_CHANGED, GUESSES_CHANGED } from './constants'
+import { MY_BETS_CHANGED, INVITES_CHANGED, GUESSES_CHANGED } from './betConstants'
 
 const initialState = {
   invites: [],
@@ -6,7 +6,7 @@ const initialState = {
   guesses: [],
 }
 
-const dashboard = (state = initialState, action) => {
+const bets = (state = initialState, action) => {
   switch (action.type) {
     case MY_BETS_CHANGED:
       return { ...state, myBets: action.payload }
@@ -19,4 +19,4 @@ const dashboard = (state = initialState, action) => {
   }
 }
 
-export default dashboard
+export default bets

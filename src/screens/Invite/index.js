@@ -11,6 +11,7 @@ import DefaultPage from '../../components/DefaultPage'
 import InviteForm from './InviteForm'
 import InviteWithBet from './InviteWithBet'
 import Participants from './Participants'
+import { userSelector } from '../SignIn/selectors'
 
 const styles = theme => ({
   button: {
@@ -59,7 +60,7 @@ class Invite extends React.PureComponent {
 }
 
 const mapStateToProps = state => ({
-  user: state.signIn.user,
+  user: userSelector(state),
 })
 
 const mapDispatchToProps = {
