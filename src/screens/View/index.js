@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import Button from 'material-ui/Button'
 import { withStyles } from 'material-ui/styles'
 import { compose, branch, renderNothing } from 'recompose'
-import { propTypesBet } from '../../customPropTypes'
+import { propTypesBet, propTypesUser } from '../../customPropTypes'
 
 import DefaultPage from '../../components/DefaultPage'
 import { userSelector } from '../SignIn/selectors'
@@ -22,18 +22,37 @@ class View extends React.PureComponent {
     classes: PropTypes.object.isRequired,
     changePage: PropTypes.func.isRequired,
     bet: propTypesBet.isRequired,
+    user: propTypesUser.isRequired,
   }
 
   toDashboard = () => this.props.changePage('/')
+  toInvite = () => this.props.changePage(`/bet/${this.props.bet.id}/invite`)
 
   render() {
-    const { classes, bet } = this.props
+    const { classes, bet, user } = this.props
     return (
       <DefaultPage>
         <h1>{bet.title}</h1>
-        <Button variant="raised" color="primary" onClick={this.toDashboard} className={classes.button}>
+        <Button
+          variant="raised"
+          color="primary"
+          aria-label="go to dashboard"
+          onClick={this.toDashboard}
+          className={classes.button}
+        >
           back
         </Button>
+        {user.uid === bet.admin && (
+          <Button
+            variant="raised"
+            color="primary"
+            aria-label="invite more people"
+            onClick={this.toInvite}
+            className={classes.button}
+          >
+            Invite more
+          </Button>
+        )}
       </DefaultPage>
     )
   }
