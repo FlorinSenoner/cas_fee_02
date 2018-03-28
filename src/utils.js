@@ -8,6 +8,8 @@ import omit from 'lodash/fp/omit'
 
 export const omitProps = keys => mapProps(props => omit(keys, props))
 
+export const getDisplayName = WrappedComponent => WrappedComponent.displayName || WrappedComponent.name || 'Component'
+
 const middlewares = []
 const mockStore = configureStore(middlewares)
 const initialState = {

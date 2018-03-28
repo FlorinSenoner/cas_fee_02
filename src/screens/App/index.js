@@ -1,13 +1,14 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
 import { Switch, Route, withRouter } from 'react-router-dom'
 import { Reboot } from 'material-ui'
 import { connect } from 'react-redux'
 import { replace } from 'react-router-redux'
 import { compose } from 'recompose'
 import PropTypes from 'prop-types'
+
 import { isAuthenticated, auth } from '../../fire'
 import { userChanged } from '../SignIn/actions'
-
+import WithBets from './WithBets'
 import Dashboard from '../Dashboard'
 import NotFound from '../NotFound'
 import CreateBet from '../Create'
@@ -26,7 +27,7 @@ PrivateRoute.propTypes = {
   location: PropTypes.object,
 }
 
-class App extends React.PureComponent {
+class App extends PureComponent {
   componentDidMount() {
     auth.onAuthStateChanged(user => {
       if (user) {
@@ -41,8 +42,9 @@ class App extends React.PureComponent {
 
     return (
       <Reboot>
+        <WithBets user={user} />
         <Switch>
-          <PrivateRoute exact path="/" user={user} component={Dashboard} />
+          <PrivateRoute exact path="/" component={Dashboard} />
           <PrivateRoute exact path="/create" component={CreateBet} />
           <PrivateRoute exact path="/bet/:id/invite" component={Invite} />
           <PrivateRoute exact path="/bet/:id/view" component={View} />
