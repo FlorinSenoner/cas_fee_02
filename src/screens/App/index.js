@@ -8,8 +8,6 @@ import PropTypes from 'prop-types'
 import { isAuthenticated, auth } from '../../fire'
 import { userChanged } from '../SignIn/actions'
 
-import './App.css'
-
 import Dashboard from '../Dashboard'
 import NotFound from '../NotFound'
 import CreateBet from '../Create'
