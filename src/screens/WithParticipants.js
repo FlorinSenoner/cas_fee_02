@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { getParticipants } from '../../services/user.service'
+import { getParticipants } from '../services/user.service'
 
 class WithParticipants extends React.PureComponent {
   static propTypes = {

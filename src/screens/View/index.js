@@ -6,6 +6,8 @@ import Button from 'material-ui/Button'
 import { withStyles } from 'material-ui/styles'
 import { compose, branch, renderNothing } from 'recompose'
 import { propTypesBet, propTypesUser } from '../../customPropTypes'
+import WithParticipants from '../WithParticipants'
+import Guesses from './Guesses'
 
 import DefaultPage from '../../components/DefaultPage'
 import { userSelector } from '../SignIn/selectors'
@@ -27,9 +29,10 @@ class View extends React.PureComponent {
 
   toDashboard = () => this.props.changePage('/')
   toInvite = () => this.props.changePage(`/bet/${this.props.bet.id}/invite`)
+  isAdmin = () => this.props.user.uid === this.props.bet.admin
 
   render() {
-    const { classes, bet, user } = this.props
+    const { classes, bet } = this.props
     return (
       <DefaultPage>
         <h1>{bet.title}</h1>
@@ -42,7 +45,11 @@ class View extends React.PureComponent {
         >
           back
         </Button>
-        {user.uid === bet.admin && (
+        <WithParticipants
+          betId={bet.id}
+          render={participantUsers => <Guesses betId={bet.id} showGuesses={this.isAdmin()} users={participantUsers} />}
+        />
+        {this.isAdmin() && (
           <Button
             variant="raised"
             color="primary"
