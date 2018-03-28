@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { addParticipants } from '../../services/bet.service'
-import { getUserByEmail, addParticipation, getParticipants } from '../../services/user.service'
+import { addParticipant, removeParticipant } from '../../services/bet.service'
+import { getUserByEmail, addParticipation, removeParticipation, getParticipants } from '../../services/user.service'
 
 class InviteWithBet extends React.PureComponent {
   static propTypes = {
@@ -22,15 +22,16 @@ class InviteWithBet extends React.PureComponent {
     })
   }
 
-  handleSubmit = async values => {
+  removeParticipant(userId, betId) {
+    removeParticipant(betId, userId)
+    removeParticipation(userId, betId)
+  }
+
+  addParticipant = async values => {
     try {
       const participant = await getUserByEmail(values.participant)
-      const newPart = {}
-      newPart[participant.uid] = ''
-      await addParticipants(this.props.betId, { ...this.state.bet.participants, ...newPart })
-      const someVar = {}
-      someVar[this.props.betId] = ''
-      await addParticipation(participant.uid, { ...participant.participations, ...someVar })
+      addParticipant(this.props.betId, participant.uid)
+      addParticipation(participant.uid, this.props.betId)
       this.props.resetForm('InviteForm')
     } catch (error) {
       console.error('Error adding participant!', error)
@@ -38,7 +39,7 @@ class InviteWithBet extends React.PureComponent {
   }
 
   render() {
-    return <div>{this.props.render(this.state.bet, this.handleSubmit)}</div>
+    return <div>{this.props.render(this.state.bet, this.addParticipant, this.removeParticipant)}</div>
   }
 }
 

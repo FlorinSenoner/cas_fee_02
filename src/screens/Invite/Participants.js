@@ -19,23 +19,25 @@ const styles = theme => ({
 
 class Participants extends PureComponent {
   render() {
-    const { classes, users } = this.props
+    const { classes, users, betId, removeParticipant } = this.props
 
     return (
       <div className={classes.root}>
         <List>
           {users.map(user => (
             <ListItem key={user.uid} dense className={classes.listItem}>
-              <Avatar
-                alt="User profile image"
-                src={user.photoURL || 'https://www.shareicon.net/data/256x256/2016/02/29/726667_people_512x512.png'}
-              />
+              <Avatar alt="User profile image" src={user.photoURL || '/img/unknown_50x50.jpg'} />
               <ListItemText primary={user.displayName} />
-              <ListItemSecondaryAction>
-                <IconButton aria-label="delete user from invites">
-                  <DeleteIcon />
-                </IconButton>
-              </ListItemSecondaryAction>
+              {!user.participations[betId] && (
+                <ListItemSecondaryAction>
+                  <IconButton
+                    aria-label="delete user from participants"
+                    onClick={() => removeParticipant(user.uid, betId)}
+                  >
+                    <DeleteIcon />
+                  </IconButton>
+                </ListItemSecondaryAction>
+              )}
             </ListItem>
           ))}
         </List>
@@ -47,6 +49,8 @@ class Participants extends PureComponent {
 Participants.propTypes = {
   users: PropTypes.arrayOf(propTypesUser).isRequired,
   classes: PropTypes.object.isRequired,
+  removeParticipant: PropTypes.func.isRequired,
+  betId: PropTypes.string.isRequired,
 }
 
 const enhance = compose(withStyles(styles))

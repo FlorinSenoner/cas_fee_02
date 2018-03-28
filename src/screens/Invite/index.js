@@ -26,6 +26,8 @@ class Invite extends React.PureComponent {
     match: PropTypes.object.isRequired,
   }
 
+  removeParticipant() {}
+
   render() {
     const { changePage, classes, match, resetForm } = this.props
     return (
@@ -34,10 +36,16 @@ class Invite extends React.PureComponent {
         <InviteWithBet
           betId={match.params.id}
           resetForm={resetForm}
-          render={(bet, handleSubmit) => (
+          render={(bet, addParticipant, removeParticipant) => (
             <Fragment>
-              <InviteForm participants={bet.participantUsers} onSubmit={handleSubmit} />
-              {bet.participantUsers.length > 0 && <Participants users={bet.participantUsers} />}
+              <InviteForm participants={bet.participantUsers} onSubmit={addParticipant} />
+              {bet.participantUsers.length > 0 && (
+                <Participants
+                  users={bet.participantUsers}
+                  betId={match.params.id}
+                  removeParticipant={removeParticipant}
+                />
+              )}
             </Fragment>
           )}
         />
