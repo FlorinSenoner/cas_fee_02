@@ -6,6 +6,7 @@ import BetsList from './BetList'
 import CreateBtn from './CreateBtn'
 import { propTypesBet } from '../../customPropTypes'
 import DefaultPage from '../../components/DefaultPage'
+import { myBetsSelector, invitesSelector, guessesSelector } from '../App/selectors'
 
 class Dashboard extends PureComponent {
   static propTypes = {
@@ -30,9 +31,9 @@ class Dashboard extends PureComponent {
 }
 
 const mapStateToProps = state => ({
-  myBets: state.bets.myBets,
-  invites: state.bets.invites,
-  guesses: state.bets.guesses,
+  myBets: myBetsSelector(state),
+  invites: invitesSelector(state),
+  guesses: guessesSelector(state),
 })
 
 const enhance = connect(mapStateToProps)

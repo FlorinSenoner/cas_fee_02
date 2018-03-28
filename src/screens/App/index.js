@@ -17,17 +17,23 @@ import View from '../View'
 import SignInScreen from '../SignIn'
 import { propTypesUser } from '../../customPropTypes'
 
-const PrivateRoute = ({ component: Component, user, ...rest }) => (
+const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={props => (isAuthenticated() ? <Component {...props} /> : <SignInScreen />)} />
 )
 
 PrivateRoute.propTypes = {
   component: PropTypes.func.isRequired,
-  user: propTypesUser,
   location: PropTypes.object,
 }
 
 class App extends PureComponent {
+  static propTypes = {
+    user: propTypesUser.isRequired,
+    replace: PropTypes.func.isRequired,
+    userChanged: PropTypes.func.isRequired,
+    location: PropTypes.object.isRequired,
+  }
+
   componentDidMount() {
     auth.onAuthStateChanged(user => {
       if (user) {
@@ -55,14 +61,7 @@ class App extends PureComponent {
   }
 }
 
-App.propTypes = {
-  user: propTypesUser.isRequired,
-  replace: PropTypes.func.isRequired,
-  userChanged: PropTypes.func.isRequired,
-  location: PropTypes.object.isRequired,
-}
-
-const mapStateToProps = state => ({ user: state.signIn.user })
+const mapStateToProps = state => ({ user: state.signIn.user, bets: state.bets })
 const mapDispatchToProps = { replace, userChanged }
 
 const enhance = compose(withRouter, connect(mapStateToProps, mapDispatchToProps))
