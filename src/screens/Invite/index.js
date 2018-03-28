@@ -37,15 +37,11 @@ class Invite extends React.PureComponent {
         <InviteWithBet
           betId={match.params.id}
           resetForm={resetForm}
-          render={(bet, addParticipant, removeParticipant) => (
+          render={(participantUsers, addParticipant, removeParticipant) => (
             <Fragment>
-              <InviteForm participants={bet.participantUsers} onSubmit={addParticipant} />
-              {bet.participantUsers.length > 0 && (
-                <Participants
-                  users={bet.participantUsers}
-                  betId={match.params.id}
-                  removeParticipant={removeParticipant}
-                />
+              <InviteForm participants={participantUsers} onSubmit={addParticipant} />
+              {participantUsers.length > 0 && (
+                <Participants users={participantUsers} betId={match.params.id} removeParticipant={removeParticipant} />
               )}
             </Fragment>
           )}

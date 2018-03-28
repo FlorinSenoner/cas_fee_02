@@ -11,13 +11,13 @@ class InviteWithBet extends React.PureComponent {
     render: PropTypes.func.isRequired,
   }
 
-  state = { bet: { participantUsers: [] } }
+  state = { participantUsers: [] }
 
   async componentDidMount() {
     getParticipants(this.props.betId, querySnapshot => {
       this.setState({
         ...this.state,
-        bet: { ...this.state.bet, participantUsers: querySnapshot.docs.map(doc => doc.data()) },
+        participantUsers: querySnapshot.docs.map(doc => doc.data()),
       })
     })
   }
@@ -39,7 +39,7 @@ class InviteWithBet extends React.PureComponent {
   }
 
   render() {
-    return <div>{this.props.render(this.state.bet, this.addParticipant, this.removeParticipant)}</div>
+    return <div>{this.props.render(this.state.participantUsers, this.addParticipant, this.removeParticipant)}</div>
   }
 }
 
