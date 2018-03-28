@@ -12,6 +12,7 @@ import Dashboard from '../Dashboard'
 import NotFound from '../NotFound'
 import CreateBet from '../Create'
 import Invite from '../Invite'
+import View from '../View'
 import SignInScreen from '../SignIn'
 import { propTypesUser } from '../../customPropTypes'
 
@@ -44,6 +45,7 @@ class App extends React.PureComponent {
           <PrivateRoute exact path="/" user={user} component={Dashboard} />
           <PrivateRoute exact path="/create" component={CreateBet} />
           <PrivateRoute exact path="/bet/:id/invite" component={Invite} />
+          <PrivateRoute exact path="/bet/:id/view" component={View} />
           <Route component={NotFound} />
         </Switch>
       </Reboot>
