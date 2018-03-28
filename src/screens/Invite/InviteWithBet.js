@@ -25,12 +25,20 @@ class InviteWithBet extends React.PureComponent {
   handleSubmit = async values => {
     try {
       const participant = await getUserByEmail(values.participant)
-      const newPart = {}
-      newPart[participant.uid] = ''
-      await addParticipants(this.props.betId, { ...this.state.bet.participants, ...newPart })
-      const someVar = {}
-      someVar[this.props.betId] = ''
-      await addParticipation(participant.uid, { ...participant.participations, ...someVar })
+
+      // add empty guess to bet
+      const newParticipant = {}
+      newParticipant[participant.uid] = ''
+
+      // add empty guess to user
+      const newGuess = {}
+      newGuess[this.props.betId] = ''
+
+      await Promise.all([
+        addParticipants(this.props.betId, { ...this.state.bet.participants, ...newParticipant }),
+        addParticipation(participant.uid, { ...participant.participations, ...newGuess }),
+      ])
+
       this.props.resetForm('InviteForm')
     } catch (error) {
       console.error('Error adding participant!', error)
