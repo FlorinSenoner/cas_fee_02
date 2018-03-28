@@ -9,9 +9,11 @@ import { reset } from 'redux-form'
 
 import DefaultPage from '../../components/DefaultPage'
 import InviteForm from './InviteForm'
-import InviteWithBet from './InviteWithBet'
+import WithParticipants from './WithParticipants'
 import Participants from './Participants'
 import { userSelector } from '../SignIn/selectors'
+import { addParticipant, removeParticipant } from '../../services/bet.service'
+import { getUserByEmail, addParticipation, removeParticipation } from '../../services/user.service'
 
 const styles = theme => ({
   button: {
@@ -27,21 +29,38 @@ class Invite extends React.PureComponent {
     match: PropTypes.object.isRequired,
   }
 
-  removeParticipant() {}
+  removeParticipant(userId, betId) {
+    removeParticipant(betId, userId)
+    removeParticipation(userId, betId)
+  }
+
+  addParticipant = async values => {
+    try {
+      const participant = await getUserByEmail(values.participant)
+      addParticipant(this.props.match.params.id, participant.uid)
+      addParticipation(participant.uid, this.props.match.params.id)
+      this.props.resetForm('InviteForm')
+    } catch (error) {
+      console.error('Error adding participant!', error)
+    }
+  }
 
   render() {
-    const { changePage, classes, match, resetForm } = this.props
+    const { changePage, classes, match } = this.props
     return (
       <DefaultPage>
         <h1>Invite some people</h1>
-        <InviteWithBet
+        <WithParticipants
           betId={match.params.id}
-          resetForm={resetForm}
-          render={(participantUsers, addParticipant, removeParticipant) => (
+          render={participantUsers => (
             <Fragment>
-              <InviteForm participants={participantUsers} onSubmit={addParticipant} />
+              <InviteForm participants={participantUsers} onSubmit={this.addParticipant} />
               {participantUsers.length > 0 && (
-                <Participants users={participantUsers} betId={match.params.id} removeParticipant={removeParticipant} />
+                <Participants
+                  users={participantUsers}
+                  betId={match.params.id}
+                  removeParticipant={this.removeParticipant}
+                />
               )}
             </Fragment>
           )}
