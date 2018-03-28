@@ -10,6 +10,7 @@ import { propTypesUser } from '../../customPropTypes'
 import DefaultPage from '../../components/DefaultPage'
 import CreateBetForm from './Form'
 import { addBet } from '../../services/bet.service'
+import { userSelector } from '../SignIn/selectors'
 
 const styles = theme => ({
   button: {
@@ -50,7 +51,7 @@ class CreateBet extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  user: state.signIn.user,
+  user: userSelector(state),
 })
 
 const mapDispatchToProps = {

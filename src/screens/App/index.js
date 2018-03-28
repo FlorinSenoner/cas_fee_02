@@ -16,6 +16,7 @@ import Invite from '../Invite'
 import View from '../View'
 import SignInScreen from '../SignIn'
 import { propTypesUser } from '../../customPropTypes'
+import { userSelector } from '../SignIn/selectors'
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={props => (isAuthenticated() ? <Component {...props} /> : <SignInScreen />)} />
@@ -61,7 +62,7 @@ class App extends PureComponent {
   }
 }
 
-const mapStateToProps = state => ({ user: state.signIn.user, bets: state.bets })
+const mapStateToProps = state => ({ user: userSelector(state) })
 const mapDispatchToProps = { replace, userChanged }
 
 const enhance = compose(withRouter, connect(mapStateToProps, mapDispatchToProps))

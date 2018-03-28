@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
 import { compose } from 'recompose'
 import { withStyles } from 'material-ui/styles'
 import IconButton from 'material-ui/IconButton'
@@ -23,6 +22,11 @@ const styles = {
 }
 
 class BetCard extends PureComponent {
+  static propTypes = {
+    bet: propTypesBet.isRequired,
+    classes: PropTypes.object.isRequired,
+  }
+
   state = {
     anchorEl: null,
   }
@@ -68,13 +72,6 @@ class BetCard extends PureComponent {
   }
 }
 
-BetCard.propTypes = {
-  bet: propTypesBet.isRequired,
-  classes: PropTypes.object.isRequired,
-}
-
-const mapStateToProps = state => ({ bets: state.bets })
-
-const enhance = compose(connect(mapStateToProps), withStyles(styles))
+const enhance = compose(withStyles(styles))
 
 export default enhance(BetCard)
