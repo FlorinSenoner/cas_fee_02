@@ -1,6 +1,6 @@
-const firebase = require('firebase')
-require('firebase/firestore')
-require('firebase/auth')
+import firebase from 'firebase'
+import 'firebase/firestore'
+import 'firebase/auth'
 
 const config = {
   apiKey: 'AIzaSyBjgLM53YcdHFY0gg2V14XOp9pfG78J08w',
@@ -11,9 +11,9 @@ const config = {
   messagingSenderId: '34791821550',
 }
 
-const app = firebase.initializeApp(config)
+firebase.initializeApp(config)
 const auth = firebase.auth()
-const db = firebase.firestore(app)
+const db = firebase.firestore()
 /**
  * OFFLINE MODE: TO ACTIVATE READ HERE
  * https://cloud.google.com/firestore/docs/manage-data/enable-offline
@@ -22,20 +22,22 @@ const db = firebase.firestore(app)
  * - after creating a bet, .then() is not called even though the bet will be created with a valid ID.
  *   this leeds to a not working 'create bet' function
  */
-firebase
-  .firestore()
-  .enablePersistence()
-  .then(() => {
-    console.log('offlinemode acctivated')
-  })
-  .catch(err => {
-    if (err.code === 'failed-precondition') {
-      console.error('no offline mode available due a failed precondition (i.e. multiple tabs are open, etc.)')
-    } else if (err.code === 'unimplemented') {
-      console.error('no offline mode available due the current browser support')
-    }
-    console.log('no offline mode available')
-  })
+if (process.env.NODE_ENV !== 'test') {
+  firebase
+    .firestore()
+    .enablePersistence()
+    .then(() => {
+      console.log('offlinemode acctivated')
+    })
+    .catch(err => {
+      if (err.code === 'failed-precondition') {
+        console.error('no offline mode available due a failed precondition (i.e. multiple tabs are open, etc.)')
+      } else if (err.code === 'unimplemented') {
+        console.error('no offline mode available due the current browser support')
+      }
+      console.log('no offline mode available')
+    })
+}
 
 export const isAuthenticated = () => !!auth.currentUser
 export { auth, db }

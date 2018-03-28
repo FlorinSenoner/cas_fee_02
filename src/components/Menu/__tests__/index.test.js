@@ -13,7 +13,7 @@ describe('<Menu />', () => {
     // console.log(renderedComponent.debug())
     expect(renderedComponent.find('div').length).toBe(12)
   })
-  xit('renders a Menu', () => {
+  it('renders a Menu', () => {
     expect(renderedComponent).toMatchSnapshot()
   })
 })
