@@ -121,18 +121,24 @@ Wie schafft man ein nices Dashboard, weleches alle Bet-Types vereinheitlicht und
 
 ### Invite
 - Autofill Feld mit Add Button
-- OK Button (startet die Wette falls sie es nicht bereits ist)
+- OK Button
 - ~~Via E-Mail nicht registrierte Personen einladen~~ (optional)
 - ~~QR Code der von anderen gescannt werden kann~~ (optional)
   
-### View/Edit
+### View
 - Titel
 - Description
 - Status
 - Visibility
-- Participants und ihre Guesses
-- End Bet Button -> Popup Dialog in dem man das Resultat festhalten kann
-- Inivite more People Button (Admin) -> Invite
+- -> Für Admin:
+    - End Bet Button -> Popup Dialog in dem man das Resultat festhalten kann
+    - Inivite more People Button (Admin) -> Invite
+    - Participants und ihre Guesses
+- -> Für Participant (without Guess)
+    - Make a guess Field
+    - Decline Bet Button
+- -> Für Participant (with Guess)
+    - Participants und ihre Guesses
 
 ### SignUp/In
 - SignUp/In Formular mit OAuth für Google/Facebook
