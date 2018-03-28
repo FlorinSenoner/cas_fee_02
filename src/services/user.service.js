@@ -31,18 +31,19 @@ export const getParticipants = (betId, callback) => {
     .onSnapshot(callback)
 }
 
+export const takeAGuess = updateParticipation
+
 export const addParticipation = (uid, betId) => {
-  const participations = {}
-  participations[betId] = ''
-  db
-    .collection('users')
-    .doc(uid)
-    .set({ participations }, { merge: true })
+  updateParticipation(uid, betId, '')
 }
 
 export const removeParticipation = (uid, betId) => {
+  updateParticipation(uid, betId, firebase.firestore.FieldValue.delete())
+}
+
+function updateParticipation(uid, betId, value) {
   const participations = {}
-  participations[betId] = firebase.firestore.FieldValue.delete()
+  participations[betId] = value
   db
     .collection('users')
     .doc(uid)

@@ -41,18 +41,19 @@ export const deleteBet = betId => {
 //   }
 // }
 
+export const addGuess = updateParticipant
+
 export const addParticipant = (betId, uid) => {
-  const participants = {}
-  participants[uid] = ''
-  db
-    .collection('bets')
-    .doc(betId)
-    .set({ participants }, { merge: true })
+  updateParticipant(betId, uid, '')
 }
 
 export const removeParticipant = (betId, uid) => {
+  updateParticipant(betId, uid, firebase.firestore.FieldValue.delete())
+}
+
+function updateParticipant(betId, uid, value) {
   const participants = {}
-  participants[uid] = firebase.firestore.FieldValue.delete()
+  participants[uid] = value
   db
     .collection('bets')
     .doc(betId)

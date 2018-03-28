@@ -8,7 +8,9 @@ import { compose, branch, renderNothing } from 'recompose'
 import { propTypesBet, propTypesUser } from '../../customPropTypes'
 import WithParticipants from '../WithParticipants'
 import Guesses from './Guesses'
-
+import TakeAGuess from './TakeAGuess'
+import { takeAGuess } from '../../services/user.service'
+import { addGuess } from '../../services/bet.service'
 import DefaultPage from '../../components/DefaultPage'
 import { userSelector } from '../SignIn/selectors'
 import { betIdSelector } from '../App/selectors'
@@ -30,6 +32,11 @@ class View extends React.PureComponent {
   toDashboard = () => this.props.changePage('/')
   toInvite = () => this.props.changePage(`/bet/${this.props.bet.id}/invite`)
   isAdmin = () => this.props.user.uid === this.props.bet.admin
+  addGuess = guess => {
+    takeAGuess(this.props.user.uid, this.props.bet.id, guess)
+    addGuess(this.props.bet.id, this.props.user.uid, guess)
+  }
+  canTakeGuess = () => !this.props.bet.participants[this.props.user.uid]
 
   render() {
     const { classes, bet } = this.props
@@ -49,6 +56,7 @@ class View extends React.PureComponent {
           betId={bet.id}
           render={participantUsers => <Guesses betId={bet.id} showGuesses={this.isAdmin()} users={participantUsers} />}
         />
+        {this.canTakeGuess() && <TakeAGuess handleGuess={this.addGuess} />}
         {this.isAdmin() && (
           <Button
             variant="raised"
