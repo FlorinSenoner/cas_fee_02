@@ -1,4 +1,5 @@
 import { db } from '../fire'
+const firebase = require('firebase')
 
 export const updateUser = user => {
   db
@@ -30,7 +31,18 @@ export const getParticipants = (betId, callback) => {
     .onSnapshot(callback)
 }
 
-export const addParticipation = (uid, participations) => {
+export const addParticipation = (uid, betId) => {
+  const participations = {}
+  participations[betId] = ''
+  db
+    .collection('users')
+    .doc(uid)
+    .set({ participations }, { merge: true })
+}
+
+export const removeParticipation = (uid, betId) => {
+  const participations = {}
+  participations[betId] = firebase.firestore.FieldValue.delete()
   db
     .collection('users')
     .doc(uid)

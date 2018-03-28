@@ -1,4 +1,5 @@
 import { db } from '../fire'
+const firebase = require('firebase')
 
 export const addBet = (bet, changePage) => {
   db
@@ -40,7 +41,18 @@ export const deleteBet = betId => {
 //   }
 // }
 
-export const addParticipants = (betId, participants) => {
+export const addParticipant = (betId, uid) => {
+  const participants = {}
+  participants[uid] = ''
+  db
+    .collection('bets')
+    .doc(betId)
+    .set({ participants }, { merge: true })
+}
+
+export const removeParticipant = (betId, uid) => {
+  const participants = {}
+  participants[uid] = firebase.firestore.FieldValue.delete()
   db
     .collection('bets')
     .doc(betId)
