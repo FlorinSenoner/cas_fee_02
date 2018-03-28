@@ -73,7 +73,7 @@ BetCard.propTypes = {
   classes: PropTypes.object.isRequired,
 }
 
-const mapStateToProps = state => ({ bets: state.dashboard.bets })
+const mapStateToProps = state => ({ bets: state.bets })
 
 const enhance = compose(connect(mapStateToProps), withStyles(styles))
 

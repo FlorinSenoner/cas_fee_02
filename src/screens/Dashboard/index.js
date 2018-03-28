@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 import BetsList from './BetList'
 import CreateBtn from './CreateBtn'
-import { myBetsUpdate, guessesUpdate, invitesUpdate } from './actions'
+import { myBetsUpdate, guessesUpdate, invitesUpdate } from '../App/betActions'
 import { propTypesBet } from '../../customPropTypes'
 import DefaultPage from '../../components/DefaultPage'
 import { onMyBetsUpdate, onGuessesUpdate, onInvitesUpdate } from '../../services/bet.service'
@@ -20,26 +20,24 @@ class Dashboard extends PureComponent {
     userId: PropTypes.string.isRequired,
   }
 
-  static extractBets(querySnapshot) {
-    return querySnapshot.docs.map(doc => ({ ...doc.data(), id: doc.id }))
-  }
-
   componentDidMount() {
     onMyBetsUpdate(this.props.userId, this.updateMyBets)
     onInvitesUpdate(this.props.userId, this.updateInvites)
     onGuessesUpdate(this.props.userId, this.updateGuesses)
   }
 
+  extractBets = querySnapshot => querySnapshot.docs.map(doc => ({ ...doc.data(), id: doc.id }))
+
   updateMyBets = querySnapshot => {
-    this.props.myBetsUpdate(Dashboard.extractBets(querySnapshot))
+    this.props.myBetsUpdate(this.extractBets(querySnapshot))
   }
 
   updateGuesses = querySnapshot => {
-    this.props.guessesUpdate(Dashboard.extractBets(querySnapshot))
+    this.props.guessesUpdate(this.extractBets(querySnapshot))
   }
 
   updateInvites = querySnapshot => {
-    this.props.invitesUpdate(Dashboard.extractBets(querySnapshot))
+    this.props.invitesUpdate(this.extractBets(querySnapshot))
   }
 
   render() {
@@ -58,9 +56,9 @@ class Dashboard extends PureComponent {
 }
 
 const mapStateToProps = state => ({
-  myBets: state.dashboard.myBets,
-  invites: state.dashboard.invites,
-  guesses: state.dashboard.guesses,
+  myBets: state.bets.myBets,
+  invites: state.bets.invites,
+  guesses: state.bets.guesses,
   userId: state.signIn.user.uid,
 })
 
