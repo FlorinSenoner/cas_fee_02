@@ -2,17 +2,17 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { compose } from 'recompose'
 import { withStyles } from 'material-ui/styles'
-import IconButton from 'material-ui/IconButton'
+// import IconButton from 'material-ui/IconButton'
 import Card, { CardHeader } from 'material-ui/Card'
 import { format } from 'date-fns'
-import MoreVertIcon from 'material-ui-icons/MoreVert'
+// import MoreVertIcon from 'material-ui-icons/MoreVert'
 import Avatar from 'material-ui/Avatar'
-import Menu, { MenuItem } from 'material-ui/Menu'
+// import Menu, { MenuItem } from 'material-ui/Menu'
 import { Link } from 'react-router-dom'
 import Button from 'material-ui/Button'
 
 import { propTypesBet } from '../../../customPropTypes'
-import { deleteBet } from '../../../services/bet.service'
+// import { deleteBet } from '../../../services/bet.service'
 
 const styles = {
   card: {
@@ -20,6 +20,10 @@ const styles = {
   },
   deleteBet: {
     color: 'crimson',
+  },
+  button: {
+    display: 'block',
+    padding: 0,
   },
 }
 
@@ -29,47 +33,47 @@ class BetCard extends PureComponent {
     classes: PropTypes.object.isRequired,
   }
 
-  state = {
-    anchorEl: null,
-  }
+  // state = {
+  //   anchorEl: null,
+  // }
 
-  handleClick = event => {
-    this.setState({ anchorEl: event.currentTarget })
-  }
+  // handleClick = event => {
+  //   this.setState({ anchorEl: event.currentTarget })
+  // }
 
-  handleClose = () => {
-    this.setState({ anchorEl: null })
-  }
+  // handleClose = () => {
+  //   this.setState({ anchorEl: null })
+  // }
 
-  deleteBet = () => {
-    this.handleClose()
-    deleteBet(this.props.bet.id)
-  }
+  // deleteBet = () => {
+  //   this.handleClose()
+  //   deleteBet(this.props.bet.id)
+  // }
 
   render() {
-    const { anchorEl } = this.state
+    // const { anchorEl } = this.state
     const { bet, classes } = this.props
     return (
       <Card component="li" className={classes.card} elevation={4}>
-        <Button component={Link} to={`/bet/${bet.id}/view`} variant="raised">
+        <Button component={Link} className={classes.button} to={`/bet/${bet.id}/view`}>
           <CardHeader
             avatar={bet.title && <Avatar aria-label="Recipe">{bet.title.charAt(0).toUpperCase()}</Avatar>}
-            action={
-              <IconButton aria-owns={anchorEl ? 'simple-menu' : null} aria-haspopup="true" onClick={this.handleClick}>
-                <MoreVertIcon />
-              </IconButton>
-            }
+            // action={
+            //   <IconButton aria-owns={anchorEl ? 'simple-menu' : null} aria-haspopup="true" onClick={this.handleClick}>
+            //     <MoreVertIcon />
+            //   </IconButton>
+            // }
             component="h3"
             title={bet.title}
             subheader={`created: ${format(bet.dateCreated, 'dddd, DD MMM, YYYY')}`}
           />
-          <Menu id="simple-menu" anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={this.handleClose}>
+          {/* <Menu id="simple-menu" anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={this.handleClose}>
             <MenuItem onClick={this.handleClose}>Edit</MenuItem>
             <MenuItem onClick={this.deleteBet} className={classes.deleteBet}>
               Delete
             </MenuItem>
-          </Menu>
-          {/*<CardContent>*/}
+          </Menu> */}
+          {/* <CardContent> */}
         </Button>
       </Card>
     )
