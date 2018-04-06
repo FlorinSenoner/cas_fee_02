@@ -1,7 +1,30 @@
 import React from 'react'
+import { compose } from 'recompose'
+import PropTypes from 'prop-types'
 import firebase from 'firebase'
+import { withStyles } from 'material-ui/styles'
 import { FirebaseAuth } from 'react-firebaseui'
+import Grid from 'material-ui/Grid'
+import Paper from 'material-ui/Paper'
 import { auth } from '../../fire'
+
+const styles = theme => ({
+  root: {
+    flexGrow: 1,
+    margin: theme.spacing.unit,
+  },
+  paper: {
+    padding: theme.spacing.unit * 2,
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  },
+  logo: {
+    maxWidth: '100%',
+  },
+  container: {
+    width: '100%',
+  },
+})
 
 class SignInScreen extends React.PureComponent {
   uiConfig = {
@@ -17,17 +40,32 @@ class SignInScreen extends React.PureComponent {
   }
 
   render() {
+    const { classes } = this.props
+
     return (
-      <div>
-        <h1>Welcome to Wettemer</h1>
-        <p>
-          Wettemer is the most awesome platform to challenge your friends to anything. Right now, in realtime, even
-          offline! OMG! Right. Sign in to join the gang!
-        </p>
+      <div className={classes.root}>
+        <Grid className={classes.container} container justify="center">
+          <Grid item xs={12}>
+            <img className={classes.logo} src="/img/logo.png" alt="Wettemer Logo" />
+          </Grid>
+          <Grid item xs={12}>
+            <Paper className={classes.paper}>
+              <h1>Welcome</h1>
+              Wettemer is the most awesome platform to challenge your friends to anything. Right now, in realtime, even
+              offline! OMG! Right. Sign in to join the gang!
+            </Paper>
+          </Grid>
+        </Grid>
         <FirebaseAuth uiConfig={this.uiConfig} firebaseAuth={auth} />
       </div>
     )
   }
 }
 
-export default SignInScreen
+SignInScreen.propTypes = {
+  classes: PropTypes.object.isRequired,
+}
+
+const enhance = compose(withStyles(styles))
+
+export default enhance(SignInScreen)
