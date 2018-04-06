@@ -4,9 +4,9 @@ import Button from 'material-ui/Button'
 import TextField from 'material-ui/TextField'
 import Dialog, { DialogActions, DialogContent, DialogContentText, DialogTitle } from 'material-ui/Dialog'
 
-export default class TakeAGuess extends React.PureComponent {
+export default class EndBet extends React.PureComponent {
   static propTypes = {
-    handleGuess: PropTypes.func.isRequired,
+    handleEndBet: PropTypes.func.isRequired,
   }
 
   state = {
@@ -22,30 +22,28 @@ export default class TakeAGuess extends React.PureComponent {
   }
 
   handleSubmit = () => {
-    this.props.handleGuess(document.getElementById('guess').value)
+    this.props.handleEndBet(document.getElementById('result').value)
     this.handleClose()
   }
 
   render() {
     return (
       <div>
-        <Button color="primary" onClick={this.handleClickOpen}>
-          Make a Guess
+        <Button variant="raised" color="secondary" onClick={this.handleClickOpen}>
+          End bet
         </Button>
         <Dialog open={this.state.open} onClose={this.handleClose} aria-labelledby="form-dialog-title">
-          <DialogTitle id="form-dialog-title">Your guess</DialogTitle>
+          <DialogTitle id="form-dialog-title">End this bet</DialogTitle>
           <DialogContent>
-            <DialogContentText>
-              Please enter your guess here. Beware! You cannot change it afterwards.
-            </DialogContentText>
-            <TextField autoFocus margin="dense" id="guess" label="Your guess" fullWidth />
+            <DialogContentText>How did it end? Type in your result below!</DialogContentText>
+            <TextField autoFocus margin="dense" id="result" label="Bet result" fullWidth />
           </DialogContent>
           <DialogActions>
             <Button onClick={this.handleClose} color="primary">
               Cancel
             </Button>
-            <Button onClick={this.handleSubmit} variant="raised" color="primary">
-              Guess
+            <Button onClick={this.handleSubmit} variant="raised" color="secondary">
+              End bet
             </Button>
           </DialogActions>
         </Dialog>

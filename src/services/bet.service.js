@@ -41,6 +41,13 @@ export const deleteBet = betId => {
 //   }
 // }
 
+export const endBet = (betId, result) => {
+  db
+    .collection('bets')
+    .doc(betId)
+    .set({ result }, { merge: true })
+}
+
 export const addGuess = updateParticipant
 
 export const addParticipant = (betId, uid) => {

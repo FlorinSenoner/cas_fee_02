@@ -9,8 +9,9 @@ import { propTypesBet, propTypesUser } from '../../customPropTypes'
 import WithParticipants from '../WithParticipants'
 import Guesses from './Guesses'
 import TakeAGuess from './TakeAGuess'
+import EndBet from './EndBet'
 import { takeAGuess } from '../../services/user.service'
-import { addGuess } from '../../services/bet.service'
+import { addGuess, endBet } from '../../services/bet.service'
 import DefaultPage from '../../components/DefaultPage'
 import { userSelector } from '../SignIn/selectors'
 import { betIdSelector } from '../App/selectors'
@@ -36,7 +37,11 @@ class View extends React.PureComponent {
     takeAGuess(this.props.user.uid, this.props.bet.id, guess)
     addGuess(this.props.bet.id, this.props.user.uid, guess)
   }
+  endTheBet = result => {
+    endBet(this.props.bet.id, result)
+  }
   canTakeGuess = () => !this.props.bet.participants[this.props.user.uid]
+  canEndBet = () => this.isAdmin() && !this.props.bet.result
 
   render() {
     const { classes, bet } = this.props
@@ -57,6 +62,7 @@ class View extends React.PureComponent {
           render={participantUsers => <Guesses betId={bet.id} showGuesses={this.isAdmin()} users={participantUsers} />}
         />
         {this.canTakeGuess() && <TakeAGuess handleGuess={this.addGuess} />}
+        {this.canEndBet() && <EndBet handleEndBet={this.endTheBet} />}
         {this.isAdmin() && (
           <Button
             variant="raised"
