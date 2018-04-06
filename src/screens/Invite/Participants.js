@@ -26,7 +26,7 @@ class Participants extends PureComponent {
         <List>
           {users.map(user => (
             <ListItem key={user.uid} dense className={classes.listItem}>
-              <Avatar alt="User profile image" src={user.photoURL || '/img/unknown_50x50.jpg'} />
+              <Avatar alt="Participant profile image" src={user.photoURL || '/img/unknown_50x50.jpg'} />
               <ListItemText primary={user.displayName} />
               {!user.participations[betId] && (
                 <ListItemSecondaryAction>
