@@ -13,26 +13,29 @@ class Guesses extends PureComponent {
     const { users, betId } = this.props
 
     return (
-      <div>
-        {users.length && (
-          <List>
-            {users
-              .map(user => (
-                <ListItem key={user.uid} dense>
-                  <Avatar alt="User profile image" src={user.photoURL || '/img/unknown_50x50.jpg'} />
-                  <ListItemText primary={user.displayName} secondary={this.showGuess(user.participations[betId])} />
-                </ListItem>
-              ))
-              .reduce((prev, curr) => [
-                prev,
-                <li key={`divider-${prev.uid}`}>
-                  <Divider inset />
-                </li>,
-                curr,
-              ])}
-          </List>
+      <List>
+        {users.length ? (
+          users
+            .map(user => (
+              <ListItem key={user.uid} dense>
+                <Avatar alt="User profile image" src={user.photoURL || '/img/unknown_50x50.jpg'} />
+                <ListItemText primary={user.displayName} secondary={this.showGuess(user.participations[betId])} />
+              </ListItem>
+            ))
+            .reduce((prev, curr) => [
+              prev,
+              <li key={`divider-${prev.uid}`}>
+                <Divider inset />
+              </li>,
+              curr,
+            ])
+        ) : (
+          <ListItem dense>
+            <Avatar aria-label="no bet yet">:/</Avatar>
+            <ListItemText primary="This bet has no participants" secondary="go ahead and invite some" />
+          </ListItem>
         )}
-      </div>
+      </List>
     )
   }
 }
