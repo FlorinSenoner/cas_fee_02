@@ -20,7 +20,8 @@ const styles = theme => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'flex-end',
-    padding: '0 8px',
+    padding: theme.spacing.unit,
+    paddingRight: 0,
     ...theme.mixins.toolbar,
   },
 })
@@ -36,6 +37,7 @@ const PersistentDrawer = ({ classes, open, handelClose }) => (
   >
     <div>
       <div className={classes.drawerHeader} role="button" tabIndex={0} onClick={handelClose} onKeyDown={handelClose}>
+        <img src="/img/logo.png" alt="Wettemer Logo" />
         <IconButton>
           <ChevronLeftIcon />
         </IconButton>
