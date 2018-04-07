@@ -28,6 +28,9 @@ const styles = theme => ({
     paddingRight: 0,
     ...theme.mixins.toolbar,
   },
+  logo: {
+    maxWidth: '80%',
+  },
 })
 
 class PersistentDrawer extends React.PureComponent {
@@ -56,7 +59,7 @@ class PersistentDrawer extends React.PureComponent {
             onClick={handelClose}
             onKeyDown={handelClose}
           >
-            <img src="/img/logo.png" alt="Wettemer Logo" />
+            <img className={classes.logo} src="/img/logo.png" alt="Wettemer Logo" />
             <IconButton>
               <ChevronLeftIcon />
             </IconButton>
