@@ -18,10 +18,12 @@ class CreateBet extends React.Component {
   handleSubmit = values => {
     addBet(
       {
-        title: values.title,
-        dateCreated: new Date(),
         admin: this.props.user.uid,
-        privacy: values.privacy,
+        title: values.title,
+        description: values.description ? values.description : '',
+        dateCreated: new Date(),
+        dateEnd: values.endDate ? new Date(`${values.endDate}${values.endTime ? `T${values.endTime}` : ''}`) : '',
+        privacy: values.privacy ? 'public' : 'private',
       },
       this.props.changePage,
     )

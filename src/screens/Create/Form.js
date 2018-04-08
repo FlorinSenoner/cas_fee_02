@@ -49,7 +49,7 @@ const styles = theme => ({
   },
 })
 
-const Form = ({ submitting, invalid, handleSubmit, classes, privacyValue }) => (
+const Form = ({ submitting, handleSubmit, classes, privacyValue }) => (
   <form onSubmit={handleSubmit}>
     <div className={classes.wrapper}>
       <Field
@@ -116,7 +116,7 @@ const Form = ({ submitting, invalid, handleSubmit, classes, privacyValue }) => (
       <Button
         type="submit"
         aria-label="create bet"
-        disabled={submitting || invalid}
+        disabled={submitting}
         variant="raised"
         color="primary"
         className={classes.button}
@@ -130,7 +130,6 @@ const Form = ({ submitting, invalid, handleSubmit, classes, privacyValue }) => (
 
 Form.propTypes = {
   submitting: PropTypes.bool.isRequired,
-  invalid: PropTypes.bool.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   classes: PropTypes.object.isRequired,
   privacyValue: PropTypes.bool.isRequired,
@@ -140,6 +139,9 @@ const validate = values => {
   const errors = {}
   if (!values.title) {
     errors.title = 'Field is required'
+  }
+  if (values.endTime && !values.endDate) {
+    errors.endDate = 'Field is required if an end Time is defined'
   }
   return errors
 }
