@@ -30,7 +30,7 @@ class View extends React.PureComponent {
     user: propTypesUser.isRequired,
   }
 
-  toDashboard = () => this.props.changePage('/')
+  goToDashboard = () => this.props.changePage('/')
   toInvite = () => this.props.changePage(`/bet/${this.props.bet.id}/invite`)
   isAdmin = () => this.props.user.uid === this.props.bet.admin
   addGuess = guess => {
@@ -52,7 +52,7 @@ class View extends React.PureComponent {
           variant="raised"
           color="primary"
           aria-label="go to dashboard"
-          onClick={this.toDashboard}
+          onClick={this.goToDashboard}
           className={classes.button}
         >
           back
