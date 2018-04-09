@@ -66,7 +66,7 @@ Guesses.propTypes = {
   classes: PropTypes.object.isRequired,
   users: PropTypes.arrayOf(propTypesUser).isRequired,
   betId: PropTypes.string.isRequired,
-  result: PropTypes.string.isRequired,
+  result: PropTypes.string,
   currentUid: PropTypes.string.isRequired,
   showAllGuesses: PropTypes.bool.isRequired,
 }
