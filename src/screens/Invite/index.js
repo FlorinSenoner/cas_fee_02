@@ -32,7 +32,7 @@ class Invite extends React.PureComponent {
 
   addParticipant = async values => {
     try {
-      const participant = await getUserByEmail(values.participant)
+      const participant = await getUserByEmail(values.participant.toLowerCase())
       addParticipant(this.props.match.params.id, participant.uid)
       addParticipation(participant.uid, this.props.match.params.id)
       this.props.resetForm('InviteForm')
