@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { push } from 'react-router-redux'
 import { connect } from 'react-redux'
 import Button from 'material-ui/Button'
+import AddMoreIcon from 'material-ui-icons/GroupAdd'
 import { withStyles } from 'material-ui/styles'
 import { compose, branch, renderNothing } from 'recompose'
 import { propTypesBet, propTypesUser } from '../../customPropTypes'
@@ -19,6 +20,9 @@ import { betIdSelector } from '../App/selectors'
 const styles = theme => ({
   button: {
     margin: theme.spacing.unit,
+  },
+  rightIcon: {
+    marginLeft: theme.spacing.unit,
   },
 })
 
@@ -70,7 +74,7 @@ class View extends React.PureComponent {
               onClick={this.toInvite}
               className={classes.button}
             >
-              Invite more
+              Invite <AddMoreIcon className={classes.rightIcon} />
             </Button>
           )}
       </DefaultPage>
