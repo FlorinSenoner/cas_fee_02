@@ -18,6 +18,9 @@ const styles = {
   card: {
     minWidth: 275,
   },
+  cardEnd: {
+    opacity: 0.5,
+  },
   deleteBet: {
     color: 'crimson',
   },
@@ -42,8 +45,8 @@ const styles = {
   },
   badge: {
     position: 'absolute',
-    right: 0,
-    top: 0,
+    right: 4,
+    top: 4,
   },
 }
 
@@ -74,7 +77,7 @@ class BetCard extends PureComponent {
     // const { anchorEl } = this.state
     const { bet, classes } = this.props
     return (
-      <Card component="li" className={classes.card} elevation={4}>
+      <Card component="li" className={`${classes.card} ${bet.result && classes.cardEnd}`} elevation={4}>
         <Button component={Link} className={classes.button} to={`/bet/${bet.id}/view`}>
           {bet.participants_count > 0 && (
             <Badge color="secondary" badgeContent={bet.participants_count} className={classes.badge}>
@@ -96,10 +99,6 @@ class BetCard extends PureComponent {
             component="h3"
             title={bet.title}
             subheader={bet.description}
-            // subheader={`Participants: ${bet.participants_count} - created: ${format(
-            //   bet.dateCreated,
-            //   'dddd, DD MMM, YYYY',
-            // )}`}
           />
           {/* <Menu id="simple-menu" anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={this.handleClose}>
             <MenuItem onClick={this.handleClose}>Edit</MenuItem>
