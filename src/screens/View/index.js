@@ -30,7 +30,6 @@ class View extends React.PureComponent {
     user: propTypesUser.isRequired,
   }
 
-  goToDashboard = () => this.props.changePage('/')
   toInvite = () => this.props.changePage(`/bet/${this.props.bet.id}/invite`)
   isAdmin = () => this.props.user.uid === this.props.bet.admin
   addGuess = guess => {
@@ -46,18 +45,9 @@ class View extends React.PureComponent {
   render() {
     const { classes, bet, user } = this.props
     return (
-      <DefaultPage>
+      <DefaultPage linkToDashboard>
         <h1>{bet.title}</h1>
         <p>{bet.result ? `Ended. Result: ${bet.result}` : 'still running'}</p>
-        <Button
-          variant="raised"
-          color="primary"
-          aria-label="go to dashboard"
-          onClick={this.goToDashboard}
-          className={classes.button}
-        >
-          back
-        </Button>
         <WithParticipants
           betId={bet.id}
           render={participantUsers => (

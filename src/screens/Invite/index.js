@@ -1,12 +1,9 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
-import { push } from 'react-router-redux'
 import { connect } from 'react-redux'
-import Button from 'material-ui/Button'
 import { withStyles } from 'material-ui/styles'
 import { compose } from 'recompose'
 import { reset } from 'redux-form'
-import Done from 'material-ui-icons/Done'
 
 import DefaultPage from '../../components/DefaultPage'
 import InviteForm from './InviteForm'
@@ -20,15 +17,10 @@ const styles = theme => ({
   button: {
     margin: theme.spacing.unit,
   },
-  rightIcon: {
-    marginLeft: theme.spacing.unit,
-  },
 })
 
 class Invite extends React.PureComponent {
   static propTypes = {
-    classes: PropTypes.object.isRequired,
-    changePage: PropTypes.func.isRequired,
     resetForm: PropTypes.func.isRequired,
     match: PropTypes.object.isRequired,
   }
@@ -50,7 +42,7 @@ class Invite extends React.PureComponent {
   }
 
   render() {
-    const { changePage, classes, match } = this.props
+    const { match } = this.props
     return (
       <DefaultPage linkToDashboard>
         <h1>Invite some people</h1>
@@ -69,11 +61,6 @@ class Invite extends React.PureComponent {
             </Fragment>
           )}
         />
-
-        <Button variant="raised" color="primary" onClick={() => changePage('/')} className={classes.button}>
-          done
-          <Done className={classes.rightIcon} />
-        </Button>
       </DefaultPage>
     )
   }
@@ -84,7 +71,6 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = {
-  changePage: push,
   resetForm: reset,
 }
 
