@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { compose } from 'recompose'
 import { withStyles } from 'material-ui/styles'
+import Badge from 'material-ui/Badge'
 // import IconButton from 'material-ui/IconButton'
 import Card, { CardHeader } from 'material-ui/Card'
 // import MoreVertIcon from 'material-ui-icons/MoreVert'
@@ -24,6 +25,7 @@ const styles = {
     display: 'block',
     padding: 0,
     textTransform: 'unset',
+    position: 'relative',
   },
   content: {
     maxWidth: 'calc(100% - 56px)',
@@ -37,6 +39,11 @@ const styles = {
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
+  },
+  badge: {
+    position: 'absolute',
+    right: 0,
+    top: 0,
   },
 }
 
@@ -69,6 +76,11 @@ class BetCard extends PureComponent {
     return (
       <Card component="li" className={classes.card} elevation={4}>
         <Button component={Link} className={classes.button} to={`/bet/${bet.id}/view`}>
+          {bet.participants_count > 0 && (
+            <Badge color="secondary" badgeContent={bet.participants_count} className={classes.badge}>
+              {' '}
+            </Badge>
+          )}
           <CardHeader
             avatar={bet.title && <Avatar aria-label="Recipe">{bet.title.charAt(0).toUpperCase()}</Avatar>}
             // action={
