@@ -44,10 +44,11 @@ class View extends React.PureComponent {
   canEndBet = () => this.isAdmin() && !this.props.bet.result
 
   render() {
-    const { classes, bet } = this.props
+    const { classes, bet, user } = this.props
     return (
       <DefaultPage>
         <h1>{bet.title}</h1>
+        <p>{bet.result ? `Ended. Result: ${bet.result}` : 'still running'}</p>
         <Button
           variant="raised"
           color="primary"
@@ -59,21 +60,29 @@ class View extends React.PureComponent {
         </Button>
         <WithParticipants
           betId={bet.id}
-          render={participantUsers => <Guesses betId={bet.id} showGuesses={this.isAdmin()} users={participantUsers} />}
+          render={participantUsers => (
+            <Guesses
+              betId={bet.id}
+              currentUid={user.uid}
+              showAllGuesses={this.isAdmin() || bet.result}
+              users={participantUsers}
+            />
+          )}
         />
         {this.canTakeGuess() && <TakeAGuess handleGuess={this.addGuess} />}
         {this.canEndBet() && <EndBet handleEndBet={this.endTheBet} />}
-        {this.isAdmin() && (
-          <Button
-            variant="raised"
-            color="primary"
-            aria-label="invite more people"
-            onClick={this.toInvite}
-            className={classes.button}
-          >
-            Invite more
-          </Button>
-        )}
+        {this.isAdmin() &&
+          !bet.result && (
+            <Button
+              variant="raised"
+              color="primary"
+              aria-label="invite more people"
+              onClick={this.toInvite}
+              className={classes.button}
+            >
+              Invite more
+            </Button>
+          )}
       </DefaultPage>
     )
   }

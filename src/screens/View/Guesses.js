@@ -7,10 +7,15 @@ import Divider from 'material-ui/Divider'
 import { propTypesUser } from '../../customPropTypes'
 
 class Guesses extends PureComponent {
-  showGuess = guess => (this.props.showGuesses ? guess || 'not guessed yet' : undefined)
+  showGuess = user => {
+    if (this.props.showAllGuesses || user.uid === this.props.currentUid) {
+      return user.participations[this.props.betId] || 'not guessed yet'
+    }
+    return undefined
+  }
 
   render() {
-    const { users, betId } = this.props
+    const { users } = this.props
 
     return (
       <List>
@@ -19,7 +24,7 @@ class Guesses extends PureComponent {
             .map(user => (
               <ListItem key={user.uid} dense>
                 <Avatar alt="User profile image" src={user.photoURL || '/img/unknown_50x50.jpg'} />
-                <ListItemText primary={user.displayName} secondary={this.showGuess(user.participations[betId])} />
+                <ListItemText primary={user.displayName} secondary={this.showGuess(user)} />
               </ListItem>
             ))
             .reduce((prev, curr) => [
@@ -43,7 +48,8 @@ class Guesses extends PureComponent {
 Guesses.propTypes = {
   users: PropTypes.arrayOf(propTypesUser).isRequired,
   betId: PropTypes.string.isRequired,
-  showGuesses: PropTypes.bool.isRequired,
+  currentUid: PropTypes.string.isRequired,
+  showAllGuesses: PropTypes.bool.isRequired,
 }
 
 export default Guesses
