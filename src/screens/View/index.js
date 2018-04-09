@@ -43,7 +43,8 @@ class View extends React.PureComponent {
   endTheBet = result => {
     endBet(this.props.bet.id, result)
   }
-  canTakeGuess = () => this.props.bet.participants && !this.props.bet.participants[this.props.user.uid]
+  canTakeGuess = () =>
+    this.props.bet.participants && !this.props.bet.result && !this.props.bet.participants[this.props.user.uid]
   canEndBet = () => this.isAdmin() && !this.props.bet.result
 
   render() {
