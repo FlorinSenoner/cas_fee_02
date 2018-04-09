@@ -7,6 +7,7 @@ import Typography from 'material-ui/Typography'
 import IconButton from 'material-ui/IconButton'
 import MenuIcon from 'material-ui-icons/Menu'
 import classNames from 'classnames'
+import Clear from 'material-ui-icons/Clear'
 
 import { drawerWidth } from './PersistentDrawer'
 
@@ -30,12 +31,15 @@ const styles = theme => ({
     marginLeft: 12,
     marginRight: 20,
   },
+  goToDashboard: {
+    marginLeft: 'auto',
+  },
   hide: {
     display: 'none',
   },
 })
 
-const NavBar = ({ classes, open, handleOpen }) => (
+const NavBar = ({ classes, open, handleOpen, goToDashboard }) => (
   <AppBar
     position="fixed"
     className={classNames(classes.appBar, {
@@ -54,6 +58,16 @@ const NavBar = ({ classes, open, handleOpen }) => (
       <Typography variant="title" color="inherit" noWrap>
         Wettemer
       </Typography>
+      {goToDashboard && (
+        <IconButton
+          color="inherit"
+          aria-label="back to dashboard"
+          onClick={goToDashboard}
+          className={classNames(classes.goToDashboard)}
+        >
+          <Clear />
+        </IconButton>
+      )}
     </Toolbar>
   </AppBar>
 )
@@ -62,6 +76,7 @@ NavBar.propTypes = {
   classes: PropTypes.object.isRequired,
   open: PropTypes.bool.isRequired,
   handleOpen: PropTypes.func.isRequired,
+  goToDashboard: PropTypes.oneOfType([PropTypes.func, PropTypes.bool]).isRequired,
 }
 
 const enhance = withStyles(styles)

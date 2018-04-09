@@ -6,6 +6,7 @@ import Button from 'material-ui/Button'
 import { withStyles } from 'material-ui/styles'
 import { compose } from 'recompose'
 import { reset } from 'redux-form'
+import Done from 'material-ui-icons/Done'
 
 import DefaultPage from '../../components/DefaultPage'
 import InviteForm from './InviteForm'
@@ -19,6 +20,9 @@ const styles = theme => ({
   button: {
     margin: theme.spacing.unit,
   },
+  rightIcon: {
+    marginLeft: theme.spacing.unit,
+  },
 })
 
 class Invite extends React.PureComponent {
@@ -29,7 +33,7 @@ class Invite extends React.PureComponent {
     match: PropTypes.object.isRequired,
   }
 
-  removeParticipant(userId, betId) {
+  removeParticipant = (userId, betId) => {
     removeParticipant(betId, userId)
     removeParticipation(userId, betId)
   }
@@ -48,7 +52,7 @@ class Invite extends React.PureComponent {
   render() {
     const { changePage, classes, match } = this.props
     return (
-      <DefaultPage>
+      <DefaultPage linkToDashboard>
         <h1>Invite some people</h1>
         <WithParticipants
           betId={match.params.id}
@@ -68,6 +72,7 @@ class Invite extends React.PureComponent {
 
         <Button variant="raised" color="primary" onClick={() => changePage('/')} className={classes.button}>
           done
+          <Done className={classes.rightIcon} />
         </Button>
       </DefaultPage>
     )

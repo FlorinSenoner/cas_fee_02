@@ -4,6 +4,7 @@ import Button from 'material-ui/Button'
 import { withStyles } from 'material-ui/styles'
 import { compose } from 'recompose'
 import { Field, reduxForm } from 'redux-form'
+import Send from 'material-ui-icons/Send'
 
 import MuiTextField from '../../components/Input/MuiTextField'
 
@@ -15,6 +16,9 @@ const styles = theme => ({
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
     width: 200,
+  },
+  rightIcon: {
+    marginLeft: theme.spacing.unit,
   },
 })
 
@@ -31,7 +35,8 @@ const InviteForm = ({ submitting, handleSubmit, classes }) => (
         className={classes.textField}
       />
       <Button type="submit" disabled={submitting} variant="raised" color="primary" className={classes.button}>
-        Invite
+        invite
+        <Send className={classes.rightIcon} />
       </Button>
     </div>
   </form>

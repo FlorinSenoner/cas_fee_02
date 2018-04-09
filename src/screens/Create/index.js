@@ -2,9 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { push } from 'react-router-redux'
 import { connect } from 'react-redux'
-import Button from 'material-ui/Button'
-import { withStyles } from 'material-ui/styles'
-import { compose } from 'recompose'
 
 import { propTypesUser } from '../../customPropTypes'
 import DefaultPage from '../../components/DefaultPage'
@@ -12,15 +9,8 @@ import CreateBetForm from './Form'
 import { addBet } from '../../services/bet.service'
 import { userSelector } from '../SignIn/selectors'
 
-const styles = theme => ({
-  button: {
-    margin: theme.spacing.unit,
-  },
-})
-
 class CreateBet extends React.Component {
   static propTypes = {
-    classes: PropTypes.object.isRequired,
     user: propTypesUser.isRequired,
     changePage: PropTypes.func.isRequired,
   }
@@ -28,23 +18,21 @@ class CreateBet extends React.Component {
   handleSubmit = values => {
     addBet(
       {
-        title: values.title,
-        dateCreated: new Date(),
         admin: this.props.user.uid,
-        visibility: ['private', 'public'][Math.round(Math.random())],
+        title: values.title,
+        description: values.description ? values.description : '',
+        dateCreated: new Date(),
+        dateEnd: values.endDate ? new Date(`${values.endDate}${values.endTime ? `T${values.endTime}` : ''}`) : '',
+        privacy: values.privacy ? 'public' : 'private',
       },
       this.props.changePage,
     )
   }
   render() {
-    const { changePage, classes } = this.props
     return (
-      <DefaultPage>
+      <DefaultPage linkToDashboard>
         <h1>Create a bet</h1>
         <CreateBetForm onSubmit={this.handleSubmit} />
-        <Button variant="raised" color="primary" onClick={() => changePage('/')} className={classes.button}>
-          cancel
-        </Button>
       </DefaultPage>
     )
   }
@@ -58,6 +46,6 @@ const mapDispatchToProps = {
   changePage: push,
 }
 
-const enhance = compose(withStyles(styles), connect(mapStateToProps, mapDispatchToProps))
+const enhance = connect(mapStateToProps, mapDispatchToProps)
 
 export default enhance(CreateBet)
