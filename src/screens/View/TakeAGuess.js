@@ -1,12 +1,24 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { compose } from 'recompose'
+import { withStyles } from 'material-ui/styles'
+import GuessIcon from 'material-ui-icons/SmsFailed'
 import Button from 'material-ui/Button'
 import TextField from 'material-ui/TextField'
 import Dialog, { DialogActions, DialogContent, DialogContentText, DialogTitle } from 'material-ui/Dialog'
 
-export default class TakeAGuess extends React.PureComponent {
+const styles = () => ({
+  addBtnRightCorner: {
+    position: 'absolute',
+    bottom: '1rem',
+    right: '1rem',
+  },
+})
+
+class TakeAGuess extends React.PureComponent {
   static propTypes = {
     handleGuess: PropTypes.func.isRequired,
+    classes: PropTypes.object.isRequired,
   }
 
   state = {
@@ -29,8 +41,13 @@ export default class TakeAGuess extends React.PureComponent {
   render() {
     return (
       <div>
-        <Button color="primary" onClick={this.handleClickOpen}>
-          Make a Guess
+        <Button
+          className={this.props.classes.addBtnRightCorner}
+          variant="fab"
+          color="primary"
+          onClick={this.handleClickOpen}
+        >
+          <GuessIcon />
         </Button>
         <Dialog open={this.state.open} onClose={this.handleClose} aria-labelledby="form-dialog-title">
           <DialogTitle id="form-dialog-title">Your guess</DialogTitle>
@@ -53,3 +70,7 @@ export default class TakeAGuess extends React.PureComponent {
     )
   }
 }
+
+const enhance = compose(withStyles(styles))
+
+export default enhance(TakeAGuess)

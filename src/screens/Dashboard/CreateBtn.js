@@ -12,7 +12,7 @@ const styles = theme => ({
   button: {
     margin: theme.spacing.unit,
   },
-  btnCreate: {
+  addBtnRightCorner: {
     position: 'absolute',
     bottom: '1rem',
     right: '1rem',
@@ -24,7 +24,7 @@ const CreateBtn = ({ classes, changePage }) => (
     variant="fab"
     color="secondary"
     aria-label="create bet"
-    className={classes.btnCreate}
+    className={classes.addBtnRightCorner}
     onClick={() => changePage('/create')}
   >
     <AddIcon />
