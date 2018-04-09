@@ -11,6 +11,7 @@ import { propTypesUser } from '../../customPropTypes'
 const styles = () => ({
   userAvatarCurrent: {
     border: '4px turquoise solid',
+    boxShadow: '0 0 5px turquoise',
   },
 })
 
