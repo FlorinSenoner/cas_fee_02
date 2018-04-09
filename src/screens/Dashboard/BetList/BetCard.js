@@ -4,7 +4,6 @@ import { compose } from 'recompose'
 import { withStyles } from 'material-ui/styles'
 // import IconButton from 'material-ui/IconButton'
 import Card, { CardHeader } from 'material-ui/Card'
-import { format } from 'date-fns'
 // import MoreVertIcon from 'material-ui-icons/MoreVert'
 import Avatar from 'material-ui/Avatar'
 // import Menu, { MenuItem } from 'material-ui/Menu'
@@ -24,6 +23,20 @@ const styles = {
   button: {
     display: 'block',
     padding: 0,
+    textTransform: 'unset',
+  },
+  content: {
+    maxWidth: 'calc(100% - 56px)',
+  },
+  title: {
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+  },
+  subheader: {
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
   },
 }
 
@@ -63,12 +76,18 @@ class BetCard extends PureComponent {
             //     <MoreVertIcon />
             //   </IconButton>
             // }
+            classes={{
+              content: classes.content,
+              title: classes.title,
+              subheader: classes.subheader,
+            }}
             component="h3"
             title={bet.title}
-            subheader={`Participants: ${bet.participants_count} - created: ${format(
-              bet.dateCreated,
-              'dddd, DD MMM, YYYY',
-            )}`}
+            subheader={bet.description}
+            // subheader={`Participants: ${bet.participants_count} - created: ${format(
+            //   bet.dateCreated,
+            //   'dddd, DD MMM, YYYY',
+            // )}`}
           />
           {/* <Menu id="simple-menu" anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={this.handleClose}>
             <MenuItem onClick={this.handleClose}>Edit</MenuItem>
