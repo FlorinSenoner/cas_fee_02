@@ -17,9 +17,6 @@ const styles = theme => ({
     marginRight: theme.spacing.unit,
     width: 200,
   },
-  rightIcon: {
-    marginLeft: theme.spacing.unit,
-  },
 })
 
 const InviteForm = ({ submitting, handleSubmit, classes }) => (
@@ -35,7 +32,7 @@ const InviteForm = ({ submitting, handleSubmit, classes }) => (
         className={classes.textField}
       />
       <Button type="submit" disabled={submitting} variant="raised" color="primary" className={classes.button}>
-        <AddIcon className={classes.rightIcon} />
+        <AddIcon />
       </Button>
     </div>
   </form>
