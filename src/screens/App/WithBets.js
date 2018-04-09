@@ -13,7 +13,7 @@ class WithBets extends PureComponent {
     user: propTypesUser.isRequired,
   }
 
-  componentDidUpdate() {
+  componentDidMount() {
     onMyBetsUpdate(this.props.user.uid, this.updateMyBets)
     onInvitesUpdate(this.props.user.uid, this.updateInvites)
     onGuessesUpdate(this.props.user.uid, this.updateGuesses)

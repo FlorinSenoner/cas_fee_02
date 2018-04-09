@@ -49,7 +49,7 @@ class App extends PureComponent {
 
     return (
       <Reboot>
-        <WithBets user={user} />
+        {isAuthenticated() && <WithBets user={user} />}
         <Switch>
           <PrivateRoute exact path="/" component={Dashboard} />
           <PrivateRoute exact path="/create" component={CreateBet} />
