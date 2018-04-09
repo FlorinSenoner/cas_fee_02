@@ -6,6 +6,7 @@ import List, { ListItem, ListItemText } from 'material-ui/List'
 import Avatar from 'material-ui/Avatar'
 import Divider from 'material-ui/Divider'
 
+import Result from './Result'
 import { propTypesUser } from '../../customPropTypes'
 
 const styles = () => ({
@@ -26,7 +27,7 @@ class Guesses extends PureComponent {
   isCurrentUser = userId => this.props.currentUid === userId
 
   render() {
-    const { users, classes } = this.props
+    const { users, classes, result } = this.props
 
     return (
       <List>
@@ -40,6 +41,7 @@ class Guesses extends PureComponent {
                   src={user.photoURL || '/img/unknown_50x50.jpg'}
                 />
                 <ListItemText primary={user.displayName} secondary={this.showGuess(user)} />
+                <Result result={result} guess={user.participations[this.props.betId]} />
               </ListItem>
             ))
             .reduce((prev, curr) => [
@@ -64,6 +66,7 @@ Guesses.propTypes = {
   classes: PropTypes.object.isRequired,
   users: PropTypes.arrayOf(propTypesUser).isRequired,
   betId: PropTypes.string.isRequired,
+  result: PropTypes.string.isRequired,
   currentUid: PropTypes.string.isRequired,
   showAllGuesses: PropTypes.bool.isRequired,
 }

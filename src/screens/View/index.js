@@ -57,6 +57,7 @@ class View extends React.PureComponent {
           render={participantUsers => (
             <Guesses
               betId={bet.id}
+              result={bet.result}
               currentUid={user.uid}
               showAllGuesses={this.isAdmin() || !!bet.result}
               users={participantUsers}
