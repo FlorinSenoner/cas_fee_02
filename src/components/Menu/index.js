@@ -52,13 +52,17 @@ const Menu = ({ classes, isDrawerOpen, openDrawer, closeDrawer, children, goToDa
     <div className={classes.appFrame}>
       <NavBar open={isDrawerOpen} handleOpen={openDrawer} goToDashboard={goToDashboard} />
       <PersistentDrawer open={isDrawerOpen} handelClose={closeDrawer} />
-      <main
+      <div
+        role="button"
+        tabIndex="0"
+        onKeyPress={closeDrawer}
+        onClick={closeDrawer}
         className={classNames(classes.content, {
           [classes.contentShift]: isDrawerOpen,
         })}
       >
         {children}
-      </main>
+      </div>
     </div>
   </div>
 )
