@@ -23,6 +23,7 @@ class CreateBet extends React.Component {
       title: values.title,
       description: values.description ? values.description : '',
       dateCreated: new Date(),
+      participants: {},
       dateEnd: values.endDate ? new Date(`${values.endDate}${values.endTime ? `T${values.endTime}` : ''}`) : '',
       privacy: values.privacy ? 'public' : 'private',
     })

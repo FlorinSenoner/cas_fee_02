@@ -79,8 +79,8 @@ class BetCard extends PureComponent {
     return (
       <Card component="li" className={`${classes.card} ${bet.result && classes.cardEnd}`} elevation={4}>
         <Button component={Link} className={classes.button} to={`/bet/${bet.id}/view`}>
-          {bet.participants_count > 0 && (
-            <Badge color="secondary" badgeContent={bet.participants_count} className={classes.badge}>
+          {Object.keys(bet.participants).length > 0 && (
+            <Badge color="secondary" badgeContent={Object.keys(bet.participants).length} className={classes.badge}>
               {' '}
             </Badge>
           )}
