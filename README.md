@@ -2,7 +2,7 @@
 
 ## 🔥 What's hot
 #### Progressive Web App
-Wettemer🄬 was developed **mobile first**. It updates **real-time** without you having to reload the site even once. 
+Wettemer🄬 was developed **mobile first** with a fluid design. It updates **real-time** without you having to reload the site even once. 
 Most features that Wettemer🄬 offers are also available **offline**.
 
 #### Latest and newest front end technology
@@ -15,7 +15,8 @@ Most features that Wettemer🄬 offers are also available **offline**.
 * Using beta software (Firestore, Firebase Functions, Material UI) took a lot of time and effort. Even though we learned a lot :)
 * React is awesome and fun, but there are too many add-on libraries to choose from. That takes a lot of time just for research.
 * During the CAS FEE only little practical knowledge on how to build **real react apps** (not counters) was given.
-* Real-time and offline is awesome. But there's no such thing as a free lunch -> `devtime++` 
+* Real-time and offline is awesome. But there's no such thing as a free lunch -> `devtime++`
+* We are no designers
 
 ## 🤓 Demo
 http://wettemer.com
