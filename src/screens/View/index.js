@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { push } from 'react-router-redux'
+import { push, replace } from 'react-router-redux'
 import { connect } from 'react-redux'
 import Button from 'material-ui/Button'
-import AddMoreIcon from 'material-ui-icons/GroupAdd'
+import Group from 'material-ui-icons/Group'
 import { withStyles } from 'material-ui/styles'
 import { compose, branch, renderNothing } from 'recompose'
 import { propTypesBet, propTypesUser } from '../../customPropTypes'
@@ -12,8 +12,9 @@ import Guesses from './Guesses'
 import TakeAGuess from './TakeAGuess'
 import EndBet from './EndBet'
 import { takeAGuess } from '../../services/user.service'
-import { addGuess, endBet } from '../../services/bet.service'
+import { addGuess, endBet, deleteBet } from '../../services/bet.service'
 import DefaultPage from '../../components/DefaultPage'
+import { openSnackbar, editSnackbarText } from '../App/SnackBar/actions'
 import { userSelector } from '../SignIn/selectors'
 import { betIdSelector } from '../App/selectors'
 
@@ -29,12 +30,15 @@ const styles = theme => ({
 class View extends React.PureComponent {
   static propTypes = {
     classes: PropTypes.object.isRequired,
-    changePage: PropTypes.func.isRequired,
+    pushPage: PropTypes.func.isRequired,
+    replacePage: PropTypes.func.isRequired,
+    open: PropTypes.func.isRequired,
+    editText: PropTypes.func.isRequired,
     bet: propTypesBet.isRequired,
     user: propTypesUser.isRequired,
   }
 
-  toInvite = () => this.props.changePage(`/bet/${this.props.bet.id}/invite`)
+  goToInvite = () => this.props.pushPage(`/bet/${this.props.bet.id}/invite`)
   addGuess = guess => {
     takeAGuess(this.props.user.uid, this.props.bet.id, guess)
     addGuess(this.props.bet.id, this.props.user.uid, guess)
@@ -46,6 +50,16 @@ class View extends React.PureComponent {
   canTakeGuess = () =>
     this.props.bet.participants && !this.props.bet.result && !this.props.bet.participants[this.props.user.uid]
   canEndBet = () => this.isAdmin() && !this.props.bet.result
+
+  deleteBetHandler = () => {
+    if (Object.keys(this.props.bet.participants).length === 0) {
+      deleteBet(this.props.bet.id)
+      this.props.replacePage('/')
+    } else {
+      this.props.open()
+      this.props.editText({ text: 'please remove participants before deleting the bet' })
+    }
+  }
 
   render() {
     const { classes, bet, user } = this.props
@@ -73,12 +87,17 @@ class View extends React.PureComponent {
               variant="raised"
               color="primary"
               aria-label="invite more people"
-              onClick={this.toInvite}
+              onClick={this.goToInvite}
               className={classes.button}
             >
-              Invite <AddMoreIcon className={classes.rightIcon} />
+              Manage Invites <Group className={classes.rightIcon} />
             </Button>
           )}
+        {this.isAdmin() && (
+          <Button color="primary" aria-label="delete bet" onClick={this.deleteBetHandler} className={classes.button}>
+            DELETE
+          </Button>
+        )}
       </DefaultPage>
     )
   }
@@ -90,7 +109,10 @@ const mapStateToProps = (state, ownProps) => ({
 })
 
 const mapDispatchToProps = {
-  changePage: push,
+  pushPage: push,
+  replacePage: replace,
+  open: openSnackbar,
+  editText: editSnackbarText,
 }
 
 const enhance = compose(
