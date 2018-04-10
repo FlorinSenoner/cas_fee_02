@@ -1,6 +1,10 @@
 # 📝 Changelog
 
 ## next version
+#### v0.3.0
+* MVP implemented
+* getting ready for presentation
+
 #### v0.2.0
 * offline
 * define initial DB structure and connect to firebase
