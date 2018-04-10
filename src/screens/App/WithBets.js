@@ -1,11 +1,11 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { onMyBetsUpdate, onGuessesUpdate, onInvitesUpdate } from '../../services/bet.service'
 import { myBetsUpdate, guessesUpdate, invitesUpdate } from './betActions'
 import { propTypesUser } from '../../customPropTypes'
 
-class WithBets extends PureComponent {
+class WithBets extends Component {
   static propTypes = {
     myBetsUpdate: PropTypes.func.isRequired,
     invitesUpdate: PropTypes.func.isRequired,
