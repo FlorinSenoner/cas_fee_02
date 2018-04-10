@@ -1,36 +1,30 @@
 # 🗂 Folder Structure
 
-##be
-* all the code related to the back-end (server)
+##build
+build folder that get's deployed
 
-## fe
-* all the code related to the front-end (app)
+##docs
+documentation folder
 
-#### components
-* react components without logic
+##functions
+firebase functions that will run on the backend side
 
-#### containers
-* react components with logic
+##public
+all content that will be served static
 
-#### images
+#### img
 * images
 * logos
-* favicon
 
-#### translations
-* translation files needed for i18n
+##src
+all js code for the app
 
-#### utils
-* folder with various utilities
+#### components
+dumb and independent component
 
-#### images
+#### screens
+* each screen represents a main route of the app.
+* screens may contain components as well, but only, if they're just used for that particular screen 
 
-## internals
-* all the code related to the setup/build process
-
-#### webpack
-* all the files related to webpack
-    * production
-    * development
-    * base
-    * dll
+####services
+* connections to firebase backend
