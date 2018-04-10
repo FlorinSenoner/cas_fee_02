@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { push } from 'react-router-redux'
-
 import PropTypes from 'prop-types'
+
 import Menu from '../Menu'
 
 class DefaultPage extends Component {
@@ -12,10 +12,10 @@ class DefaultPage extends Component {
     changePage: PropTypes.func.isRequired,
   }
 
-  handleClick = () => this.props.changePage('/')
+  clickHandler = () => this.props.changePage('/')
 
   render() {
-    return <Menu goToDashboard={this.props.linkToDashboard ? this.handleClick : false}>{this.props.children}</Menu>
+    return <Menu goToDashboard={this.props.linkToDashboard ? this.clickHandler : false}>{this.props.children}</Menu>
   }
 }
 

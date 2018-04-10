@@ -8,25 +8,30 @@ import DefaultPage from '../../components/DefaultPage'
 import CreateBetForm from './Form'
 import { addBet } from '../../services/bet.service'
 import { userSelector } from '../SignIn/selectors'
+import { openSnackbar } from '../App/SnackBar/actions'
 
 class CreateBet extends React.Component {
   static propTypes = {
     user: propTypesUser.isRequired,
     changePage: PropTypes.func.isRequired,
+    openSnackBar: PropTypes.func.isRequired,
   }
 
-  handleSubmit = values => {
-    addBet(
-      {
-        admin: this.props.user.uid,
-        title: values.title,
-        description: values.description ? values.description : '',
-        dateCreated: new Date(),
-        dateEnd: values.endDate ? new Date(`${values.endDate}${values.endTime ? `T${values.endTime}` : ''}`) : '',
-        privacy: values.privacy ? 'public' : 'private',
-      },
-      this.props.changePage,
-    )
+  handleSubmit = async values => {
+    const betId = await addBet({
+      admin: this.props.user.uid,
+      title: values.title,
+      description: values.description ? values.description : '',
+      dateCreated: new Date(),
+      dateEnd: values.endDate ? new Date(`${values.endDate}${values.endTime ? `T${values.endTime}` : ''}`) : '',
+      privacy: values.privacy ? 'public' : 'private',
+    })
+    console.log('Added Bet: ', betId)
+    this.props.changePage(`/bet/${betId}/invite`)
+    this.props.openSnackBar({
+      text: 'Congratulations you created a new bet 🎉',
+      betId,
+    })
   }
   render() {
     return (
@@ -44,6 +49,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   changePage: push,
+  openSnackBar: openSnackbar,
 }
 
 const enhance = connect(mapStateToProps, mapDispatchToProps)

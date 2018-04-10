@@ -1,14 +1,14 @@
 import { db } from '../fire'
 const firebase = require('firebase')
 
-export const addBet = (bet, changePage) => {
-  db
-    .collection('bets')
-    .add(bet)
-    .then(docRef => {
-      changePage(`/bet/${docRef.id}/invite`)
-      console.log('Added Bet: ', docRef.id)
-    })
+export const addBet = async bet => {
+  try {
+    const doc = await db.collection('bets').add(bet)
+    return doc.id
+  } catch (error) {
+    console.log('Error adding bet', error)
+    return false
+  }
 }
 
 export const deleteBet = betId => {

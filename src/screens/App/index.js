@@ -17,6 +17,7 @@ import View from '../View'
 import SignInScreen from '../SignIn'
 import { propTypesUser } from '../../customPropTypes'
 import { userSelector } from '../SignIn/selectors'
+import SnackBar from './SnackBar'
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={props => (isAuthenticated() ? <Component {...props} /> : <SignInScreen />)} />
@@ -57,6 +58,7 @@ class App extends PureComponent {
           <PrivateRoute exact path="/bet/:id/view" component={View} />
           <Route component={NotFound} />
         </Switch>
+        <SnackBar />
       </Reboot>
     )
   }

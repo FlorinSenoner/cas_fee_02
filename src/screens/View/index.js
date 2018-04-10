@@ -35,7 +35,7 @@ class View extends React.PureComponent {
   }
 
   toInvite = () => this.props.changePage(`/bet/${this.props.bet.id}/invite`)
-  isAdmin = () => this.props.user.uid === this.props.bet.admin
+
   addGuess = guess => {
     takeAGuess(this.props.user.uid, this.props.bet.id, guess)
     addGuess(this.props.bet.id, this.props.user.uid, guess)
@@ -43,9 +43,11 @@ class View extends React.PureComponent {
   endTheBet = result => {
     endBet(this.props.bet.id, result)
   }
-  canTakeGuess = () =>
-    this.props.bet.participants && !this.props.bet.result && !this.props.bet.participants[this.props.user.uid]
-  canEndBet = () => this.isAdmin() && !this.props.bet.result
+  isAdmin = this.props.user.uid === this.props.bet.admin
+  canTakeGuess = this.props.bet.participants &&
+    !this.props.bet.result &&
+    !this.props.bet.participants[this.props.user.uid]
+  canEndBet = this.isAdmin && !this.props.bet.result
 
   render() {
     const { classes, bet, user } = this.props
@@ -60,14 +62,14 @@ class View extends React.PureComponent {
               betId={bet.id}
               result={bet.result}
               currentUid={user.uid}
-              showAllGuesses={this.isAdmin() || !!bet.result}
+              showAllGuesses={this.isAdmin || !!bet.result}
               users={participantUsers}
             />
           )}
         />
-        {this.canTakeGuess() && <TakeAGuess handleGuess={this.addGuess} />}
-        {this.canEndBet() && <EndBet handleEndBet={this.endTheBet} />}
-        {this.isAdmin() &&
+        {this.canTakeGuess && <TakeAGuess handleGuess={this.addGuess} />}
+        {this.canEndBet && <EndBet handleEndBet={this.endTheBet} />}
+        {this.isAdmin &&
           !bet.result && (
             <Button
               variant="raised"
