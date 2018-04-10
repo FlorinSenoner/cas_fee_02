@@ -1,8 +1,8 @@
 import { createSelector } from 'reselect'
 
-export const myBetsSelector = state => state.bets.myBets
-export const invitesSelector = state => state.bets.invites
-export const guessesSelector = state => state.bets.guesses
+const myBetsSelector = state => state.bets.myBets
+const invitesSelector = state => state.bets.invites
+const guessesSelector = state => state.bets.guesses
 
 export const myBetsSelectorEnded = (state, ended) => state.bets.myBets.filter(bet => ended || !bet.result)
 export const invitesSelectorEnded = (state, ended) => state.bets.invites.filter(bet => ended || !bet.result)
