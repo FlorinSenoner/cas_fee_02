@@ -2,15 +2,15 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { compose } from 'recompose'
-
 import { withStyles } from 'material-ui/styles'
 import Button from 'material-ui/Button'
 import Snackbar from 'material-ui/Snackbar'
 import IconButton from 'material-ui/IconButton'
 import Close from 'material-ui-icons/Close'
 
-import { closeSnackbar, deleteBetSnackbar } from './actions'
-import { isOpenSelector, textSelector } from './selectors'
+import { deleteBet } from '../../../services/bet.service'
+import { closeSnackbar } from './actions'
+import { isOpenSelector, textSelector, betIdSelector } from './selectors'
 
 const styles = theme => ({
   close: {
@@ -23,9 +23,15 @@ class SnackBar extends Component {
   static propTypes = {
     isOpen: PropTypes.bool.isRequired,
     text: PropTypes.string.isRequired,
+    betId: PropTypes.string.isRequired,
     close: PropTypes.func.isRequired,
-    deleteBet: PropTypes.func.isRequired,
     classes: PropTypes.object.isRequired,
+  }
+
+  clickHandeler = () => {
+    deleteBet(this.props.betId)
+    this.props.close()
+    console.log(`Delete bet with Id: ${this.props.betId}`)
   }
 
   render() {
@@ -44,7 +50,7 @@ class SnackBar extends Component {
         }}
         message={<span id="message-id">{text}</span>}
         action={[
-          <Button key="undo" color="secondary" size="small" onClick={() => console.log('TODO: delete bet')}>
+          <Button key="undo" color="secondary" size="small" onClick={this.clickHandeler}>
             UNDO
           </Button>,
           <IconButton key="close" aria-label="Close" color="inherit" className={classes.close} onClick={close}>
@@ -59,11 +65,11 @@ class SnackBar extends Component {
 const mapStateToProps = state => ({
   isOpen: isOpenSelector(state),
   text: textSelector(state),
+  betId: betIdSelector(state),
 })
 
 const mapDispatchToProps = {
   close: closeSnackbar,
-  deleteBet: deleteBetSnackbar,
 }
 
 const enhance = compose(connect(mapStateToProps, mapDispatchToProps), withStyles(styles))
