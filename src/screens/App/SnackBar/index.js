@@ -37,7 +37,6 @@ class SnackBar extends Component {
   clickHandeler = () => {
     deleteBet(this.props.betId)
     this.props.close()
-    console.log(`Delete bet with Id: ${this.props.betId}`)
     this.props.open({ text: 'bet has been successfully removed', betId: '' })
     this.props.changePage('/')
   }

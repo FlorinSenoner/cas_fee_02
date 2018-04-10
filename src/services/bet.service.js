@@ -17,7 +17,7 @@ export const deleteBet = betId => {
     .doc(betId)
     .delete()
     .then(() => {
-      console.log('Bet successfully deleted!')
+      console.log(`Bet with Id: ${betId} successfully deleted!`)
     })
     .catch(error => {
       console.error('Error removing bet: ', error)
