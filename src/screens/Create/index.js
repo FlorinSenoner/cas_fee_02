@@ -8,13 +8,15 @@ import DefaultPage from '../../components/DefaultPage'
 import CreateBetForm from './Form'
 import { addBet } from '../../services/bet.service'
 import { userSelector } from '../SignIn/selectors'
-import { openSnackbar } from '../App/SnackBar/actions'
+import { openSnackbar, editSnackbarBetId, editSnackbarText } from '../App/SnackBar/actions'
 
 class CreateBet extends React.Component {
   static propTypes = {
     user: propTypesUser.isRequired,
     changePage: PropTypes.func.isRequired,
     openSnackBar: PropTypes.func.isRequired,
+    editText: PropTypes.func.isRequired,
+    editBetId: PropTypes.func.isRequired,
   }
 
   handleSubmit = async values => {
@@ -29,10 +31,9 @@ class CreateBet extends React.Component {
     })
     console.log('Added Bet: ', betId)
     this.props.changePage(`/bet/${betId}/invite`)
-    this.props.openSnackBar({
-      text: 'Congratulations you created a new bet 🎉',
-      betId,
-    })
+    this.props.openSnackBar()
+    this.props.editText({ text: 'Congratulations you created a new bet 🎉' })
+    this.props.editBetId({ betId })
   }
   render() {
     return (
@@ -51,6 +52,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = {
   changePage: push,
   openSnackBar: openSnackbar,
+  editText: editSnackbarText,
+  editBetId: editSnackbarBetId,
 }
 
 const enhance = connect(mapStateToProps, mapDispatchToProps)

@@ -10,7 +10,7 @@ import Close from 'material-ui-icons/Close'
 import { replace } from 'react-router-redux'
 
 import { deleteBet } from '../../../services/bet.service'
-import { closeSnackbar, openSnackbar } from './actions'
+import { closeSnackbar, openSnackbar, editSnackbarText, editSnackbarBetId } from './actions'
 import { isOpenSelector, textSelector, betIdSelector } from './selectors'
 
 const styles = theme => ({
@@ -29,6 +29,8 @@ class SnackBar extends Component {
     text: PropTypes.string.isRequired,
     betId: PropTypes.string.isRequired,
     close: PropTypes.func.isRequired,
+    editText: PropTypes.func.isRequired,
+    editBetId: PropTypes.func.isRequired,
     open: PropTypes.func.isRequired,
     changePage: PropTypes.func.isRequired,
     classes: PropTypes.object.isRequired,
@@ -37,7 +39,10 @@ class SnackBar extends Component {
   clickHandeler = () => {
     deleteBet(this.props.betId)
     this.props.close()
-    this.props.open({ text: 'bet has been successfully removed', betId: '' })
+    this.props.editText({ text: '' })
+    this.props.open()
+    this.props.editText({ text: 'bet has been successfully removed' })
+    this.props.editBetId({ betId: '' })
     this.props.changePage('/')
   }
 
@@ -84,6 +89,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = {
   close: closeSnackbar,
   open: openSnackbar,
+  editText: editSnackbarText,
+  editBetId: editSnackbarBetId,
   changePage: replace,
 }
 

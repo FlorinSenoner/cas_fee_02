@@ -1,4 +1,4 @@
-import { OPEN_SNACKBAR, CLOSE_SNACKBAR } from './constants'
+import * as actions from './constants'
 
 const initialState = {
   isOpen: false,
@@ -8,10 +8,14 @@ const initialState = {
 
 const snackBar = (state = initialState, action) => {
   switch (action.type) {
-    case OPEN_SNACKBAR:
-      return { ...state, isOpen: true, text: action.payload.text, betId: action.payload.betId }
-    case CLOSE_SNACKBAR:
-      return { ...state, isOpen: false, text: '' }
+    case actions.OPEN_SNACKBAR:
+      return { ...state, isOpen: true }
+    case actions.CLOSE_SNACKBAR:
+      return { ...state, isOpen: false }
+    case actions.EDIT_SNACKBAR_TEXT:
+      return { ...state, text: action.payload.text }
+    case actions.EDIT_SNACKBAR_BET_ID:
+      return { ...state, betId: action.payload.betId }
     default:
       return state
   }
