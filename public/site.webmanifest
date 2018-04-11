@@ -1,6 +1,11 @@
 {
     "name": "Wettemer",
     "short_name": "Wettemer",
+    "description": "Wettemer is the most awesome platform to challenge your friends to anything.",
+    "lang": "en",
+    "Scope": "/",
+    "start_url": "/",
+    "splash_pages": null
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -13,7 +18,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
-    "display": "standalone"
+    "theme_color": "#ff72a7",
+    "background_color": "#65cccc",
+    "display": "fullscreen"
 }
