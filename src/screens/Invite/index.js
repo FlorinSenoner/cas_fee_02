@@ -44,7 +44,7 @@ class Invite extends React.PureComponent {
   render() {
     const { match } = this.props
     return (
-      <DefaultPage linkToDashboard>
+      <DefaultPage goToBetView={`/bet/${match.params.id}/view`}>
         <h1>Invite some people</h1>
         <WithParticipants
           betId={match.params.id}

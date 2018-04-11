@@ -47,10 +47,10 @@ const styles = theme => ({
   },
 })
 
-const Menu = ({ classes, isDrawerOpen, openDrawer, closeDrawer, children, goToDashboard }) => (
+const Menu = ({ classes, isDrawerOpen, openDrawer, closeDrawer, children, goToDashboard, goBack }) => (
   <div className={classes.root}>
     <div className={classes.appFrame}>
-      <NavBar open={isDrawerOpen} handleOpen={openDrawer} goToDashboard={goToDashboard} />
+      <NavBar open={isDrawerOpen} handleOpen={openDrawer} goToDashboard={goToDashboard} goBack={goBack} />
       <PersistentDrawer open={isDrawerOpen} handelClose={closeDrawer} />
       <div
         role="button"
@@ -73,6 +73,7 @@ Menu.propTypes = {
   openDrawer: PropTypes.func.isRequired,
   closeDrawer: PropTypes.func.isRequired,
   goToDashboard: PropTypes.oneOfType([PropTypes.func, PropTypes.bool]).isRequired,
+  goBack: PropTypes.oneOfType([PropTypes.func, PropTypes.bool]).isRequired,
   children: PropTypes.node.isRequired,
 }
 

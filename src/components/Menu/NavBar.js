@@ -8,6 +8,7 @@ import IconButton from 'material-ui/IconButton'
 import MenuIcon from 'material-ui-icons/Menu'
 import classNames from 'classnames'
 import Clear from 'material-ui-icons/Clear'
+import ArrowBack from 'material-ui-icons/ArrowBack'
 
 import { drawerWidth } from './PersistentDrawer'
 
@@ -31,22 +32,25 @@ const styles = theme => ({
     marginLeft: 12,
     marginRight: 20,
   },
-  goToDashboard: {
+  backButton: {
     marginLeft: 'auto',
   },
   hide: {
     display: 'none',
   },
+  gutters: {
+    paddingRight: 0,
+  },
 })
 
-const NavBar = ({ classes, open, handleOpen, goToDashboard }) => (
+const NavBar = ({ classes, open, handleOpen, goToDashboard, goBack }) => (
   <AppBar
     position="fixed"
     className={classNames(classes.appBar, {
       [classes.appBarShift]: open,
     })}
   >
-    <Toolbar disableGutters={!open}>
+    <Toolbar disableGutters={!open} classes={{ gutters: classes.gutters }}>
       <IconButton
         color="inherit"
         aria-label="open drawer"
@@ -58,12 +62,22 @@ const NavBar = ({ classes, open, handleOpen, goToDashboard }) => (
       <Typography variant="title" color="inherit" noWrap>
         Wettemer
       </Typography>
+      {goBack && (
+        <IconButton
+          color="inherit"
+          aria-label="back to dashboard"
+          onClick={goBack}
+          className={classNames(classes.backButton)}
+        >
+          <ArrowBack />
+        </IconButton>
+      )}
       {goToDashboard && (
         <IconButton
           color="inherit"
           aria-label="back to dashboard"
           onClick={goToDashboard}
-          className={classNames(classes.goToDashboard)}
+          className={classNames(classes.backButton)}
         >
           <Clear />
         </IconButton>
@@ -77,6 +91,7 @@ NavBar.propTypes = {
   open: PropTypes.bool.isRequired,
   handleOpen: PropTypes.func.isRequired,
   goToDashboard: PropTypes.oneOfType([PropTypes.func, PropTypes.bool]).isRequired,
+  goBack: PropTypes.oneOfType([PropTypes.func, PropTypes.bool]).isRequired,
 }
 
 const enhance = withStyles(styles)
