@@ -39,6 +39,10 @@ const styles = theme => ({
   },
   date: {
     marginRight: theme.spacing.unit * 4,
+    minWidth: 120,
+  },
+  time: {
+    minWidth: 120,
   },
   privacyWrapper: {
     display: 'flex',
@@ -96,6 +100,7 @@ const Form = ({ submitting, handleSubmit, classes, privacyValue }) => (
             shrink: true,
           }}
           component={MuiTextField}
+          className={classes.time}
         />
       </div>
       <div className={classes.privacyWrapper}>
