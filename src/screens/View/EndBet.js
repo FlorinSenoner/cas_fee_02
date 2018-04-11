@@ -1,12 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Button from 'material-ui/Button'
+import { withStyles } from 'material-ui/styles'
 import TextField from 'material-ui/TextField'
 import Dialog, { DialogActions, DialogContent, DialogContentText, DialogTitle } from 'material-ui/Dialog'
 
-export default class EndBet extends React.PureComponent {
+const styles = {
+  button: {
+    color: 'white',
+  },
+}
+
+class EndBet extends React.PureComponent {
   static propTypes = {
     handleEndBet: PropTypes.func.isRequired,
+    classes: PropTypes.object.isRequired,
   }
 
   state = {
@@ -27,9 +35,10 @@ export default class EndBet extends React.PureComponent {
   }
 
   render() {
+    const { classes } = this.props
     return (
       <div>
-        <Button variant="raised" color="secondary" onClick={this.handleClickOpen}>
+        <Button variant="raised" color="secondary" onClick={this.handleClickOpen} className={classes.button}>
           End bet
         </Button>
         <Dialog open={this.state.open} onClose={this.handleClose} aria-labelledby="form-dialog-title">
@@ -39,10 +48,10 @@ export default class EndBet extends React.PureComponent {
             <TextField autoFocus margin="dense" id="result" label="Bet result" fullWidth />
           </DialogContent>
           <DialogActions>
-            <Button onClick={this.handleClose} color="primary">
+            <Button onClick={this.handleClose} color="secondary">
               Cancel
             </Button>
-            <Button onClick={this.handleSubmit} variant="raised" color="secondary">
+            <Button onClick={this.handleSubmit} className={classes.button} variant="raised" color="secondary">
               End bet
             </Button>
           </DialogActions>
@@ -51,3 +60,7 @@ export default class EndBet extends React.PureComponent {
     )
   }
 }
+
+const enhance = withStyles(styles)
+
+export default enhance(EndBet)

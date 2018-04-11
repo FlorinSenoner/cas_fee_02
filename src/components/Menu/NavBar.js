@@ -14,6 +14,7 @@ import { drawerWidth } from './PersistentDrawer'
 
 const styles = theme => ({
   appBar: {
+    color: 'white',
     position: 'absolute',
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.sharp,

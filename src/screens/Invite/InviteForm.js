@@ -10,6 +10,7 @@ import MuiTextField from '../../components/Input/MuiTextField'
 
 const styles = theme => ({
   button: {
+    color: 'white',
     margin: theme.spacing.unit,
   },
   textField: {

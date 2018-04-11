@@ -18,6 +18,7 @@ const styles = theme => ({
     alignItems: 'center',
   },
   button: {
+    color: 'white',
     margin: theme.spacing.unit,
   },
   textField: {

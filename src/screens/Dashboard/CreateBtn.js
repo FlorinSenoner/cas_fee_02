@@ -8,16 +8,16 @@ import { push } from 'react-router-redux'
 import { connect } from 'react-redux'
 import { compose } from 'recompose'
 
-const styles = theme => ({
+const styles = {
   button: {
-    margin: theme.spacing.unit,
+    color: 'white',
   },
   addBtnRightCorner: {
     position: 'absolute',
     bottom: '1rem',
     right: '1rem',
   },
-})
+}
 
 const CreateBtn = ({ classes, changePage }) => (
   <Button
@@ -27,7 +27,7 @@ const CreateBtn = ({ classes, changePage }) => (
     className={classes.addBtnRightCorner}
     onClick={() => changePage('/create')}
   >
-    <AddIcon />
+    <AddIcon className={classes.button} />
   </Button>
 )
 

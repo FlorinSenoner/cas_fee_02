@@ -43,10 +43,13 @@ const styles = {
     overflow: 'hidden',
     textOverflow: 'ellipsis',
   },
-  badge: {
+  badgeRoot: {
     position: 'absolute',
     right: 4,
     top: 4,
+  },
+  badgeBadge: {
+    color: 'white',
   },
 }
 
@@ -80,7 +83,11 @@ class BetCard extends PureComponent {
       <Card component="li" className={`${classes.card} ${bet.result && classes.cardEnd}`} elevation={4}>
         <Button component={Link} className={classes.button} to={`/bet/${bet.id}/view`}>
           {Object.keys(bet.participants).length > 0 && (
-            <Badge color="secondary" badgeContent={Object.keys(bet.participants).length} className={classes.badge}>
+            <Badge
+              color="secondary"
+              badgeContent={Object.keys(bet.participants).length}
+              classes={{ root: classes.badgeRoot, badge: classes.badgeBadge }}
+            >
               {' '}
             </Badge>
           )}

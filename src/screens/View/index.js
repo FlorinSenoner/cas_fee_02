@@ -21,6 +21,7 @@ import { betIdSelector } from '../App/selectors'
 const styles = theme => ({
   button: {
     margin: theme.spacing.unit,
+    color: 'white',
   },
   rightIcon: {
     marginLeft: theme.spacing.unit,
@@ -94,7 +95,7 @@ class View extends React.PureComponent {
             </Button>
           )}
         {this.isAdmin() && (
-          <Button color="primary" aria-label="delete bet" onClick={this.deleteBetHandler} className={classes.button}>
+          <Button color="primary" aria-label="delete bet" onClick={this.deleteBetHandler}>
             DELETE
           </Button>
         )}

@@ -9,9 +9,13 @@ import Dialog, { DialogActions, DialogContent, DialogContentText, DialogTitle } 
 
 const styles = () => ({
   addBtnRightCorner: {
+    color: 'white',
     position: 'absolute',
     bottom: '1rem',
     right: '1rem',
+  },
+  button: {
+    color: 'white',
   },
 })
 
@@ -39,14 +43,10 @@ class TakeAGuess extends React.PureComponent {
   }
 
   render() {
+    const { classes } = this.props
     return (
       <div>
-        <Button
-          className={this.props.classes.addBtnRightCorner}
-          variant="fab"
-          color="primary"
-          onClick={this.handleClickOpen}
-        >
+        <Button className={classes.addBtnRightCorner} variant="fab" color="primary" onClick={this.handleClickOpen}>
           <GuessIcon />
         </Button>
         <Dialog open={this.state.open} onClose={this.handleClose} aria-labelledby="form-dialog-title">
@@ -61,7 +61,7 @@ class TakeAGuess extends React.PureComponent {
             <Button onClick={this.handleClose} color="primary">
               Cancel
             </Button>
-            <Button onClick={this.handleSubmit} variant="raised" color="primary">
+            <Button onClick={this.handleSubmit} className={classes.button} variant="raised" color="primary">
               Guess
             </Button>
           </DialogActions>
