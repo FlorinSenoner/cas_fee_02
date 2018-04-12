@@ -46,7 +46,6 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "deploy": "yarn build && firebase deploy",
-    "testPuppeteer": "react-scripts test",
     "debug": "NODE_ENV=debug npm test",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
