@@ -50,7 +50,7 @@ class SignInScreen extends React.PureComponent {
           </Grid>
           <Grid item xs={12}>
             <Paper className={classes.paper}>
-              <h1>Welcome</h1>
+              <h1 data-testid="h1">Welcome</h1>
               Wettemer is the most awesome platform to challenge your friends to anything. Right now, in realtime, even
               offline! OMG! Right. Sign in to join the gang!
             </Paper>

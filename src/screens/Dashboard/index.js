@@ -24,7 +24,7 @@ class Dashboard extends PureComponent {
       <DefaultPage>
         Show ended bets?
         <Switch checked={this.props.showEnded} onChange={this.props.toggleEnded} color="primary" />
-        <h3>Invites</h3>
+        <h3 data-testid="h3-invites">Invites</h3>
         <BetsList bets={this.props.invites} />
         <h3>My Bets</h3>
         <BetsList bets={this.props.myBets} />

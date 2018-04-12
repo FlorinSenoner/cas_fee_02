@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import { Switch, Route, withRouter } from 'react-router-dom'
-import { Reboot } from 'material-ui'
+import { CssBaseline } from 'material-ui'
 import { connect } from 'react-redux'
 import { replace } from 'react-router-redux'
 import { compose } from 'recompose'
@@ -49,7 +49,7 @@ class App extends PureComponent {
     const { user } = this.props
 
     return (
-      <Reboot>
+      <CssBaseline>
         {isAuthenticated() && <WithBets user={user} />}
         <Switch>
           <PrivateRoute exact path="/" component={Dashboard} />
@@ -59,7 +59,7 @@ class App extends PureComponent {
           <Route component={NotFound} />
         </Switch>
         <SnackBar />
-      </Reboot>
+      </CssBaseline>
     )
   }
 }
