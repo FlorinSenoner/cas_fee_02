@@ -1,6 +1,6 @@
 const functions = require('firebase-functions')
 
-exports.updateParticipantsCount = functions.firestore.document('bets/{betId}').onWrite(event => {
+exports.updateParticipantsCount = functions.firestore.document('bets/{betId}').onUpdate(event => {
   const bet = event.data.exists ? event.data.data() : null
   if (bet) {
     const participantsCount = bet.participants ? Object.keys(bet.participants).length : 0
