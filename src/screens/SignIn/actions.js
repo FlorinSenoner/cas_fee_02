@@ -11,7 +11,7 @@ export const userChanged = firebaseUser => {
 export const signOut = () => {
   auth
     .signOut()
-    .then(response => console.log('signed out successfully: ', response))
-    .catch(error => console.log('problem while signout: ', error))
+    .then(() => console.log('sign out successful!'))
+    .catch(error => console.error('problem while signout: ', error))
   return { type: SIGNOUT }
 }

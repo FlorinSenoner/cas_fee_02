@@ -6,7 +6,7 @@ export const addBet = async bet => {
     const doc = await db.collection('bets').add(bet)
     return doc.id
   } catch (error) {
-    console.log('Error adding bet', error)
+    console.error('Error adding bet', error)
     return false
   }
 }

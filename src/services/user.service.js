@@ -6,7 +6,7 @@ export const updateUser = user => {
     .collection('users')
     .doc(user.uid)
     .set(user, { merge: true })
-    .then(() => console.log('user updated'))
+    .then(() => console.log('user data updated'))
 }
 
 export const getUserByEmail = email =>

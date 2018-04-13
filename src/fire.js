@@ -34,8 +34,9 @@ if (process.env.NODE_ENV !== 'test') {
         console.error('no offline mode available due a failed precondition (i.e. multiple tabs are open, etc.)')
       } else if (err.code === 'unimplemented') {
         console.error('no offline mode available due the current browser support')
+      } else {
+        console.error('no offline mode available')
       }
-      console.log('no offline mode available')
     })
 }
 
