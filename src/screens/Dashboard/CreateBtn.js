@@ -11,12 +11,12 @@ import { compose } from 'recompose'
 const styles = {
   button: {
     color: 'white',
-    zIndex: 1,
   },
   addBtnRightCorner: {
     position: 'absolute',
     bottom: '1rem',
     right: '1rem',
+    zIndex: 1,
   },
 }
 
