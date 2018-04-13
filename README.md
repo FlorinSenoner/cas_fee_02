@@ -21,6 +21,13 @@ Most features that Wettemer🄬 offers are also available **offline**.
 ## 🤓 Demo
 http://wettemer.com
 
+## Browser Support
+Wettemer was tested on all major browsers:
+* Google Chrome
+* Firefox
+* Safari
+* Internet Explorer
+
 ## 🚀 Setup
 
 ### Development
