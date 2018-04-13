@@ -10,7 +10,6 @@ const renderedComponent = mountWithRouter(
 
 describe('<Menu />', () => {
   xit('renders without crashing', () => {
-    // console.log(renderedComponent.debug())
     expect(renderedComponent.find('div').length).toBe(12)
   })
   xit('renders a Menu', () => {
