@@ -24,12 +24,11 @@ export const getUserByEmail = email =>
     })
     .catch(error => console.error(error))
 
-export const getParticipants = (betId, callback) => {
+export const getParticipants = (betId, callback) =>
   db
     .collection('users')
     .where(`participations.${betId}`, '>=', '')
     .onSnapshot(callback)
-}
 
 export const takeAGuess = updateParticipation
 
