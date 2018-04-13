@@ -11,6 +11,7 @@ import { compose } from 'recompose'
 const styles = {
   button: {
     color: 'white',
+    zIndex: 1,
   },
   addBtnRightCorner: {
     position: 'absolute',
