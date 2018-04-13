@@ -3,12 +3,13 @@ import PropTypes from 'prop-types'
 import { push, replace } from 'react-router-redux'
 import { connect } from 'react-redux'
 import Button from 'material-ui/Button'
-import Group from 'material-ui-icons/Group'
+import GroupIcon from 'material-ui-icons/Group'
+import DeleteIcon from 'material-ui-icons/Delete'
+import Card, { CardActions } from 'material-ui/Card'
 import { withStyles } from 'material-ui/styles'
 import { compose, branch, renderNothing } from 'recompose'
 import { propTypesBet, propTypesUser } from '../../customPropTypes'
-import WithParticipants from '../WithParticipants'
-import Guesses from './Guesses'
+
 import TakeAGuess from './TakeAGuess'
 import EndBet from './EndBet'
 import { takeAGuess } from '../../services/user.service'
@@ -17,14 +18,32 @@ import DefaultPage from '../../components/DefaultPage'
 import { openSnackbar, editSnackbarText } from '../App/SnackBar/actions'
 import { userSelector } from '../SignIn/selectors'
 import { betIdSelector } from '../App/selectors'
+import BetDetails from './BetDetails'
 
 const styles = theme => ({
   button: {
-    margin: theme.spacing.unit,
     color: 'white',
+    [theme.breakpoints.down('xs')]: {
+      marginTop: theme.spacing.unit,
+    },
+    [theme.breakpoints.up('sm')]: {
+      marginLeft: theme.spacing.unit,
+    },
   },
   rightIcon: {
     marginLeft: theme.spacing.unit,
+  },
+  deleteBtn: {
+    color: 'purple',
+    [theme.breakpoints.up('sm')]: {
+      marginLeft: 'auto',
+    },
+  },
+  cardActions: {
+    [theme.breakpoints.down('xs')]: {
+      flexDirection: 'column',
+      alignItems: 'stretch',
+    },
   },
 })
 
@@ -66,39 +85,30 @@ class View extends React.PureComponent {
     const { classes, bet, user } = this.props
     return (
       <DefaultPage linkToDashboard>
-        <h1>{bet.title}</h1>
-        <p>{bet.result ? `Ended. Result: ${bet.result}` : 'still running'}</p>
-        <WithParticipants
-          betId={bet.id}
-          render={participantUsers => (
-            <Guesses
-              betId={bet.id}
-              result={bet.result}
-              currentUid={user.uid}
-              showAllGuesses={this.isAdmin() || !!bet.result}
-              users={participantUsers}
-            />
-          )}
-        />
-        {this.canTakeGuess() && <TakeAGuess handleGuess={this.addGuess} />}
-        {this.canEndBet() && <EndBet handleEndBet={this.endTheBet} />}
-        {this.isAdmin() &&
-          !bet.result && (
-            <Button
-              variant="raised"
-              color="primary"
-              aria-label="invite more people"
-              onClick={this.goToInvite}
-              className={classes.button}
-            >
-              Manage Invites <Group className={classes.rightIcon} />
-            </Button>
-          )}
-        {this.isAdmin() && (
-          <Button color="primary" aria-label="delete bet" onClick={this.deleteBetHandler}>
-            DELETE
-          </Button>
-        )}
+        <Card>
+          <BetDetails bet={bet} isAdmin={this.isAdmin()} currentUid={user.uid} />
+          <CardActions className={classes.cardActions} disableActionSpacing>
+            {this.canEndBet() && <EndBet handleEndBet={this.endTheBet} />}
+            {this.isAdmin() &&
+              !bet.result && (
+                <Button
+                  className={classes.button}
+                  variant="raised"
+                  color="primary"
+                  aria-label="invite more people"
+                  onClick={this.goToInvite}
+                >
+                  Manage Invites <GroupIcon className={classes.rightIcon} />
+                </Button>
+              )}
+            {this.canTakeGuess() && <TakeAGuess handleGuess={this.addGuess} />}
+            {this.isAdmin() && (
+              <Button className={classes.deleteBtn} aria-label="delete bet" onClick={this.deleteBetHandler}>
+                Delete bet<DeleteIcon />
+              </Button>
+            )}
+          </CardActions>
+        </Card>
       </DefaultPage>
     )
   }

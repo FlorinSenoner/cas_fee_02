@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { compose } from 'recompose'
 import { withStyles } from 'material-ui/styles'
@@ -7,15 +7,18 @@ import Button from 'material-ui/Button'
 import TextField from 'material-ui/TextField'
 import Dialog, { DialogActions, DialogContent, DialogContentText, DialogTitle } from 'material-ui/Dialog'
 
-const styles = () => ({
-  addBtnRightCorner: {
-    color: 'white',
-    position: 'absolute',
-    bottom: '1rem',
-    right: '1rem',
-  },
+const styles = theme => ({
   button: {
     color: 'white',
+    [theme.breakpoints.down('xs')]: {
+      marginTop: theme.spacing.unit,
+    },
+    [theme.breakpoints.up('sm')]: {
+      marginLeft: theme.spacing.unit,
+    },
+  },
+  rightIcon: {
+    marginLeft: theme.spacing.unit,
   },
 })
 
@@ -45,9 +48,9 @@ class TakeAGuess extends React.PureComponent {
   render() {
     const { classes } = this.props
     return (
-      <div>
-        <Button className={classes.addBtnRightCorner} variant="fab" color="primary" onClick={this.handleClickOpen}>
-          <GuessIcon />
+      <Fragment>
+        <Button className={classes.button} variant="raised" color="primary" onClick={this.handleClickOpen}>
+          Participate <GuessIcon className={classes.rightIcon} />
         </Button>
         <Dialog open={this.state.open} onClose={this.handleClose} aria-labelledby="form-dialog-title">
           <DialogTitle id="form-dialog-title">Your guess</DialogTitle>
@@ -66,7 +69,7 @@ class TakeAGuess extends React.PureComponent {
             </Button>
           </DialogActions>
         </Dialog>
-      </div>
+      </Fragment>
     )
   }
 }

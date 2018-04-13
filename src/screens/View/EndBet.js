@@ -1,15 +1,19 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import Button from 'material-ui/Button'
+import DoneIcon from 'material-ui-icons/Done'
 import { withStyles } from 'material-ui/styles'
 import TextField from 'material-ui/TextField'
 import Dialog, { DialogActions, DialogContent, DialogContentText, DialogTitle } from 'material-ui/Dialog'
 
-const styles = {
+const styles = theme => ({
   button: {
     color: 'white',
   },
-}
+  rightIcon: {
+    marginLeft: theme.spacing.unit,
+  },
+})
 
 class EndBet extends React.PureComponent {
   static propTypes = {
@@ -37,9 +41,9 @@ class EndBet extends React.PureComponent {
   render() {
     const { classes } = this.props
     return (
-      <div>
+      <Fragment>
         <Button variant="raised" color="secondary" onClick={this.handleClickOpen} className={classes.button}>
-          End bet
+          End bet <DoneIcon className={classes.rightIcon} />
         </Button>
         <Dialog open={this.state.open} onClose={this.handleClose} aria-labelledby="form-dialog-title">
           <DialogTitle id="form-dialog-title">End this bet</DialogTitle>
@@ -56,7 +60,7 @@ class EndBet extends React.PureComponent {
             </Button>
           </DialogActions>
         </Dialog>
-      </div>
+      </Fragment>
     )
   }
 }
