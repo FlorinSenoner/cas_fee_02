@@ -7,10 +7,7 @@ const User = ({ user }) => (
   <List>
     <ListItem>
       <Avatar alt="User profile image" src={user.photoURL || '/img/unknown_50x50.jpg'} />
-      <ListItemText
-        primary={user.displayName}
-        secondary={`Participations: ${user.participations ? user.participations.size() : 0}`}
-      />
+      <ListItemText primary={user.displayName} secondary={user.email} />
     </ListItem>
   </List>
 )
