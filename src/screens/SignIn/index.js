@@ -2,6 +2,7 @@ import React from 'react'
 import { compose } from 'recompose'
 import PropTypes from 'prop-types'
 import firebase from 'firebase'
+import * as firebaseui from 'firebaseui'
 import { withStyles } from 'material-ui/styles'
 import { FirebaseAuth } from 'react-firebaseui'
 import Grid from 'material-ui/Grid'
@@ -37,6 +38,7 @@ class SignInScreen extends React.PureComponent {
       firebase.auth.GoogleAuthProvider.PROVIDER_ID,
       firebase.auth.FacebookAuthProvider.PROVIDER_ID,
     ],
+    credentialHelper: firebaseui.auth.CredentialHelper.NONE,
   }
 
   render() {
