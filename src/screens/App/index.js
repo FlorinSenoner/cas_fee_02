@@ -56,7 +56,7 @@ class App extends PureComponent {
           <PrivateRoute exact path="/create" component={CreateBet} />
           <PrivateRoute exact path="/bet/:id/invite" component={Invite} />
           <PrivateRoute exact path="/bet/:id/view" component={View} />
-          <Route component={NotFound} />
+          <PrivateRoute component={NotFound} />
         </Switch>
         <SnackBar />
       </CssBaseline>
