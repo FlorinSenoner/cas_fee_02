@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import { Switch, Route, withRouter } from 'react-router-dom'
-import { CssBaseline } from 'material-ui'
+import CssBaseline from 'material-ui/CssBaseline'
 import { connect } from 'react-redux'
 import { replace } from 'react-router-redux'
 import { compose } from 'recompose'
