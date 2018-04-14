@@ -14,9 +14,15 @@ class WithBets extends Component {
   }
 
   componentDidMount() {
-    onMyBetsUpdate(this.props.user.uid, this.updateMyBets)
-    onInvitesUpdate(this.props.user.uid, this.updateInvites)
-    onGuessesUpdate(this.props.user.uid, this.updateGuesses)
+    this.unsubscribeMyBets = onMyBetsUpdate(this.props.user.uid, this.updateMyBets)
+    this.unsubscribeInvites = onInvitesUpdate(this.props.user.uid, this.updateInvites)
+    this.unsubscribeGuesses = onGuessesUpdate(this.props.user.uid, this.updateGuesses)
+  }
+
+  componentWillUnmount() {
+    this.unsubscribeMyBets()
+    this.unsubscribeInvites()
+    this.unsubscribeGuesses()
   }
 
   extractBets = querySnapshot => querySnapshot.docs.map(doc => ({ ...doc.data(), id: doc.id }))

@@ -21,11 +21,11 @@ class CreateBet extends React.Component {
   }
 
   componentDidMount() {
-    this.unsubscribeFromBetsUpdate = onMyBetsUpdate(this.props.user.uid, this.updateMyBets)
+    this.unsubscribeMyBets = onMyBetsUpdate(this.props.user.uid, this.updateMyBets)
   }
 
   componentWillUnmount() {
-    this.unsubscribeFromBetsUpdate()
+    this.unsubscribeMyBets()
   }
 
   updateMyBets = querySnapshot => {

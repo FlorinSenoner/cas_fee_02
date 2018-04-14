@@ -12,7 +12,7 @@ class WithParticipants extends React.PureComponent {
   state = { participantUsers: [] }
 
   componentDidMount() {
-    this.unsubscribe = getParticipants(this.props.betId, querySnapshot => {
+    this.unsubscribeParticipants = getParticipants(this.props.betId, querySnapshot => {
       this.setState({
         ...this.state,
         participantUsers: querySnapshot.docs.map(doc => doc.data()),
@@ -21,7 +21,7 @@ class WithParticipants extends React.PureComponent {
   }
 
   componentWillUnmount() {
-    this.unsubscribe()
+    this.unsubscribeParticipants()
   }
 
   render() {
