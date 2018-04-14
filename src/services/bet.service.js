@@ -1,14 +1,11 @@
 import { db } from '../fire'
 const firebase = require('firebase')
 
-export const addBet = async bet => {
-  try {
-    const doc = await db.collection('bets').add(bet)
-    return doc.id
-  } catch (error) {
-    console.error('Error adding bet', error)
-    return false
-  }
+export const addBet = bet => {
+  db
+    .collection('bets')
+    .add(bet)
+    .catch(console.error)
 }
 
 export const deleteBet = betId => {
@@ -50,23 +47,20 @@ function updateParticipant(betId, uid, value) {
     .set({ participants }, { merge: true })
 }
 
-export const onMyBetsUpdate = (uid, callback) => {
+export const onMyBetsUpdate = (uid, callback) =>
   db
     .collection('bets')
     .where('admin', '==', uid)
     .onSnapshot(callback)
-}
 
-export const onInvitesUpdate = (uid, callback) => {
+export const onInvitesUpdate = (uid, callback) =>
   db
     .collection('bets')
     .where(`participants.${uid}`, '==', '')
     .onSnapshot(callback)
-}
 
-export const onGuessesUpdate = (uid, callback) => {
+export const onGuessesUpdate = (uid, callback) =>
   db
     .collection('bets')
     .where(`participants.${uid}`, '>', '')
     .onSnapshot(callback)
-}
