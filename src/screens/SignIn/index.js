@@ -35,7 +35,10 @@ class SignInScreen extends React.PureComponent {
     },
     signInOptions: [
       firebase.auth.EmailAuthProvider.PROVIDER_ID,
+      // user must have 3rd party cookie enabled if he joins from wettemer.com
+      // see: https://stackoverflow.com/questions/48757757/use-google-firebase-authentication-without-3rd-party-cookies
       firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+      // user must leave the "share email" checked. Otherwise we do not have the users email address.
       firebase.auth.FacebookAuthProvider.PROVIDER_ID,
     ],
     credentialHelper: firebaseui.auth.CredentialHelper.NONE,
