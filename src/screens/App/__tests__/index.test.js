@@ -51,7 +51,7 @@ describe('login page loads successfully', () => {
     async () => {
       const html = await page.$eval('[data-testid="h1"]', e => e.innerHTML)
 
-      expect(html).toBe('Welcome')
+      expect(html).toBe('Welcome<span role="img" aria-label="vulcan welcome">🖖</span>')
     },
     16000,
   )
