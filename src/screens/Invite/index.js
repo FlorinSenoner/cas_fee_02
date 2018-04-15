@@ -12,6 +12,7 @@ import Participants from './Participants'
 import { userSelector } from '../SignIn/selectors'
 import { addParticipant, removeParticipant } from '../../services/bet.service'
 import { getUserByEmail, addParticipation, removeParticipation } from '../../services/user.service'
+import { editSnackbarText, openSnackbar } from '../App/SnackBar/actions'
 
 const styles = theme => ({
   button: {
@@ -23,6 +24,8 @@ class Invite extends React.PureComponent {
   static propTypes = {
     resetForm: PropTypes.func.isRequired,
     match: PropTypes.object.isRequired,
+    openSnackBar: PropTypes.func.isRequired,
+    editText: PropTypes.func.isRequired,
   }
 
   removeParticipant = (userId, betId) => {
@@ -37,7 +40,8 @@ class Invite extends React.PureComponent {
       addParticipation(participant.uid, this.props.match.params.id)
       this.props.resetForm('InviteForm')
     } catch (error) {
-      console.error('Error adding participant!', error)
+      this.props.openSnackBar()
+      this.props.editText({ text: 'No user with that email found 🤷' })
     }
   }
 
@@ -72,6 +76,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   resetForm: reset,
+  openSnackBar: openSnackbar,
+  editText: editSnackbarText,
 }
 
 const enhance = compose(withStyles(styles), connect(mapStateToProps, mapDispatchToProps))
