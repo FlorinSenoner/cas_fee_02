@@ -45,7 +45,7 @@ const styles = theme => ({
   time: {
     minWidth: 120,
   },
-  privacyWrapper: {
+  visibilityWrapper: {
     display: 'flex',
     alignItems: 'center',
     marginBottom: theme.spacing.unit * 4,
@@ -54,7 +54,7 @@ const styles = theme => ({
   },
 })
 
-const Form = ({ submitting, handleSubmit, classes, privacyValue }) => (
+const Form = ({ submitting, handleSubmit, classes, visibilityValue }) => (
   <form onSubmit={handleSubmit}>
     <div className={classes.wrapper}>
       <Field
@@ -104,18 +104,18 @@ const Form = ({ submitting, handleSubmit, classes, privacyValue }) => (
           className={classes.time}
         />
       </div>
-      <div className={classes.privacyWrapper}>
+      <div className={classes.visibilityWrapper}>
         <Field
-          name="privacy"
-          label="Privacy"
+          name="visibility"
+          label="Visibility"
           inputProps={{
-            'aria-label': 'Privacy',
+            'aria-label': 'Visibility',
           }}
           color="primary"
           component={MuiSwitch}
         />
         <Typography color="inherit" component="span" noWrap>
-          {privacyValue ? 'public' : 'private'}
+          {visibilityValue ? 'public' : 'private'}
         </Typography>
       </div>
 
@@ -138,7 +138,7 @@ Form.propTypes = {
   submitting: PropTypes.bool.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   classes: PropTypes.object.isRequired,
-  privacyValue: PropTypes.bool.isRequired,
+  visibilityValue: PropTypes.bool.isRequired,
 }
 
 const validate = values => {
@@ -153,14 +153,14 @@ const validate = values => {
 }
 
 const mapStateToProps = state => ({
-  privacyValue: formValueSelector('CreateBetForm')(state, 'privacy'),
+  visibilityValue: formValueSelector('CreateBetForm')(state, 'visibility'),
 })
 
 const enhance = compose(
   reduxForm({
     form: 'CreateBetForm',
     initialValues: {
-      privacy: false,
+      visibility: false,
     },
     validate,
   }),

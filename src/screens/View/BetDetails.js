@@ -29,7 +29,7 @@ class BetDetails extends React.PureComponent {
           </Typography>
           <Typography variant="subheading">Visibility</Typography>
           <Typography variant="body2" gutterBottom>
-            {bet.privacy}
+            {bet.visibility}
           </Typography>
           {bet.description && (
             <Fragment>
