@@ -36,13 +36,17 @@ class SnackBar extends Component {
     classes: PropTypes.object.isRequired,
   }
 
-  clickHandeler = () => {
-    deleteBet(this.props.betId)
+  deleteHandler = () => {
     this.props.close()
-    this.props.editText({ text: '' })
     this.props.open()
-    this.props.editText({ text: 'bet has been successfully removed' })
     this.props.editBetId({ betId: '' })
+    deleteBet(this.props.betId)
+      .then(() => {
+        this.props.editText({ text: 'bet has been deleted 🙂' })
+      })
+      .catch(() => {
+        this.props.editText({ text: 'could not delete bet 🤔' })
+      })
     this.props.changePage('/')
   }
 
@@ -66,7 +70,7 @@ class SnackBar extends Component {
             key="undo"
             color="secondary"
             size="small"
-            onClick={this.clickHandeler}
+            onClick={this.deleteHandler}
             className={this.props.betId || classes.undoHidden}
           >
             UNDO

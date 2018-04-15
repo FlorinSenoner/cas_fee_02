@@ -8,18 +8,11 @@ export const addBet = bet => {
     .catch(console.error)
 }
 
-export const deleteBet = betId => {
+export const deleteBet = betId =>
   db
     .collection('bets')
     .doc(betId)
     .delete()
-    .then(() => {
-      console.log(`Bet with Id: ${betId} successfully deleted!`)
-    })
-    .catch(error => {
-      console.error('Error removing bet: ', error)
-    })
-}
 
 export const endBet = (betId, result) => {
   db
