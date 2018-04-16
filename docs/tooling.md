@@ -9,15 +9,12 @@
 * React and tools:
     * [React](https://reactjs.org/)
     * [Redux](https://redux.js.org/)
+    * [react-router](https://github.com/ReactTraining/react-router)
     * [reselect](https://github.com/reactjs/reselect)
     * [recompose](https://github.com/acdlite/recompose)
     * [redux-form](https://github.com/erikras/redux-form/)
 * UI-Library:
-    * [Material-UI](https://material-ui-next.com/)
-* Immutability:
-  * [lodash/fp](https://github.com/lodash/lodash/wiki/FP-Guide)
-* CSS in JS:
-    * [Styled Components](https://styled-components.com/)
+    * [Material-UI && Material-UI-Icons](https://material-ui-next.com/)
 * Code quality:
     * [ESlint](https://eslint.org/) & [Airbnb styleguide](https://github.com/airbnb/javascript)
     * [Prettier](https://github.com/prettier/prettier)
@@ -26,11 +23,13 @@
 * Tests:
     * [Jest](https://facebook.github.io/jest/)
     * [Enzyme](https://github.com/airbnb/enzyme)
-    
-
-
+    * [Puppeteer](https://github.com/GoogleChrome/puppeteer)
+    * [Pixelmatch](https://github.com/mapbox/pixelmatch)
+    * [Faker](https://github.com/stympy/faker)
+ 
+ 
 ## 🧠 Inspiration
-* ~~[Relay](https://github.com/facebook/relay)~~
+* [Relay](https://github.com/facebook/relay)
 * [TKFramework](https://github.com/tubackkhoa/tkframework)
 * [React Redux Universal Hot](https://github.com/erikras/react-redux-universal-hot-example)
 * [React Universal Component 2.0](https://github.com/faceyspacey/react-universal-component)
