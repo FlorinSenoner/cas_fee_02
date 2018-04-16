@@ -15,25 +15,13 @@
 //   })
 // })
 
-// const pathname = await getLocationProp(page, 'pathname')
-// const re = /(?<=bet\/)(.*)(?=\/invite)/
-// const betId = pathname.match(re)[1]
-// console.log(`A new bet with id: ${betId} was successfully created`)
-
-// await page.goto('http://localhost:3000/')
-// await page.goto(`http://localhost:3000/bet/${betId}/invites`)
-
 import puppeteer from 'puppeteer'
 import faker from 'faker'
 import format from 'date-fns/format'
 
-import { getLocationProp } from './utils'
-
 const timeout = 16000
 
-async function waitFor(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms))
-}
+const waitFor = async ms => new Promise(resolve => setTimeout(resolve, ms))
 
 const isDebugging = () => {
   const debuggingMode = {
