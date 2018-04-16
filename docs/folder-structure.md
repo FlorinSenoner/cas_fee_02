@@ -1,22 +1,25 @@
 # 🗂 Folder Structure
 
-##build
+## build
 build folder that get's deployed
 
-##docs
+## docs
 documentation folder
 
-##functions
+## functions
 firebase functions that will run on the backend side
 
-##public
+## public
 all content that will be served static
+
+## testImages
+folder that contains images for the pixel/screenShot tests
 
 #### img
 * images
 * logos
 
-##src
+## src
 all js code for the app
 
 #### components
@@ -26,5 +29,5 @@ dumb and independent component
 * each screen represents a main route of the app.
 * screens may contain components as well, but only, if they're just used for that particular screen 
 
-####services
+#### services
 * connections to firebase backend
