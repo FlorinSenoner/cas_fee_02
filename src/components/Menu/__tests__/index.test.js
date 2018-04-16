@@ -3,16 +3,13 @@ import { mountWithRouter } from '../../../utils'
 
 import Menu from '../index'
 const renderedComponent = mountWithRouter(
-  <Menu isDrawerOpen>
+  <Menu isDrawerOpen goBack={() => {}} goToDashboard={() => {}}>
     <div>test</div>
   </Menu>,
 )
 
 describe('<Menu />', () => {
-  xit('renders without crashing', () => {
-    expect(renderedComponent.find('div').length).toBe(12)
-  })
-  xit('renders a Menu', () => {
+  it('renders a Menu', () => {
     expect(renderedComponent).toMatchSnapshot()
   })
 })

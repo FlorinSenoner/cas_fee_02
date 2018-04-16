@@ -30,3 +30,4 @@ export const mountWithRouter = component =>
   )
     .find('MemoryRouter')
     .children()
+    .children()
