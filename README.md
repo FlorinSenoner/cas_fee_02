@@ -21,12 +21,33 @@ Most features that Wettemer🄬 offers are also available **offline**.
 ## 🤓 Demo
 http://wettemer.com
 
-## Browser Support
+## 💻 Browser Support
 Wettemer was tested on all major browsers:
 * Google Chrome
 * Firefox
 * Safari
+* Edge
 * Internet Explorer
+
+## 👩‍💻 User Testing
+The App was tested by three users (two female, one male). The users were given no specific task, nor a description of the app.
+They received the URL with the words: "this is pretty dope. check it out!"
+
+![user testing](https://wettemer.com/img/user_testing.jpg)
+
+Results were:
+
+### Positive
+* the app is almost self explaining and very intuitive
+* they liked the app
+* offline and real time features impressed
+
+### Room for Improvement
+* more features were requested
+* the determination who has won a bet should be improved
+* adding users is hart, cause the exact email has to be entered
+* add button not always perfectly visible on mobile
+* make it an app (by adding site to home screen) should be more advertised
 
 ## 🚀 Setup
 
