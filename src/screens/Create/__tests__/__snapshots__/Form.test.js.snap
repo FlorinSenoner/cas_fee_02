@@ -1,0 +1,3370 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Form /> renders a Form 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <ReduxForm
+    onSubmit={[Function]}
+  >
+    <Connect(Form(Connect(WithStyles(Form))))
+      destroyOnUnmount={true}
+      enableReinitialize={false}
+      forceUnregisterOnUnmount={false}
+      form="CreateBetForm"
+      getFormState={[Function]}
+      initialValues={
+        Object {
+          "visibility": false,
+        }
+      }
+      keepDirtyOnReinitialize={false}
+      onSubmit={[Function]}
+      persistentSubmitErrors={false}
+      pure={true}
+      shouldAsyncValidate={[Function]}
+      shouldError={[Function]}
+      shouldValidate={[Function]}
+      shouldWarn={[Function]}
+      touchOnBlur={true}
+      touchOnChange={false}
+      updateUnregisteredFields={false}
+      validate={[Function]}
+    >
+      <Form(Connect(WithStyles(Form)))
+        anyTouched={false}
+        array={
+          Object {
+            "insert": [Function],
+            "move": [Function],
+            "pop": [Function],
+            "push": [Function],
+            "remove": [Function],
+            "removeAll": [Function],
+            "shift": [Function],
+            "splice": [Function],
+            "swap": [Function],
+            "unshift": [Function],
+          }
+        }
+        arrayInsert={[Function]}
+        arrayMove={[Function]}
+        arrayPop={[Function]}
+        arrayPush={[Function]}
+        arrayRemove={[Function]}
+        arrayRemoveAll={[Function]}
+        arrayShift={[Function]}
+        arraySplice={[Function]}
+        arraySwap={[Function]}
+        arrayUnshift={[Function]}
+        asyncValidating={false}
+        autofill={[Function]}
+        blur={[Function]}
+        change={[Function]}
+        clearAsyncError={[Function]}
+        clearFields={[Function]}
+        clearSubmit={[Function]}
+        clearSubmitErrors={[Function]}
+        destroy={[Function]}
+        destroyOnUnmount={true}
+        dirty={false}
+        dispatch={[Function]}
+        enableReinitialize={false}
+        focus={[Function]}
+        forceUnregisterOnUnmount={false}
+        form="CreateBetForm"
+        getFormState={[Function]}
+        initialValues={
+          Object {
+            "visibility": false,
+          }
+        }
+        initialize={[Function]}
+        initialized={true}
+        invalid={true}
+        keepDirtyOnReinitialize={false}
+        onSubmit={[Function]}
+        persistentSubmitErrors={false}
+        pristine={true}
+        pure={true}
+        registerField={[Function]}
+        registeredFields={
+          Object {
+            "description": Object {
+              "count": 1,
+              "name": "description",
+              "type": "Field",
+            },
+            "endDate": Object {
+              "count": 1,
+              "name": "endDate",
+              "type": "Field",
+            },
+            "endTime": Object {
+              "count": 1,
+              "name": "endTime",
+              "type": "Field",
+            },
+            "title": Object {
+              "count": 1,
+              "name": "title",
+              "type": "Field",
+            },
+            "visibility": Object {
+              "count": 1,
+              "name": "visibility",
+              "type": "Field",
+            },
+          }
+        }
+        reset={[Function]}
+        resetSection={[Function]}
+        setSubmitFailed={[Function]}
+        setSubmitSucceeded={[Function]}
+        shouldAsyncValidate={[Function]}
+        shouldError={[Function]}
+        shouldValidate={[Function]}
+        shouldWarn={[Function]}
+        startAsyncValidation={[Function]}
+        startSubmit={[Function]}
+        stopAsyncValidation={[Function]}
+        stopSubmit={[Function]}
+        submit={[Function]}
+        submitFailed={false}
+        submitSucceeded={false}
+        submitting={false}
+        syncErrors={
+          Object {
+            "title": "Field is required",
+          }
+        }
+        syncWarnings={Object {}}
+        touch={[Function]}
+        touchOnBlur={true}
+        touchOnChange={false}
+        unregisterField={[Function]}
+        untouch={[Function]}
+        updateSyncErrors={[Function]}
+        updateSyncWarnings={[Function]}
+        updateUnregisteredFields={false}
+        valid={false}
+        validExceptSubmit={false}
+        validate={[Function]}
+        values={
+          Object {
+            "visibility": false,
+          }
+        }
+      >
+        <Connect(WithStyles(Form))
+          anyTouched={false}
+          array={
+            Object {
+              "insert": [Function],
+              "move": [Function],
+              "pop": [Function],
+              "push": [Function],
+              "remove": [Function],
+              "removeAll": [Function],
+              "shift": [Function],
+              "splice": [Function],
+              "swap": [Function],
+              "unshift": [Function],
+            }
+          }
+          asyncValidate={[Function]}
+          asyncValidating={false}
+          autofill={[Function]}
+          blur={[Function]}
+          change={[Function]}
+          clearAsyncError={[Function]}
+          clearFields={[Function]}
+          clearSubmit={[Function]}
+          clearSubmitErrors={[Function]}
+          destroy={[Function]}
+          dirty={false}
+          dispatch={[Function]}
+          form="CreateBetForm"
+          handleSubmit={[Function]}
+          initialValues={
+            Object {
+              "visibility": false,
+            }
+          }
+          initialize={[Function]}
+          initialized={true}
+          invalid={true}
+          onSubmit={[Function]}
+          pristine={true}
+          pure={true}
+          reset={[Function]}
+          resetSection={[Function]}
+          submit={[Function]}
+          submitFailed={false}
+          submitSucceeded={false}
+          submitting={false}
+          touch={[Function]}
+          untouch={[Function]}
+          valid={false}
+          validate={[Function]}
+        >
+          <WithStyles(Form)
+            anyTouched={false}
+            array={
+              Object {
+                "insert": [Function],
+                "move": [Function],
+                "pop": [Function],
+                "push": [Function],
+                "remove": [Function],
+                "removeAll": [Function],
+                "shift": [Function],
+                "splice": [Function],
+                "swap": [Function],
+                "unshift": [Function],
+              }
+            }
+            asyncValidate={[Function]}
+            asyncValidating={false}
+            autofill={[Function]}
+            blur={[Function]}
+            change={[Function]}
+            clearAsyncError={[Function]}
+            clearFields={[Function]}
+            clearSubmit={[Function]}
+            clearSubmitErrors={[Function]}
+            destroy={[Function]}
+            dirty={false}
+            dispatch={[Function]}
+            form="CreateBetForm"
+            handleSubmit={[Function]}
+            initialValues={
+              Object {
+                "visibility": false,
+              }
+            }
+            initialize={[Function]}
+            initialized={true}
+            invalid={true}
+            onSubmit={[Function]}
+            pristine={true}
+            pure={true}
+            reset={[Function]}
+            resetSection={[Function]}
+            submit={[Function]}
+            submitFailed={false}
+            submitSucceeded={false}
+            submitting={false}
+            touch={[Function]}
+            untouch={[Function]}
+            valid={false}
+            validate={[Function]}
+            visibilityValue={false}
+          >
+            <Form
+              anyTouched={false}
+              array={
+                Object {
+                  "insert": [Function],
+                  "move": [Function],
+                  "pop": [Function],
+                  "push": [Function],
+                  "remove": [Function],
+                  "removeAll": [Function],
+                  "shift": [Function],
+                  "splice": [Function],
+                  "swap": [Function],
+                  "unshift": [Function],
+                }
+              }
+              asyncValidate={[Function]}
+              asyncValidating={false}
+              autofill={[Function]}
+              blur={[Function]}
+              change={[Function]}
+              classes={
+                Object {
+                  "button": "Form-button-2",
+                  "date": "Form-date-7",
+                  "endDateTimeWrapper": "Form-endDateTimeWrapper-6",
+                  "rightIcon": "Form-rightIcon-5",
+                  "switch": "Form-switch-4",
+                  "textField": "Form-textField-3",
+                  "time": "Form-time-8",
+                  "visibilityWrapper": "Form-visibilityWrapper-9",
+                  "wrapper": "Form-wrapper-1",
+                }
+              }
+              clearAsyncError={[Function]}
+              clearFields={[Function]}
+              clearSubmit={[Function]}
+              clearSubmitErrors={[Function]}
+              destroy={[Function]}
+              dirty={false}
+              dispatch={[Function]}
+              form="CreateBetForm"
+              handleSubmit={[Function]}
+              initialValues={
+                Object {
+                  "visibility": false,
+                }
+              }
+              initialize={[Function]}
+              initialized={true}
+              invalid={true}
+              onSubmit={[Function]}
+              pristine={true}
+              pure={true}
+              reset={[Function]}
+              resetSection={[Function]}
+              submit={[Function]}
+              submitFailed={false}
+              submitSucceeded={false}
+              submitting={false}
+              touch={[Function]}
+              untouch={[Function]}
+              valid={false}
+              validate={[Function]}
+              visibilityValue={false}
+            >
+              <form
+                onSubmit={[Function]}
+              >
+                <div
+                  className="Form-wrapper-1"
+                >
+                  <Field
+                    className="Form-textField-3"
+                    component={[Function]}
+                    data-test-id="betTitle"
+                    inputProps={
+                      Object {
+                        "aria-label": "Title",
+                      }
+                    }
+                    label="Title"
+                    name="title"
+                  >
+                    <Connect(ConnectedField)
+                      _reduxForm={
+                        Object {
+                          "anyTouched": false,
+                          "array": Object {
+                            "insert": [Function],
+                            "move": [Function],
+                            "pop": [Function],
+                            "push": [Function],
+                            "remove": [Function],
+                            "removeAll": [Function],
+                            "shift": [Function],
+                            "splice": [Function],
+                            "swap": [Function],
+                            "unshift": [Function],
+                          },
+                          "arrayInsert": [Function],
+                          "arrayMove": [Function],
+                          "arrayPop": [Function],
+                          "arrayPush": [Function],
+                          "arrayRemove": [Function],
+                          "arrayRemoveAll": [Function],
+                          "arrayShift": [Function],
+                          "arraySplice": [Function],
+                          "arraySwap": [Function],
+                          "arrayUnshift": [Function],
+                          "asyncErrors": undefined,
+                          "asyncValidate": [Function],
+                          "asyncValidating": false,
+                          "autofill": [Function],
+                          "blur": [Function],
+                          "change": [Function],
+                          "clearAsyncError": [Function],
+                          "clearFields": [Function],
+                          "clearSubmit": [Function],
+                          "clearSubmitErrors": [Function],
+                          "destroy": [Function],
+                          "destroyOnUnmount": true,
+                          "dirty": false,
+                          "dispatch": [Function],
+                          "enableReinitialize": false,
+                          "error": undefined,
+                          "focus": [Function],
+                          "forceUnregisterOnUnmount": false,
+                          "form": "CreateBetForm",
+                          "getFormState": [Function],
+                          "getValues": [Function],
+                          "initialValues": Object {
+                            "visibility": false,
+                          },
+                          "initialize": [Function],
+                          "initialized": true,
+                          "invalid": true,
+                          "keepDirtyOnReinitialize": false,
+                          "onSubmit": [Function],
+                          "persistentSubmitErrors": false,
+                          "pristine": true,
+                          "pure": true,
+                          "register": [Function],
+                          "registerField": [Function],
+                          "registerInnerOnSubmit": [Function],
+                          "registeredFields": Object {
+                            "description": Object {
+                              "count": 1,
+                              "name": "description",
+                              "type": "Field",
+                            },
+                            "endDate": Object {
+                              "count": 1,
+                              "name": "endDate",
+                              "type": "Field",
+                            },
+                            "endTime": Object {
+                              "count": 1,
+                              "name": "endTime",
+                              "type": "Field",
+                            },
+                            "title": Object {
+                              "count": 1,
+                              "name": "title",
+                              "type": "Field",
+                            },
+                            "visibility": Object {
+                              "count": 1,
+                              "name": "visibility",
+                              "type": "Field",
+                            },
+                          },
+                          "reset": [Function],
+                          "resetSection": [Function],
+                          "sectionPrefix": undefined,
+                          "setSubmitFailed": [Function],
+                          "setSubmitSucceeded": [Function],
+                          "shouldAsyncValidate": [Function],
+                          "shouldError": [Function],
+                          "shouldValidate": [Function],
+                          "shouldWarn": [Function],
+                          "startAsyncValidation": [Function],
+                          "startSubmit": [Function],
+                          "stopAsyncValidation": [Function],
+                          "stopSubmit": [Function],
+                          "submit": [Function],
+                          "submitFailed": false,
+                          "submitSucceeded": false,
+                          "submitting": false,
+                          "syncErrors": Object {
+                            "title": "Field is required",
+                          },
+                          "syncWarnings": Object {},
+                          "touch": [Function],
+                          "touchOnBlur": true,
+                          "touchOnChange": false,
+                          "triggerSubmit": undefined,
+                          "unregister": [Function],
+                          "unregisterField": [Function],
+                          "untouch": [Function],
+                          "updateSyncErrors": [Function],
+                          "updateSyncWarnings": [Function],
+                          "updateUnregisteredFields": false,
+                          "valid": false,
+                          "validExceptSubmit": false,
+                          "validate": [Function],
+                          "values": Object {
+                            "visibility": false,
+                          },
+                          "warning": undefined,
+                        }
+                      }
+                      className="Form-textField-3"
+                      component={[Function]}
+                      data-test-id="betTitle"
+                      inputProps={
+                        Object {
+                          "aria-label": "Title",
+                        }
+                      }
+                      label="Title"
+                      name="title"
+                      normalize={[Function]}
+                    >
+                      <ConnectedField
+                        _reduxForm={
+                          Object {
+                            "anyTouched": false,
+                            "array": Object {
+                              "insert": [Function],
+                              "move": [Function],
+                              "pop": [Function],
+                              "push": [Function],
+                              "remove": [Function],
+                              "removeAll": [Function],
+                              "shift": [Function],
+                              "splice": [Function],
+                              "swap": [Function],
+                              "unshift": [Function],
+                            },
+                            "arrayInsert": [Function],
+                            "arrayMove": [Function],
+                            "arrayPop": [Function],
+                            "arrayPush": [Function],
+                            "arrayRemove": [Function],
+                            "arrayRemoveAll": [Function],
+                            "arrayShift": [Function],
+                            "arraySplice": [Function],
+                            "arraySwap": [Function],
+                            "arrayUnshift": [Function],
+                            "asyncErrors": undefined,
+                            "asyncValidate": [Function],
+                            "asyncValidating": false,
+                            "autofill": [Function],
+                            "blur": [Function],
+                            "change": [Function],
+                            "clearAsyncError": [Function],
+                            "clearFields": [Function],
+                            "clearSubmit": [Function],
+                            "clearSubmitErrors": [Function],
+                            "destroy": [Function],
+                            "destroyOnUnmount": true,
+                            "dirty": false,
+                            "dispatch": [Function],
+                            "enableReinitialize": false,
+                            "error": undefined,
+                            "focus": [Function],
+                            "forceUnregisterOnUnmount": false,
+                            "form": "CreateBetForm",
+                            "getFormState": [Function],
+                            "getValues": [Function],
+                            "initialValues": Object {
+                              "visibility": false,
+                            },
+                            "initialize": [Function],
+                            "initialized": true,
+                            "invalid": true,
+                            "keepDirtyOnReinitialize": false,
+                            "onSubmit": [Function],
+                            "persistentSubmitErrors": false,
+                            "pristine": true,
+                            "pure": true,
+                            "register": [Function],
+                            "registerField": [Function],
+                            "registerInnerOnSubmit": [Function],
+                            "registeredFields": Object {
+                              "description": Object {
+                                "count": 1,
+                                "name": "description",
+                                "type": "Field",
+                              },
+                              "endDate": Object {
+                                "count": 1,
+                                "name": "endDate",
+                                "type": "Field",
+                              },
+                              "endTime": Object {
+                                "count": 1,
+                                "name": "endTime",
+                                "type": "Field",
+                              },
+                              "title": Object {
+                                "count": 1,
+                                "name": "title",
+                                "type": "Field",
+                              },
+                              "visibility": Object {
+                                "count": 1,
+                                "name": "visibility",
+                                "type": "Field",
+                              },
+                            },
+                            "reset": [Function],
+                            "resetSection": [Function],
+                            "sectionPrefix": undefined,
+                            "setSubmitFailed": [Function],
+                            "setSubmitSucceeded": [Function],
+                            "shouldAsyncValidate": [Function],
+                            "shouldError": [Function],
+                            "shouldValidate": [Function],
+                            "shouldWarn": [Function],
+                            "startAsyncValidation": [Function],
+                            "startSubmit": [Function],
+                            "stopAsyncValidation": [Function],
+                            "stopSubmit": [Function],
+                            "submit": [Function],
+                            "submitFailed": false,
+                            "submitSucceeded": false,
+                            "submitting": false,
+                            "syncErrors": Object {
+                              "title": "Field is required",
+                            },
+                            "syncWarnings": Object {},
+                            "touch": [Function],
+                            "touchOnBlur": true,
+                            "touchOnChange": false,
+                            "triggerSubmit": undefined,
+                            "unregister": [Function],
+                            "unregisterField": [Function],
+                            "untouch": [Function],
+                            "updateSyncErrors": [Function],
+                            "updateSyncWarnings": [Function],
+                            "updateUnregisteredFields": false,
+                            "valid": false,
+                            "validExceptSubmit": false,
+                            "validate": [Function],
+                            "values": Object {
+                              "visibility": false,
+                            },
+                            "warning": undefined,
+                          }
+                        }
+                        asyncValidating={false}
+                        className="Form-textField-3"
+                        component={[Function]}
+                        data-test-id="betTitle"
+                        dirty={false}
+                        dispatch={[Function]}
+                        inputProps={
+                          Object {
+                            "aria-label": "Title",
+                          }
+                        }
+                        label="Title"
+                        name="title"
+                        normalize={[Function]}
+                        pristine={true}
+                        syncError="Field is required"
+                      >
+                        <MuiTextField
+                          className="Form-textField-3"
+                          data-test-id="betTitle"
+                          input={
+                            Object {
+                              "name": "title",
+                              "onBlur": [Function],
+                              "onChange": [Function],
+                              "onDragStart": [Function],
+                              "onDrop": [Function],
+                              "onFocus": [Function],
+                              "value": "",
+                            }
+                          }
+                          inputProps={
+                            Object {
+                              "aria-label": "Title",
+                            }
+                          }
+                          label="Title"
+                          meta={
+                            Object {
+                              "active": false,
+                              "asyncValidating": false,
+                              "autofilled": false,
+                              "dirty": false,
+                              "dispatch": [Function],
+                              "error": "Field is required",
+                              "form": "CreateBetForm",
+                              "initial": undefined,
+                              "invalid": true,
+                              "pristine": true,
+                              "submitFailed": false,
+                              "submitting": false,
+                              "touched": false,
+                              "valid": false,
+                              "visited": false,
+                              "warning": undefined,
+                            }
+                          }
+                        >
+                          <TextField
+                            className="Form-textField-3"
+                            data-test-id="betTitle"
+                            inputProps={
+                              Object {
+                                "aria-label": "Title",
+                              }
+                            }
+                            label="Title"
+                            name="title"
+                            onBlur={[Function]}
+                            onChange={[Function]}
+                            onDragStart={[Function]}
+                            onDrop={[Function]}
+                            onFocus={[Function]}
+                            required={false}
+                            select={false}
+                            value=""
+                          >
+                            <WithStyles(FormControl)
+                              className="Form-textField-3"
+                              data-test-id="betTitle"
+                              onDragStart={[Function]}
+                              onDrop={[Function]}
+                              required={false}
+                            >
+                              <FormControl
+                                className="Form-textField-3"
+                                classes={
+                                  Object {
+                                    "fullWidth": "MuiFormControl-fullWidth-13",
+                                    "marginDense": "MuiFormControl-marginDense-12",
+                                    "marginNormal": "MuiFormControl-marginNormal-11",
+                                    "root": "MuiFormControl-root-10",
+                                  }
+                                }
+                                component="div"
+                                data-test-id="betTitle"
+                                disabled={false}
+                                error={false}
+                                fullWidth={false}
+                                margin="none"
+                                onDragStart={[Function]}
+                                onDrop={[Function]}
+                                required={false}
+                              >
+                                <div
+                                  className="MuiFormControl-root-10 Form-textField-3"
+                                  data-test-id="betTitle"
+                                  onBlur={[Function]}
+                                  onDragStart={[Function]}
+                                  onDrop={[Function]}
+                                  onFocus={[Function]}
+                                >
+                                  <WithStyles(InputLabel)>
+                                    <InputLabel
+                                      classes={
+                                        Object {
+                                          "animated": "MuiInputLabel-animated-18",
+                                          "formControl": "MuiInputLabel-formControl-15",
+                                          "marginDense": "MuiInputLabel-marginDense-16",
+                                          "root": "MuiInputLabel-root-14",
+                                          "shrink": "MuiInputLabel-shrink-17",
+                                        }
+                                      }
+                                      disableAnimation={false}
+                                    >
+                                      <WithStyles(FormLabel)
+                                        className="MuiInputLabel-root-14 MuiInputLabel-formControl-15 MuiInputLabel-animated-18"
+                                        data-shrink={false}
+                                      >
+                                        <FormLabel
+                                          className="MuiInputLabel-root-14 MuiInputLabel-formControl-15 MuiInputLabel-animated-18"
+                                          classes={
+                                            Object {
+                                              "asterisk": "MuiFormLabel-asterisk-23",
+                                              "asteriskError": "MuiFormLabel-asteriskError-24",
+                                              "disabled": "MuiFormLabel-disabled-21",
+                                              "error": "MuiFormLabel-error-22",
+                                              "focused": "MuiFormLabel-focused-20",
+                                              "root": "MuiFormLabel-root-19",
+                                            }
+                                          }
+                                          component="label"
+                                          data-shrink={false}
+                                        >
+                                          <label
+                                            className="MuiFormLabel-root-19 MuiInputLabel-root-14 MuiInputLabel-formControl-15 MuiInputLabel-animated-18"
+                                            data-shrink={false}
+                                          >
+                                            Title
+                                          </label>
+                                        </FormLabel>
+                                      </WithStyles(FormLabel)>
+                                    </InputLabel>
+                                  </WithStyles(InputLabel)>
+                                  <WithStyles(Input)
+                                    inputProps={
+                                      Object {
+                                        "aria-label": "Title",
+                                      }
+                                    }
+                                    name="title"
+                                    onBlur={[Function]}
+                                    onChange={[Function]}
+                                    onFocus={[Function]}
+                                    value=""
+                                  >
+                                    <Input
+                                      classes={
+                                        Object {
+                                          "disabled": "MuiInput-disabled-28",
+                                          "error": "MuiInput-error-30",
+                                          "focused": "MuiInput-focused-27",
+                                          "formControl": "MuiInput-formControl-26",
+                                          "fullWidth": "MuiInput-fullWidth-32",
+                                          "input": "MuiInput-input-33",
+                                          "inputDisabled": "MuiInput-inputDisabled-35",
+                                          "inputMarginDense": "MuiInput-inputMarginDense-34",
+                                          "inputMultiline": "MuiInput-inputMultiline-36",
+                                          "inputType": "MuiInput-inputType-37",
+                                          "inputTypeSearch": "MuiInput-inputTypeSearch-38",
+                                          "multiline": "MuiInput-multiline-31",
+                                          "root": "MuiInput-root-25",
+                                          "underline": "MuiInput-underline-29",
+                                        }
+                                      }
+                                      disableUnderline={false}
+                                      fullWidth={false}
+                                      inputProps={
+                                        Object {
+                                          "aria-label": "Title",
+                                        }
+                                      }
+                                      multiline={false}
+                                      name="title"
+                                      onBlur={[Function]}
+                                      onChange={[Function]}
+                                      onFocus={[Function]}
+                                      type="text"
+                                      value=""
+                                    >
+                                      <div
+                                        className="MuiInput-root-25 MuiInput-formControl-26 MuiInput-underline-29"
+                                      >
+                                        <input
+                                          aria-invalid={false}
+                                          aria-label="Title"
+                                          aria-required={false}
+                                          className="MuiInput-input-33"
+                                          disabled={false}
+                                          name="title"
+                                          onBlur={[Function]}
+                                          onChange={[Function]}
+                                          onFocus={[Function]}
+                                          type="text"
+                                          value=""
+                                        />
+                                      </div>
+                                    </Input>
+                                  </WithStyles(Input)>
+                                </div>
+                              </FormControl>
+                            </WithStyles(FormControl)>
+                          </TextField>
+                        </MuiTextField>
+                      </ConnectedField>
+                    </Connect(ConnectedField)>
+                  </Field>
+                  <Field
+                    className="Form-textField-3"
+                    component={[Function]}
+                    data-test-id="betDescription"
+                    inputProps={
+                      Object {
+                        "aria-label": "Description",
+                      }
+                    }
+                    label="Description"
+                    multiline={true}
+                    name="description"
+                  >
+                    <Connect(ConnectedField)
+                      _reduxForm={
+                        Object {
+                          "anyTouched": false,
+                          "array": Object {
+                            "insert": [Function],
+                            "move": [Function],
+                            "pop": [Function],
+                            "push": [Function],
+                            "remove": [Function],
+                            "removeAll": [Function],
+                            "shift": [Function],
+                            "splice": [Function],
+                            "swap": [Function],
+                            "unshift": [Function],
+                          },
+                          "arrayInsert": [Function],
+                          "arrayMove": [Function],
+                          "arrayPop": [Function],
+                          "arrayPush": [Function],
+                          "arrayRemove": [Function],
+                          "arrayRemoveAll": [Function],
+                          "arrayShift": [Function],
+                          "arraySplice": [Function],
+                          "arraySwap": [Function],
+                          "arrayUnshift": [Function],
+                          "asyncErrors": undefined,
+                          "asyncValidate": [Function],
+                          "asyncValidating": false,
+                          "autofill": [Function],
+                          "blur": [Function],
+                          "change": [Function],
+                          "clearAsyncError": [Function],
+                          "clearFields": [Function],
+                          "clearSubmit": [Function],
+                          "clearSubmitErrors": [Function],
+                          "destroy": [Function],
+                          "destroyOnUnmount": true,
+                          "dirty": false,
+                          "dispatch": [Function],
+                          "enableReinitialize": false,
+                          "error": undefined,
+                          "focus": [Function],
+                          "forceUnregisterOnUnmount": false,
+                          "form": "CreateBetForm",
+                          "getFormState": [Function],
+                          "getValues": [Function],
+                          "initialValues": Object {
+                            "visibility": false,
+                          },
+                          "initialize": [Function],
+                          "initialized": true,
+                          "invalid": true,
+                          "keepDirtyOnReinitialize": false,
+                          "onSubmit": [Function],
+                          "persistentSubmitErrors": false,
+                          "pristine": true,
+                          "pure": true,
+                          "register": [Function],
+                          "registerField": [Function],
+                          "registerInnerOnSubmit": [Function],
+                          "registeredFields": Object {
+                            "description": Object {
+                              "count": 1,
+                              "name": "description",
+                              "type": "Field",
+                            },
+                            "endDate": Object {
+                              "count": 1,
+                              "name": "endDate",
+                              "type": "Field",
+                            },
+                            "endTime": Object {
+                              "count": 1,
+                              "name": "endTime",
+                              "type": "Field",
+                            },
+                            "title": Object {
+                              "count": 1,
+                              "name": "title",
+                              "type": "Field",
+                            },
+                            "visibility": Object {
+                              "count": 1,
+                              "name": "visibility",
+                              "type": "Field",
+                            },
+                          },
+                          "reset": [Function],
+                          "resetSection": [Function],
+                          "sectionPrefix": undefined,
+                          "setSubmitFailed": [Function],
+                          "setSubmitSucceeded": [Function],
+                          "shouldAsyncValidate": [Function],
+                          "shouldError": [Function],
+                          "shouldValidate": [Function],
+                          "shouldWarn": [Function],
+                          "startAsyncValidation": [Function],
+                          "startSubmit": [Function],
+                          "stopAsyncValidation": [Function],
+                          "stopSubmit": [Function],
+                          "submit": [Function],
+                          "submitFailed": false,
+                          "submitSucceeded": false,
+                          "submitting": false,
+                          "syncErrors": Object {
+                            "title": "Field is required",
+                          },
+                          "syncWarnings": Object {},
+                          "touch": [Function],
+                          "touchOnBlur": true,
+                          "touchOnChange": false,
+                          "triggerSubmit": undefined,
+                          "unregister": [Function],
+                          "unregisterField": [Function],
+                          "untouch": [Function],
+                          "updateSyncErrors": [Function],
+                          "updateSyncWarnings": [Function],
+                          "updateUnregisteredFields": false,
+                          "valid": false,
+                          "validExceptSubmit": false,
+                          "validate": [Function],
+                          "values": Object {
+                            "visibility": false,
+                          },
+                          "warning": undefined,
+                        }
+                      }
+                      className="Form-textField-3"
+                      component={[Function]}
+                      data-test-id="betDescription"
+                      inputProps={
+                        Object {
+                          "aria-label": "Description",
+                        }
+                      }
+                      label="Description"
+                      multiline={true}
+                      name="description"
+                      normalize={[Function]}
+                    >
+                      <ConnectedField
+                        _reduxForm={
+                          Object {
+                            "anyTouched": false,
+                            "array": Object {
+                              "insert": [Function],
+                              "move": [Function],
+                              "pop": [Function],
+                              "push": [Function],
+                              "remove": [Function],
+                              "removeAll": [Function],
+                              "shift": [Function],
+                              "splice": [Function],
+                              "swap": [Function],
+                              "unshift": [Function],
+                            },
+                            "arrayInsert": [Function],
+                            "arrayMove": [Function],
+                            "arrayPop": [Function],
+                            "arrayPush": [Function],
+                            "arrayRemove": [Function],
+                            "arrayRemoveAll": [Function],
+                            "arrayShift": [Function],
+                            "arraySplice": [Function],
+                            "arraySwap": [Function],
+                            "arrayUnshift": [Function],
+                            "asyncErrors": undefined,
+                            "asyncValidate": [Function],
+                            "asyncValidating": false,
+                            "autofill": [Function],
+                            "blur": [Function],
+                            "change": [Function],
+                            "clearAsyncError": [Function],
+                            "clearFields": [Function],
+                            "clearSubmit": [Function],
+                            "clearSubmitErrors": [Function],
+                            "destroy": [Function],
+                            "destroyOnUnmount": true,
+                            "dirty": false,
+                            "dispatch": [Function],
+                            "enableReinitialize": false,
+                            "error": undefined,
+                            "focus": [Function],
+                            "forceUnregisterOnUnmount": false,
+                            "form": "CreateBetForm",
+                            "getFormState": [Function],
+                            "getValues": [Function],
+                            "initialValues": Object {
+                              "visibility": false,
+                            },
+                            "initialize": [Function],
+                            "initialized": true,
+                            "invalid": true,
+                            "keepDirtyOnReinitialize": false,
+                            "onSubmit": [Function],
+                            "persistentSubmitErrors": false,
+                            "pristine": true,
+                            "pure": true,
+                            "register": [Function],
+                            "registerField": [Function],
+                            "registerInnerOnSubmit": [Function],
+                            "registeredFields": Object {
+                              "description": Object {
+                                "count": 1,
+                                "name": "description",
+                                "type": "Field",
+                              },
+                              "endDate": Object {
+                                "count": 1,
+                                "name": "endDate",
+                                "type": "Field",
+                              },
+                              "endTime": Object {
+                                "count": 1,
+                                "name": "endTime",
+                                "type": "Field",
+                              },
+                              "title": Object {
+                                "count": 1,
+                                "name": "title",
+                                "type": "Field",
+                              },
+                              "visibility": Object {
+                                "count": 1,
+                                "name": "visibility",
+                                "type": "Field",
+                              },
+                            },
+                            "reset": [Function],
+                            "resetSection": [Function],
+                            "sectionPrefix": undefined,
+                            "setSubmitFailed": [Function],
+                            "setSubmitSucceeded": [Function],
+                            "shouldAsyncValidate": [Function],
+                            "shouldError": [Function],
+                            "shouldValidate": [Function],
+                            "shouldWarn": [Function],
+                            "startAsyncValidation": [Function],
+                            "startSubmit": [Function],
+                            "stopAsyncValidation": [Function],
+                            "stopSubmit": [Function],
+                            "submit": [Function],
+                            "submitFailed": false,
+                            "submitSucceeded": false,
+                            "submitting": false,
+                            "syncErrors": Object {
+                              "title": "Field is required",
+                            },
+                            "syncWarnings": Object {},
+                            "touch": [Function],
+                            "touchOnBlur": true,
+                            "touchOnChange": false,
+                            "triggerSubmit": undefined,
+                            "unregister": [Function],
+                            "unregisterField": [Function],
+                            "untouch": [Function],
+                            "updateSyncErrors": [Function],
+                            "updateSyncWarnings": [Function],
+                            "updateUnregisteredFields": false,
+                            "valid": false,
+                            "validExceptSubmit": false,
+                            "validate": [Function],
+                            "values": Object {
+                              "visibility": false,
+                            },
+                            "warning": undefined,
+                          }
+                        }
+                        asyncValidating={false}
+                        className="Form-textField-3"
+                        component={[Function]}
+                        data-test-id="betDescription"
+                        dirty={false}
+                        dispatch={[Function]}
+                        inputProps={
+                          Object {
+                            "aria-label": "Description",
+                          }
+                        }
+                        label="Description"
+                        multiline={true}
+                        name="description"
+                        normalize={[Function]}
+                        pristine={true}
+                      >
+                        <MuiTextField
+                          className="Form-textField-3"
+                          data-test-id="betDescription"
+                          input={
+                            Object {
+                              "name": "description",
+                              "onBlur": [Function],
+                              "onChange": [Function],
+                              "onDragStart": [Function],
+                              "onDrop": [Function],
+                              "onFocus": [Function],
+                              "value": "",
+                            }
+                          }
+                          inputProps={
+                            Object {
+                              "aria-label": "Description",
+                            }
+                          }
+                          label="Description"
+                          meta={
+                            Object {
+                              "active": false,
+                              "asyncValidating": false,
+                              "autofilled": false,
+                              "dirty": false,
+                              "dispatch": [Function],
+                              "error": undefined,
+                              "form": "CreateBetForm",
+                              "initial": undefined,
+                              "invalid": false,
+                              "pristine": true,
+                              "submitFailed": false,
+                              "submitting": false,
+                              "touched": false,
+                              "valid": true,
+                              "visited": false,
+                              "warning": undefined,
+                            }
+                          }
+                          multiline={true}
+                        >
+                          <TextField
+                            className="Form-textField-3"
+                            data-test-id="betDescription"
+                            inputProps={
+                              Object {
+                                "aria-label": "Description",
+                              }
+                            }
+                            label="Description"
+                            multiline={true}
+                            name="description"
+                            onBlur={[Function]}
+                            onChange={[Function]}
+                            onDragStart={[Function]}
+                            onDrop={[Function]}
+                            onFocus={[Function]}
+                            required={false}
+                            select={false}
+                            value=""
+                          >
+                            <WithStyles(FormControl)
+                              className="Form-textField-3"
+                              data-test-id="betDescription"
+                              onDragStart={[Function]}
+                              onDrop={[Function]}
+                              required={false}
+                            >
+                              <FormControl
+                                className="Form-textField-3"
+                                classes={
+                                  Object {
+                                    "fullWidth": "MuiFormControl-fullWidth-13",
+                                    "marginDense": "MuiFormControl-marginDense-12",
+                                    "marginNormal": "MuiFormControl-marginNormal-11",
+                                    "root": "MuiFormControl-root-10",
+                                  }
+                                }
+                                component="div"
+                                data-test-id="betDescription"
+                                disabled={false}
+                                error={false}
+                                fullWidth={false}
+                                margin="none"
+                                onDragStart={[Function]}
+                                onDrop={[Function]}
+                                required={false}
+                              >
+                                <div
+                                  className="MuiFormControl-root-10 Form-textField-3"
+                                  data-test-id="betDescription"
+                                  onBlur={[Function]}
+                                  onDragStart={[Function]}
+                                  onDrop={[Function]}
+                                  onFocus={[Function]}
+                                >
+                                  <WithStyles(InputLabel)>
+                                    <InputLabel
+                                      classes={
+                                        Object {
+                                          "animated": "MuiInputLabel-animated-18",
+                                          "formControl": "MuiInputLabel-formControl-15",
+                                          "marginDense": "MuiInputLabel-marginDense-16",
+                                          "root": "MuiInputLabel-root-14",
+                                          "shrink": "MuiInputLabel-shrink-17",
+                                        }
+                                      }
+                                      disableAnimation={false}
+                                    >
+                                      <WithStyles(FormLabel)
+                                        className="MuiInputLabel-root-14 MuiInputLabel-formControl-15 MuiInputLabel-animated-18"
+                                        data-shrink={false}
+                                      >
+                                        <FormLabel
+                                          className="MuiInputLabel-root-14 MuiInputLabel-formControl-15 MuiInputLabel-animated-18"
+                                          classes={
+                                            Object {
+                                              "asterisk": "MuiFormLabel-asterisk-23",
+                                              "asteriskError": "MuiFormLabel-asteriskError-24",
+                                              "disabled": "MuiFormLabel-disabled-21",
+                                              "error": "MuiFormLabel-error-22",
+                                              "focused": "MuiFormLabel-focused-20",
+                                              "root": "MuiFormLabel-root-19",
+                                            }
+                                          }
+                                          component="label"
+                                          data-shrink={false}
+                                        >
+                                          <label
+                                            className="MuiFormLabel-root-19 MuiInputLabel-root-14 MuiInputLabel-formControl-15 MuiInputLabel-animated-18"
+                                            data-shrink={false}
+                                          >
+                                            Description
+                                          </label>
+                                        </FormLabel>
+                                      </WithStyles(FormLabel)>
+                                    </InputLabel>
+                                  </WithStyles(InputLabel)>
+                                  <WithStyles(Input)
+                                    inputProps={
+                                      Object {
+                                        "aria-label": "Description",
+                                      }
+                                    }
+                                    multiline={true}
+                                    name="description"
+                                    onBlur={[Function]}
+                                    onChange={[Function]}
+                                    onFocus={[Function]}
+                                    value=""
+                                  >
+                                    <Input
+                                      classes={
+                                        Object {
+                                          "disabled": "MuiInput-disabled-28",
+                                          "error": "MuiInput-error-30",
+                                          "focused": "MuiInput-focused-27",
+                                          "formControl": "MuiInput-formControl-26",
+                                          "fullWidth": "MuiInput-fullWidth-32",
+                                          "input": "MuiInput-input-33",
+                                          "inputDisabled": "MuiInput-inputDisabled-35",
+                                          "inputMarginDense": "MuiInput-inputMarginDense-34",
+                                          "inputMultiline": "MuiInput-inputMultiline-36",
+                                          "inputType": "MuiInput-inputType-37",
+                                          "inputTypeSearch": "MuiInput-inputTypeSearch-38",
+                                          "multiline": "MuiInput-multiline-31",
+                                          "root": "MuiInput-root-25",
+                                          "underline": "MuiInput-underline-29",
+                                        }
+                                      }
+                                      disableUnderline={false}
+                                      fullWidth={false}
+                                      inputProps={
+                                        Object {
+                                          "aria-label": "Description",
+                                        }
+                                      }
+                                      multiline={true}
+                                      name="description"
+                                      onBlur={[Function]}
+                                      onChange={[Function]}
+                                      onFocus={[Function]}
+                                      type="text"
+                                      value=""
+                                    >
+                                      <div
+                                        className="MuiInput-root-25 MuiInput-formControl-26 MuiInput-multiline-31 MuiInput-underline-29"
+                                      >
+                                        <WithStyles(Textarea)
+                                          aria-invalid={false}
+                                          aria-label="Description"
+                                          aria-required={false}
+                                          className="MuiInput-input-33 MuiInput-inputMultiline-36"
+                                          disabled={false}
+                                          name="description"
+                                          onBlur={[Function]}
+                                          onChange={[Function]}
+                                          onFocus={[Function]}
+                                          textareaRef={[Function]}
+                                          type="text"
+                                          value=""
+                                        >
+                                          <Textarea
+                                            aria-invalid={false}
+                                            aria-label="Description"
+                                            aria-required={false}
+                                            className="MuiInput-input-33 MuiInput-inputMultiline-36"
+                                            classes={
+                                              Object {
+                                                "root": "MuiTextarea-root-39",
+                                                "shadow": "MuiTextarea-shadow-41",
+                                                "textarea": "MuiTextarea-textarea-40",
+                                              }
+                                            }
+                                            disabled={false}
+                                            name="description"
+                                            onBlur={[Function]}
+                                            onChange={[Function]}
+                                            onFocus={[Function]}
+                                            rows={1}
+                                            textareaRef={[Function]}
+                                            type="text"
+                                            value=""
+                                          >
+                                            <div
+                                              className="MuiTextarea-root-39"
+                                              style={
+                                                Object {
+                                                  "height": 0,
+                                                }
+                                              }
+                                            >
+                                              <EventListener
+                                                onResize={[Function]}
+                                                target="window"
+                                              />
+                                              <textarea
+                                                aria-hidden="true"
+                                                className="MuiTextarea-shadow-41 MuiTextarea-textarea-40"
+                                                readOnly={true}
+                                                rows="1"
+                                                tabIndex={-1}
+                                                value=""
+                                              />
+                                              <textarea
+                                                aria-hidden="true"
+                                                className="MuiTextarea-shadow-41 MuiTextarea-textarea-40"
+                                                readOnly={true}
+                                                rows={1}
+                                                tabIndex={-1}
+                                                value=""
+                                              />
+                                              <textarea
+                                                aria-invalid={false}
+                                                aria-label="Description"
+                                                aria-required={false}
+                                                className="MuiTextarea-textarea-40 MuiInput-input-33 MuiInput-inputMultiline-36"
+                                                disabled={false}
+                                                name="description"
+                                                onBlur={[Function]}
+                                                onChange={[Function]}
+                                                onFocus={[Function]}
+                                                rows={1}
+                                                type="text"
+                                                value=""
+                                              />
+                                            </div>
+                                          </Textarea>
+                                        </WithStyles(Textarea)>
+                                      </div>
+                                    </Input>
+                                  </WithStyles(Input)>
+                                </div>
+                              </FormControl>
+                            </WithStyles(FormControl)>
+                          </TextField>
+                        </MuiTextField>
+                      </ConnectedField>
+                    </Connect(ConnectedField)>
+                  </Field>
+                  <div
+                    className="Form-endDateTimeWrapper-6"
+                  >
+                    <Field
+                      InputLabelProps={
+                        Object {
+                          "shrink": true,
+                        }
+                      }
+                      className="Form-date-7"
+                      component={[Function]}
+                      data-test-id="betEndDate"
+                      inputProps={
+                        Object {
+                          "aria-label": "End Date",
+                        }
+                      }
+                      label="End Date"
+                      name="endDate"
+                      type="date"
+                    >
+                      <Connect(ConnectedField)
+                        InputLabelProps={
+                          Object {
+                            "shrink": true,
+                          }
+                        }
+                        _reduxForm={
+                          Object {
+                            "anyTouched": false,
+                            "array": Object {
+                              "insert": [Function],
+                              "move": [Function],
+                              "pop": [Function],
+                              "push": [Function],
+                              "remove": [Function],
+                              "removeAll": [Function],
+                              "shift": [Function],
+                              "splice": [Function],
+                              "swap": [Function],
+                              "unshift": [Function],
+                            },
+                            "arrayInsert": [Function],
+                            "arrayMove": [Function],
+                            "arrayPop": [Function],
+                            "arrayPush": [Function],
+                            "arrayRemove": [Function],
+                            "arrayRemoveAll": [Function],
+                            "arrayShift": [Function],
+                            "arraySplice": [Function],
+                            "arraySwap": [Function],
+                            "arrayUnshift": [Function],
+                            "asyncErrors": undefined,
+                            "asyncValidate": [Function],
+                            "asyncValidating": false,
+                            "autofill": [Function],
+                            "blur": [Function],
+                            "change": [Function],
+                            "clearAsyncError": [Function],
+                            "clearFields": [Function],
+                            "clearSubmit": [Function],
+                            "clearSubmitErrors": [Function],
+                            "destroy": [Function],
+                            "destroyOnUnmount": true,
+                            "dirty": false,
+                            "dispatch": [Function],
+                            "enableReinitialize": false,
+                            "error": undefined,
+                            "focus": [Function],
+                            "forceUnregisterOnUnmount": false,
+                            "form": "CreateBetForm",
+                            "getFormState": [Function],
+                            "getValues": [Function],
+                            "initialValues": Object {
+                              "visibility": false,
+                            },
+                            "initialize": [Function],
+                            "initialized": true,
+                            "invalid": true,
+                            "keepDirtyOnReinitialize": false,
+                            "onSubmit": [Function],
+                            "persistentSubmitErrors": false,
+                            "pristine": true,
+                            "pure": true,
+                            "register": [Function],
+                            "registerField": [Function],
+                            "registerInnerOnSubmit": [Function],
+                            "registeredFields": Object {
+                              "description": Object {
+                                "count": 1,
+                                "name": "description",
+                                "type": "Field",
+                              },
+                              "endDate": Object {
+                                "count": 1,
+                                "name": "endDate",
+                                "type": "Field",
+                              },
+                              "endTime": Object {
+                                "count": 1,
+                                "name": "endTime",
+                                "type": "Field",
+                              },
+                              "title": Object {
+                                "count": 1,
+                                "name": "title",
+                                "type": "Field",
+                              },
+                              "visibility": Object {
+                                "count": 1,
+                                "name": "visibility",
+                                "type": "Field",
+                              },
+                            },
+                            "reset": [Function],
+                            "resetSection": [Function],
+                            "sectionPrefix": undefined,
+                            "setSubmitFailed": [Function],
+                            "setSubmitSucceeded": [Function],
+                            "shouldAsyncValidate": [Function],
+                            "shouldError": [Function],
+                            "shouldValidate": [Function],
+                            "shouldWarn": [Function],
+                            "startAsyncValidation": [Function],
+                            "startSubmit": [Function],
+                            "stopAsyncValidation": [Function],
+                            "stopSubmit": [Function],
+                            "submit": [Function],
+                            "submitFailed": false,
+                            "submitSucceeded": false,
+                            "submitting": false,
+                            "syncErrors": Object {
+                              "title": "Field is required",
+                            },
+                            "syncWarnings": Object {},
+                            "touch": [Function],
+                            "touchOnBlur": true,
+                            "touchOnChange": false,
+                            "triggerSubmit": undefined,
+                            "unregister": [Function],
+                            "unregisterField": [Function],
+                            "untouch": [Function],
+                            "updateSyncErrors": [Function],
+                            "updateSyncWarnings": [Function],
+                            "updateUnregisteredFields": false,
+                            "valid": false,
+                            "validExceptSubmit": false,
+                            "validate": [Function],
+                            "values": Object {
+                              "visibility": false,
+                            },
+                            "warning": undefined,
+                          }
+                        }
+                        className="Form-date-7"
+                        component={[Function]}
+                        data-test-id="betEndDate"
+                        inputProps={
+                          Object {
+                            "aria-label": "End Date",
+                          }
+                        }
+                        label="End Date"
+                        name="endDate"
+                        normalize={[Function]}
+                        type="date"
+                      >
+                        <ConnectedField
+                          InputLabelProps={
+                            Object {
+                              "shrink": true,
+                            }
+                          }
+                          _reduxForm={
+                            Object {
+                              "anyTouched": false,
+                              "array": Object {
+                                "insert": [Function],
+                                "move": [Function],
+                                "pop": [Function],
+                                "push": [Function],
+                                "remove": [Function],
+                                "removeAll": [Function],
+                                "shift": [Function],
+                                "splice": [Function],
+                                "swap": [Function],
+                                "unshift": [Function],
+                              },
+                              "arrayInsert": [Function],
+                              "arrayMove": [Function],
+                              "arrayPop": [Function],
+                              "arrayPush": [Function],
+                              "arrayRemove": [Function],
+                              "arrayRemoveAll": [Function],
+                              "arrayShift": [Function],
+                              "arraySplice": [Function],
+                              "arraySwap": [Function],
+                              "arrayUnshift": [Function],
+                              "asyncErrors": undefined,
+                              "asyncValidate": [Function],
+                              "asyncValidating": false,
+                              "autofill": [Function],
+                              "blur": [Function],
+                              "change": [Function],
+                              "clearAsyncError": [Function],
+                              "clearFields": [Function],
+                              "clearSubmit": [Function],
+                              "clearSubmitErrors": [Function],
+                              "destroy": [Function],
+                              "destroyOnUnmount": true,
+                              "dirty": false,
+                              "dispatch": [Function],
+                              "enableReinitialize": false,
+                              "error": undefined,
+                              "focus": [Function],
+                              "forceUnregisterOnUnmount": false,
+                              "form": "CreateBetForm",
+                              "getFormState": [Function],
+                              "getValues": [Function],
+                              "initialValues": Object {
+                                "visibility": false,
+                              },
+                              "initialize": [Function],
+                              "initialized": true,
+                              "invalid": true,
+                              "keepDirtyOnReinitialize": false,
+                              "onSubmit": [Function],
+                              "persistentSubmitErrors": false,
+                              "pristine": true,
+                              "pure": true,
+                              "register": [Function],
+                              "registerField": [Function],
+                              "registerInnerOnSubmit": [Function],
+                              "registeredFields": Object {
+                                "description": Object {
+                                  "count": 1,
+                                  "name": "description",
+                                  "type": "Field",
+                                },
+                                "endDate": Object {
+                                  "count": 1,
+                                  "name": "endDate",
+                                  "type": "Field",
+                                },
+                                "endTime": Object {
+                                  "count": 1,
+                                  "name": "endTime",
+                                  "type": "Field",
+                                },
+                                "title": Object {
+                                  "count": 1,
+                                  "name": "title",
+                                  "type": "Field",
+                                },
+                                "visibility": Object {
+                                  "count": 1,
+                                  "name": "visibility",
+                                  "type": "Field",
+                                },
+                              },
+                              "reset": [Function],
+                              "resetSection": [Function],
+                              "sectionPrefix": undefined,
+                              "setSubmitFailed": [Function],
+                              "setSubmitSucceeded": [Function],
+                              "shouldAsyncValidate": [Function],
+                              "shouldError": [Function],
+                              "shouldValidate": [Function],
+                              "shouldWarn": [Function],
+                              "startAsyncValidation": [Function],
+                              "startSubmit": [Function],
+                              "stopAsyncValidation": [Function],
+                              "stopSubmit": [Function],
+                              "submit": [Function],
+                              "submitFailed": false,
+                              "submitSucceeded": false,
+                              "submitting": false,
+                              "syncErrors": Object {
+                                "title": "Field is required",
+                              },
+                              "syncWarnings": Object {},
+                              "touch": [Function],
+                              "touchOnBlur": true,
+                              "touchOnChange": false,
+                              "triggerSubmit": undefined,
+                              "unregister": [Function],
+                              "unregisterField": [Function],
+                              "untouch": [Function],
+                              "updateSyncErrors": [Function],
+                              "updateSyncWarnings": [Function],
+                              "updateUnregisteredFields": false,
+                              "valid": false,
+                              "validExceptSubmit": false,
+                              "validate": [Function],
+                              "values": Object {
+                                "visibility": false,
+                              },
+                              "warning": undefined,
+                            }
+                          }
+                          asyncValidating={false}
+                          className="Form-date-7"
+                          component={[Function]}
+                          data-test-id="betEndDate"
+                          dirty={false}
+                          dispatch={[Function]}
+                          inputProps={
+                            Object {
+                              "aria-label": "End Date",
+                            }
+                          }
+                          label="End Date"
+                          name="endDate"
+                          normalize={[Function]}
+                          pristine={true}
+                          type="date"
+                        >
+                          <MuiTextField
+                            InputLabelProps={
+                              Object {
+                                "shrink": true,
+                              }
+                            }
+                            className="Form-date-7"
+                            data-test-id="betEndDate"
+                            input={
+                              Object {
+                                "name": "endDate",
+                                "onBlur": [Function],
+                                "onChange": [Function],
+                                "onDragStart": [Function],
+                                "onDrop": [Function],
+                                "onFocus": [Function],
+                                "value": "",
+                              }
+                            }
+                            inputProps={
+                              Object {
+                                "aria-label": "End Date",
+                              }
+                            }
+                            label="End Date"
+                            meta={
+                              Object {
+                                "active": false,
+                                "asyncValidating": false,
+                                "autofilled": false,
+                                "dirty": false,
+                                "dispatch": [Function],
+                                "error": undefined,
+                                "form": "CreateBetForm",
+                                "initial": undefined,
+                                "invalid": false,
+                                "pristine": true,
+                                "submitFailed": false,
+                                "submitting": false,
+                                "touched": false,
+                                "valid": true,
+                                "visited": false,
+                                "warning": undefined,
+                              }
+                            }
+                            type="date"
+                          >
+                            <TextField
+                              InputLabelProps={
+                                Object {
+                                  "shrink": true,
+                                }
+                              }
+                              className="Form-date-7"
+                              data-test-id="betEndDate"
+                              inputProps={
+                                Object {
+                                  "aria-label": "End Date",
+                                }
+                              }
+                              label="End Date"
+                              name="endDate"
+                              onBlur={[Function]}
+                              onChange={[Function]}
+                              onDragStart={[Function]}
+                              onDrop={[Function]}
+                              onFocus={[Function]}
+                              required={false}
+                              select={false}
+                              type="date"
+                              value=""
+                            >
+                              <WithStyles(FormControl)
+                                className="Form-date-7"
+                                data-test-id="betEndDate"
+                                onDragStart={[Function]}
+                                onDrop={[Function]}
+                                required={false}
+                              >
+                                <FormControl
+                                  className="Form-date-7"
+                                  classes={
+                                    Object {
+                                      "fullWidth": "MuiFormControl-fullWidth-13",
+                                      "marginDense": "MuiFormControl-marginDense-12",
+                                      "marginNormal": "MuiFormControl-marginNormal-11",
+                                      "root": "MuiFormControl-root-10",
+                                    }
+                                  }
+                                  component="div"
+                                  data-test-id="betEndDate"
+                                  disabled={false}
+                                  error={false}
+                                  fullWidth={false}
+                                  margin="none"
+                                  onDragStart={[Function]}
+                                  onDrop={[Function]}
+                                  required={false}
+                                >
+                                  <div
+                                    className="MuiFormControl-root-10 Form-date-7"
+                                    data-test-id="betEndDate"
+                                    onBlur={[Function]}
+                                    onDragStart={[Function]}
+                                    onDrop={[Function]}
+                                    onFocus={[Function]}
+                                  >
+                                    <WithStyles(InputLabel)
+                                      shrink={true}
+                                    >
+                                      <InputLabel
+                                        classes={
+                                          Object {
+                                            "animated": "MuiInputLabel-animated-18",
+                                            "formControl": "MuiInputLabel-formControl-15",
+                                            "marginDense": "MuiInputLabel-marginDense-16",
+                                            "root": "MuiInputLabel-root-14",
+                                            "shrink": "MuiInputLabel-shrink-17",
+                                          }
+                                        }
+                                        disableAnimation={false}
+                                        shrink={true}
+                                      >
+                                        <WithStyles(FormLabel)
+                                          className="MuiInputLabel-root-14 MuiInputLabel-formControl-15 MuiInputLabel-animated-18 MuiInputLabel-shrink-17"
+                                          data-shrink={true}
+                                        >
+                                          <FormLabel
+                                            className="MuiInputLabel-root-14 MuiInputLabel-formControl-15 MuiInputLabel-animated-18 MuiInputLabel-shrink-17"
+                                            classes={
+                                              Object {
+                                                "asterisk": "MuiFormLabel-asterisk-23",
+                                                "asteriskError": "MuiFormLabel-asteriskError-24",
+                                                "disabled": "MuiFormLabel-disabled-21",
+                                                "error": "MuiFormLabel-error-22",
+                                                "focused": "MuiFormLabel-focused-20",
+                                                "root": "MuiFormLabel-root-19",
+                                              }
+                                            }
+                                            component="label"
+                                            data-shrink={true}
+                                          >
+                                            <label
+                                              className="MuiFormLabel-root-19 MuiInputLabel-root-14 MuiInputLabel-formControl-15 MuiInputLabel-animated-18 MuiInputLabel-shrink-17"
+                                              data-shrink={true}
+                                            >
+                                              End Date
+                                            </label>
+                                          </FormLabel>
+                                        </WithStyles(FormLabel)>
+                                      </InputLabel>
+                                    </WithStyles(InputLabel)>
+                                    <WithStyles(Input)
+                                      inputProps={
+                                        Object {
+                                          "aria-label": "End Date",
+                                        }
+                                      }
+                                      name="endDate"
+                                      onBlur={[Function]}
+                                      onChange={[Function]}
+                                      onFocus={[Function]}
+                                      type="date"
+                                      value=""
+                                    >
+                                      <Input
+                                        classes={
+                                          Object {
+                                            "disabled": "MuiInput-disabled-28",
+                                            "error": "MuiInput-error-30",
+                                            "focused": "MuiInput-focused-27",
+                                            "formControl": "MuiInput-formControl-26",
+                                            "fullWidth": "MuiInput-fullWidth-32",
+                                            "input": "MuiInput-input-33",
+                                            "inputDisabled": "MuiInput-inputDisabled-35",
+                                            "inputMarginDense": "MuiInput-inputMarginDense-34",
+                                            "inputMultiline": "MuiInput-inputMultiline-36",
+                                            "inputType": "MuiInput-inputType-37",
+                                            "inputTypeSearch": "MuiInput-inputTypeSearch-38",
+                                            "multiline": "MuiInput-multiline-31",
+                                            "root": "MuiInput-root-25",
+                                            "underline": "MuiInput-underline-29",
+                                          }
+                                        }
+                                        disableUnderline={false}
+                                        fullWidth={false}
+                                        inputProps={
+                                          Object {
+                                            "aria-label": "End Date",
+                                          }
+                                        }
+                                        multiline={false}
+                                        name="endDate"
+                                        onBlur={[Function]}
+                                        onChange={[Function]}
+                                        onFocus={[Function]}
+                                        type="date"
+                                        value=""
+                                      >
+                                        <div
+                                          className="MuiInput-root-25 MuiInput-formControl-26 MuiInput-underline-29"
+                                        >
+                                          <input
+                                            aria-invalid={false}
+                                            aria-label="End Date"
+                                            aria-required={false}
+                                            className="MuiInput-input-33 MuiInput-inputType-37"
+                                            disabled={false}
+                                            name="endDate"
+                                            onBlur={[Function]}
+                                            onChange={[Function]}
+                                            onFocus={[Function]}
+                                            type="date"
+                                            value=""
+                                          />
+                                        </div>
+                                      </Input>
+                                    </WithStyles(Input)>
+                                  </div>
+                                </FormControl>
+                              </WithStyles(FormControl)>
+                            </TextField>
+                          </MuiTextField>
+                        </ConnectedField>
+                      </Connect(ConnectedField)>
+                    </Field>
+                    <Field
+                      InputLabelProps={
+                        Object {
+                          "shrink": true,
+                        }
+                      }
+                      className="Form-time-8"
+                      component={[Function]}
+                      data-test-id="betEndTime"
+                      inputProps={
+                        Object {
+                          "aria-label": "End Time",
+                        }
+                      }
+                      label="End Time"
+                      name="endTime"
+                      type="time"
+                    >
+                      <Connect(ConnectedField)
+                        InputLabelProps={
+                          Object {
+                            "shrink": true,
+                          }
+                        }
+                        _reduxForm={
+                          Object {
+                            "anyTouched": false,
+                            "array": Object {
+                              "insert": [Function],
+                              "move": [Function],
+                              "pop": [Function],
+                              "push": [Function],
+                              "remove": [Function],
+                              "removeAll": [Function],
+                              "shift": [Function],
+                              "splice": [Function],
+                              "swap": [Function],
+                              "unshift": [Function],
+                            },
+                            "arrayInsert": [Function],
+                            "arrayMove": [Function],
+                            "arrayPop": [Function],
+                            "arrayPush": [Function],
+                            "arrayRemove": [Function],
+                            "arrayRemoveAll": [Function],
+                            "arrayShift": [Function],
+                            "arraySplice": [Function],
+                            "arraySwap": [Function],
+                            "arrayUnshift": [Function],
+                            "asyncErrors": undefined,
+                            "asyncValidate": [Function],
+                            "asyncValidating": false,
+                            "autofill": [Function],
+                            "blur": [Function],
+                            "change": [Function],
+                            "clearAsyncError": [Function],
+                            "clearFields": [Function],
+                            "clearSubmit": [Function],
+                            "clearSubmitErrors": [Function],
+                            "destroy": [Function],
+                            "destroyOnUnmount": true,
+                            "dirty": false,
+                            "dispatch": [Function],
+                            "enableReinitialize": false,
+                            "error": undefined,
+                            "focus": [Function],
+                            "forceUnregisterOnUnmount": false,
+                            "form": "CreateBetForm",
+                            "getFormState": [Function],
+                            "getValues": [Function],
+                            "initialValues": Object {
+                              "visibility": false,
+                            },
+                            "initialize": [Function],
+                            "initialized": true,
+                            "invalid": true,
+                            "keepDirtyOnReinitialize": false,
+                            "onSubmit": [Function],
+                            "persistentSubmitErrors": false,
+                            "pristine": true,
+                            "pure": true,
+                            "register": [Function],
+                            "registerField": [Function],
+                            "registerInnerOnSubmit": [Function],
+                            "registeredFields": Object {
+                              "description": Object {
+                                "count": 1,
+                                "name": "description",
+                                "type": "Field",
+                              },
+                              "endDate": Object {
+                                "count": 1,
+                                "name": "endDate",
+                                "type": "Field",
+                              },
+                              "endTime": Object {
+                                "count": 1,
+                                "name": "endTime",
+                                "type": "Field",
+                              },
+                              "title": Object {
+                                "count": 1,
+                                "name": "title",
+                                "type": "Field",
+                              },
+                              "visibility": Object {
+                                "count": 1,
+                                "name": "visibility",
+                                "type": "Field",
+                              },
+                            },
+                            "reset": [Function],
+                            "resetSection": [Function],
+                            "sectionPrefix": undefined,
+                            "setSubmitFailed": [Function],
+                            "setSubmitSucceeded": [Function],
+                            "shouldAsyncValidate": [Function],
+                            "shouldError": [Function],
+                            "shouldValidate": [Function],
+                            "shouldWarn": [Function],
+                            "startAsyncValidation": [Function],
+                            "startSubmit": [Function],
+                            "stopAsyncValidation": [Function],
+                            "stopSubmit": [Function],
+                            "submit": [Function],
+                            "submitFailed": false,
+                            "submitSucceeded": false,
+                            "submitting": false,
+                            "syncErrors": Object {
+                              "title": "Field is required",
+                            },
+                            "syncWarnings": Object {},
+                            "touch": [Function],
+                            "touchOnBlur": true,
+                            "touchOnChange": false,
+                            "triggerSubmit": undefined,
+                            "unregister": [Function],
+                            "unregisterField": [Function],
+                            "untouch": [Function],
+                            "updateSyncErrors": [Function],
+                            "updateSyncWarnings": [Function],
+                            "updateUnregisteredFields": false,
+                            "valid": false,
+                            "validExceptSubmit": false,
+                            "validate": [Function],
+                            "values": Object {
+                              "visibility": false,
+                            },
+                            "warning": undefined,
+                          }
+                        }
+                        className="Form-time-8"
+                        component={[Function]}
+                        data-test-id="betEndTime"
+                        inputProps={
+                          Object {
+                            "aria-label": "End Time",
+                          }
+                        }
+                        label="End Time"
+                        name="endTime"
+                        normalize={[Function]}
+                        type="time"
+                      >
+                        <ConnectedField
+                          InputLabelProps={
+                            Object {
+                              "shrink": true,
+                            }
+                          }
+                          _reduxForm={
+                            Object {
+                              "anyTouched": false,
+                              "array": Object {
+                                "insert": [Function],
+                                "move": [Function],
+                                "pop": [Function],
+                                "push": [Function],
+                                "remove": [Function],
+                                "removeAll": [Function],
+                                "shift": [Function],
+                                "splice": [Function],
+                                "swap": [Function],
+                                "unshift": [Function],
+                              },
+                              "arrayInsert": [Function],
+                              "arrayMove": [Function],
+                              "arrayPop": [Function],
+                              "arrayPush": [Function],
+                              "arrayRemove": [Function],
+                              "arrayRemoveAll": [Function],
+                              "arrayShift": [Function],
+                              "arraySplice": [Function],
+                              "arraySwap": [Function],
+                              "arrayUnshift": [Function],
+                              "asyncErrors": undefined,
+                              "asyncValidate": [Function],
+                              "asyncValidating": false,
+                              "autofill": [Function],
+                              "blur": [Function],
+                              "change": [Function],
+                              "clearAsyncError": [Function],
+                              "clearFields": [Function],
+                              "clearSubmit": [Function],
+                              "clearSubmitErrors": [Function],
+                              "destroy": [Function],
+                              "destroyOnUnmount": true,
+                              "dirty": false,
+                              "dispatch": [Function],
+                              "enableReinitialize": false,
+                              "error": undefined,
+                              "focus": [Function],
+                              "forceUnregisterOnUnmount": false,
+                              "form": "CreateBetForm",
+                              "getFormState": [Function],
+                              "getValues": [Function],
+                              "initialValues": Object {
+                                "visibility": false,
+                              },
+                              "initialize": [Function],
+                              "initialized": true,
+                              "invalid": true,
+                              "keepDirtyOnReinitialize": false,
+                              "onSubmit": [Function],
+                              "persistentSubmitErrors": false,
+                              "pristine": true,
+                              "pure": true,
+                              "register": [Function],
+                              "registerField": [Function],
+                              "registerInnerOnSubmit": [Function],
+                              "registeredFields": Object {
+                                "description": Object {
+                                  "count": 1,
+                                  "name": "description",
+                                  "type": "Field",
+                                },
+                                "endDate": Object {
+                                  "count": 1,
+                                  "name": "endDate",
+                                  "type": "Field",
+                                },
+                                "endTime": Object {
+                                  "count": 1,
+                                  "name": "endTime",
+                                  "type": "Field",
+                                },
+                                "title": Object {
+                                  "count": 1,
+                                  "name": "title",
+                                  "type": "Field",
+                                },
+                                "visibility": Object {
+                                  "count": 1,
+                                  "name": "visibility",
+                                  "type": "Field",
+                                },
+                              },
+                              "reset": [Function],
+                              "resetSection": [Function],
+                              "sectionPrefix": undefined,
+                              "setSubmitFailed": [Function],
+                              "setSubmitSucceeded": [Function],
+                              "shouldAsyncValidate": [Function],
+                              "shouldError": [Function],
+                              "shouldValidate": [Function],
+                              "shouldWarn": [Function],
+                              "startAsyncValidation": [Function],
+                              "startSubmit": [Function],
+                              "stopAsyncValidation": [Function],
+                              "stopSubmit": [Function],
+                              "submit": [Function],
+                              "submitFailed": false,
+                              "submitSucceeded": false,
+                              "submitting": false,
+                              "syncErrors": Object {
+                                "title": "Field is required",
+                              },
+                              "syncWarnings": Object {},
+                              "touch": [Function],
+                              "touchOnBlur": true,
+                              "touchOnChange": false,
+                              "triggerSubmit": undefined,
+                              "unregister": [Function],
+                              "unregisterField": [Function],
+                              "untouch": [Function],
+                              "updateSyncErrors": [Function],
+                              "updateSyncWarnings": [Function],
+                              "updateUnregisteredFields": false,
+                              "valid": false,
+                              "validExceptSubmit": false,
+                              "validate": [Function],
+                              "values": Object {
+                                "visibility": false,
+                              },
+                              "warning": undefined,
+                            }
+                          }
+                          asyncValidating={false}
+                          className="Form-time-8"
+                          component={[Function]}
+                          data-test-id="betEndTime"
+                          dirty={false}
+                          dispatch={[Function]}
+                          inputProps={
+                            Object {
+                              "aria-label": "End Time",
+                            }
+                          }
+                          label="End Time"
+                          name="endTime"
+                          normalize={[Function]}
+                          pristine={true}
+                          type="time"
+                        >
+                          <MuiTextField
+                            InputLabelProps={
+                              Object {
+                                "shrink": true,
+                              }
+                            }
+                            className="Form-time-8"
+                            data-test-id="betEndTime"
+                            input={
+                              Object {
+                                "name": "endTime",
+                                "onBlur": [Function],
+                                "onChange": [Function],
+                                "onDragStart": [Function],
+                                "onDrop": [Function],
+                                "onFocus": [Function],
+                                "value": "",
+                              }
+                            }
+                            inputProps={
+                              Object {
+                                "aria-label": "End Time",
+                              }
+                            }
+                            label="End Time"
+                            meta={
+                              Object {
+                                "active": false,
+                                "asyncValidating": false,
+                                "autofilled": false,
+                                "dirty": false,
+                                "dispatch": [Function],
+                                "error": undefined,
+                                "form": "CreateBetForm",
+                                "initial": undefined,
+                                "invalid": false,
+                                "pristine": true,
+                                "submitFailed": false,
+                                "submitting": false,
+                                "touched": false,
+                                "valid": true,
+                                "visited": false,
+                                "warning": undefined,
+                              }
+                            }
+                            type="time"
+                          >
+                            <TextField
+                              InputLabelProps={
+                                Object {
+                                  "shrink": true,
+                                }
+                              }
+                              className="Form-time-8"
+                              data-test-id="betEndTime"
+                              inputProps={
+                                Object {
+                                  "aria-label": "End Time",
+                                }
+                              }
+                              label="End Time"
+                              name="endTime"
+                              onBlur={[Function]}
+                              onChange={[Function]}
+                              onDragStart={[Function]}
+                              onDrop={[Function]}
+                              onFocus={[Function]}
+                              required={false}
+                              select={false}
+                              type="time"
+                              value=""
+                            >
+                              <WithStyles(FormControl)
+                                className="Form-time-8"
+                                data-test-id="betEndTime"
+                                onDragStart={[Function]}
+                                onDrop={[Function]}
+                                required={false}
+                              >
+                                <FormControl
+                                  className="Form-time-8"
+                                  classes={
+                                    Object {
+                                      "fullWidth": "MuiFormControl-fullWidth-13",
+                                      "marginDense": "MuiFormControl-marginDense-12",
+                                      "marginNormal": "MuiFormControl-marginNormal-11",
+                                      "root": "MuiFormControl-root-10",
+                                    }
+                                  }
+                                  component="div"
+                                  data-test-id="betEndTime"
+                                  disabled={false}
+                                  error={false}
+                                  fullWidth={false}
+                                  margin="none"
+                                  onDragStart={[Function]}
+                                  onDrop={[Function]}
+                                  required={false}
+                                >
+                                  <div
+                                    className="MuiFormControl-root-10 Form-time-8"
+                                    data-test-id="betEndTime"
+                                    onBlur={[Function]}
+                                    onDragStart={[Function]}
+                                    onDrop={[Function]}
+                                    onFocus={[Function]}
+                                  >
+                                    <WithStyles(InputLabel)
+                                      shrink={true}
+                                    >
+                                      <InputLabel
+                                        classes={
+                                          Object {
+                                            "animated": "MuiInputLabel-animated-18",
+                                            "formControl": "MuiInputLabel-formControl-15",
+                                            "marginDense": "MuiInputLabel-marginDense-16",
+                                            "root": "MuiInputLabel-root-14",
+                                            "shrink": "MuiInputLabel-shrink-17",
+                                          }
+                                        }
+                                        disableAnimation={false}
+                                        shrink={true}
+                                      >
+                                        <WithStyles(FormLabel)
+                                          className="MuiInputLabel-root-14 MuiInputLabel-formControl-15 MuiInputLabel-animated-18 MuiInputLabel-shrink-17"
+                                          data-shrink={true}
+                                        >
+                                          <FormLabel
+                                            className="MuiInputLabel-root-14 MuiInputLabel-formControl-15 MuiInputLabel-animated-18 MuiInputLabel-shrink-17"
+                                            classes={
+                                              Object {
+                                                "asterisk": "MuiFormLabel-asterisk-23",
+                                                "asteriskError": "MuiFormLabel-asteriskError-24",
+                                                "disabled": "MuiFormLabel-disabled-21",
+                                                "error": "MuiFormLabel-error-22",
+                                                "focused": "MuiFormLabel-focused-20",
+                                                "root": "MuiFormLabel-root-19",
+                                              }
+                                            }
+                                            component="label"
+                                            data-shrink={true}
+                                          >
+                                            <label
+                                              className="MuiFormLabel-root-19 MuiInputLabel-root-14 MuiInputLabel-formControl-15 MuiInputLabel-animated-18 MuiInputLabel-shrink-17"
+                                              data-shrink={true}
+                                            >
+                                              End Time
+                                            </label>
+                                          </FormLabel>
+                                        </WithStyles(FormLabel)>
+                                      </InputLabel>
+                                    </WithStyles(InputLabel)>
+                                    <WithStyles(Input)
+                                      inputProps={
+                                        Object {
+                                          "aria-label": "End Time",
+                                        }
+                                      }
+                                      name="endTime"
+                                      onBlur={[Function]}
+                                      onChange={[Function]}
+                                      onFocus={[Function]}
+                                      type="time"
+                                      value=""
+                                    >
+                                      <Input
+                                        classes={
+                                          Object {
+                                            "disabled": "MuiInput-disabled-28",
+                                            "error": "MuiInput-error-30",
+                                            "focused": "MuiInput-focused-27",
+                                            "formControl": "MuiInput-formControl-26",
+                                            "fullWidth": "MuiInput-fullWidth-32",
+                                            "input": "MuiInput-input-33",
+                                            "inputDisabled": "MuiInput-inputDisabled-35",
+                                            "inputMarginDense": "MuiInput-inputMarginDense-34",
+                                            "inputMultiline": "MuiInput-inputMultiline-36",
+                                            "inputType": "MuiInput-inputType-37",
+                                            "inputTypeSearch": "MuiInput-inputTypeSearch-38",
+                                            "multiline": "MuiInput-multiline-31",
+                                            "root": "MuiInput-root-25",
+                                            "underline": "MuiInput-underline-29",
+                                          }
+                                        }
+                                        disableUnderline={false}
+                                        fullWidth={false}
+                                        inputProps={
+                                          Object {
+                                            "aria-label": "End Time",
+                                          }
+                                        }
+                                        multiline={false}
+                                        name="endTime"
+                                        onBlur={[Function]}
+                                        onChange={[Function]}
+                                        onFocus={[Function]}
+                                        type="time"
+                                        value=""
+                                      >
+                                        <div
+                                          className="MuiInput-root-25 MuiInput-formControl-26 MuiInput-underline-29"
+                                        >
+                                          <input
+                                            aria-invalid={false}
+                                            aria-label="End Time"
+                                            aria-required={false}
+                                            className="MuiInput-input-33 MuiInput-inputType-37"
+                                            disabled={false}
+                                            name="endTime"
+                                            onBlur={[Function]}
+                                            onChange={[Function]}
+                                            onFocus={[Function]}
+                                            type="time"
+                                            value=""
+                                          />
+                                        </div>
+                                      </Input>
+                                    </WithStyles(Input)>
+                                  </div>
+                                </FormControl>
+                              </WithStyles(FormControl)>
+                            </TextField>
+                          </MuiTextField>
+                        </ConnectedField>
+                      </Connect(ConnectedField)>
+                    </Field>
+                  </div>
+                  <div
+                    className="Form-visibilityWrapper-9"
+                  >
+                    <Field
+                      color="primary"
+                      component={[Function]}
+                      data-test-id="betVisibility"
+                      inputProps={
+                        Object {
+                          "aria-label": "Visibility",
+                        }
+                      }
+                      label="Visibility"
+                      name="visibility"
+                    >
+                      <Connect(ConnectedField)
+                        _reduxForm={
+                          Object {
+                            "anyTouched": false,
+                            "array": Object {
+                              "insert": [Function],
+                              "move": [Function],
+                              "pop": [Function],
+                              "push": [Function],
+                              "remove": [Function],
+                              "removeAll": [Function],
+                              "shift": [Function],
+                              "splice": [Function],
+                              "swap": [Function],
+                              "unshift": [Function],
+                            },
+                            "arrayInsert": [Function],
+                            "arrayMove": [Function],
+                            "arrayPop": [Function],
+                            "arrayPush": [Function],
+                            "arrayRemove": [Function],
+                            "arrayRemoveAll": [Function],
+                            "arrayShift": [Function],
+                            "arraySplice": [Function],
+                            "arraySwap": [Function],
+                            "arrayUnshift": [Function],
+                            "asyncErrors": undefined,
+                            "asyncValidate": [Function],
+                            "asyncValidating": false,
+                            "autofill": [Function],
+                            "blur": [Function],
+                            "change": [Function],
+                            "clearAsyncError": [Function],
+                            "clearFields": [Function],
+                            "clearSubmit": [Function],
+                            "clearSubmitErrors": [Function],
+                            "destroy": [Function],
+                            "destroyOnUnmount": true,
+                            "dirty": false,
+                            "dispatch": [Function],
+                            "enableReinitialize": false,
+                            "error": undefined,
+                            "focus": [Function],
+                            "forceUnregisterOnUnmount": false,
+                            "form": "CreateBetForm",
+                            "getFormState": [Function],
+                            "getValues": [Function],
+                            "initialValues": Object {
+                              "visibility": false,
+                            },
+                            "initialize": [Function],
+                            "initialized": true,
+                            "invalid": true,
+                            "keepDirtyOnReinitialize": false,
+                            "onSubmit": [Function],
+                            "persistentSubmitErrors": false,
+                            "pristine": true,
+                            "pure": true,
+                            "register": [Function],
+                            "registerField": [Function],
+                            "registerInnerOnSubmit": [Function],
+                            "registeredFields": Object {
+                              "description": Object {
+                                "count": 1,
+                                "name": "description",
+                                "type": "Field",
+                              },
+                              "endDate": Object {
+                                "count": 1,
+                                "name": "endDate",
+                                "type": "Field",
+                              },
+                              "endTime": Object {
+                                "count": 1,
+                                "name": "endTime",
+                                "type": "Field",
+                              },
+                              "title": Object {
+                                "count": 1,
+                                "name": "title",
+                                "type": "Field",
+                              },
+                              "visibility": Object {
+                                "count": 1,
+                                "name": "visibility",
+                                "type": "Field",
+                              },
+                            },
+                            "reset": [Function],
+                            "resetSection": [Function],
+                            "sectionPrefix": undefined,
+                            "setSubmitFailed": [Function],
+                            "setSubmitSucceeded": [Function],
+                            "shouldAsyncValidate": [Function],
+                            "shouldError": [Function],
+                            "shouldValidate": [Function],
+                            "shouldWarn": [Function],
+                            "startAsyncValidation": [Function],
+                            "startSubmit": [Function],
+                            "stopAsyncValidation": [Function],
+                            "stopSubmit": [Function],
+                            "submit": [Function],
+                            "submitFailed": false,
+                            "submitSucceeded": false,
+                            "submitting": false,
+                            "syncErrors": Object {
+                              "title": "Field is required",
+                            },
+                            "syncWarnings": Object {},
+                            "touch": [Function],
+                            "touchOnBlur": true,
+                            "touchOnChange": false,
+                            "triggerSubmit": undefined,
+                            "unregister": [Function],
+                            "unregisterField": [Function],
+                            "untouch": [Function],
+                            "updateSyncErrors": [Function],
+                            "updateSyncWarnings": [Function],
+                            "updateUnregisteredFields": false,
+                            "valid": false,
+                            "validExceptSubmit": false,
+                            "validate": [Function],
+                            "values": Object {
+                              "visibility": false,
+                            },
+                            "warning": undefined,
+                          }
+                        }
+                        color="primary"
+                        component={[Function]}
+                        data-test-id="betVisibility"
+                        inputProps={
+                          Object {
+                            "aria-label": "Visibility",
+                          }
+                        }
+                        label="Visibility"
+                        name="visibility"
+                        normalize={[Function]}
+                      >
+                        <ConnectedField
+                          _reduxForm={
+                            Object {
+                              "anyTouched": false,
+                              "array": Object {
+                                "insert": [Function],
+                                "move": [Function],
+                                "pop": [Function],
+                                "push": [Function],
+                                "remove": [Function],
+                                "removeAll": [Function],
+                                "shift": [Function],
+                                "splice": [Function],
+                                "swap": [Function],
+                                "unshift": [Function],
+                              },
+                              "arrayInsert": [Function],
+                              "arrayMove": [Function],
+                              "arrayPop": [Function],
+                              "arrayPush": [Function],
+                              "arrayRemove": [Function],
+                              "arrayRemoveAll": [Function],
+                              "arrayShift": [Function],
+                              "arraySplice": [Function],
+                              "arraySwap": [Function],
+                              "arrayUnshift": [Function],
+                              "asyncErrors": undefined,
+                              "asyncValidate": [Function],
+                              "asyncValidating": false,
+                              "autofill": [Function],
+                              "blur": [Function],
+                              "change": [Function],
+                              "clearAsyncError": [Function],
+                              "clearFields": [Function],
+                              "clearSubmit": [Function],
+                              "clearSubmitErrors": [Function],
+                              "destroy": [Function],
+                              "destroyOnUnmount": true,
+                              "dirty": false,
+                              "dispatch": [Function],
+                              "enableReinitialize": false,
+                              "error": undefined,
+                              "focus": [Function],
+                              "forceUnregisterOnUnmount": false,
+                              "form": "CreateBetForm",
+                              "getFormState": [Function],
+                              "getValues": [Function],
+                              "initialValues": Object {
+                                "visibility": false,
+                              },
+                              "initialize": [Function],
+                              "initialized": true,
+                              "invalid": true,
+                              "keepDirtyOnReinitialize": false,
+                              "onSubmit": [Function],
+                              "persistentSubmitErrors": false,
+                              "pristine": true,
+                              "pure": true,
+                              "register": [Function],
+                              "registerField": [Function],
+                              "registerInnerOnSubmit": [Function],
+                              "registeredFields": Object {
+                                "description": Object {
+                                  "count": 1,
+                                  "name": "description",
+                                  "type": "Field",
+                                },
+                                "endDate": Object {
+                                  "count": 1,
+                                  "name": "endDate",
+                                  "type": "Field",
+                                },
+                                "endTime": Object {
+                                  "count": 1,
+                                  "name": "endTime",
+                                  "type": "Field",
+                                },
+                                "title": Object {
+                                  "count": 1,
+                                  "name": "title",
+                                  "type": "Field",
+                                },
+                                "visibility": Object {
+                                  "count": 1,
+                                  "name": "visibility",
+                                  "type": "Field",
+                                },
+                              },
+                              "reset": [Function],
+                              "resetSection": [Function],
+                              "sectionPrefix": undefined,
+                              "setSubmitFailed": [Function],
+                              "setSubmitSucceeded": [Function],
+                              "shouldAsyncValidate": [Function],
+                              "shouldError": [Function],
+                              "shouldValidate": [Function],
+                              "shouldWarn": [Function],
+                              "startAsyncValidation": [Function],
+                              "startSubmit": [Function],
+                              "stopAsyncValidation": [Function],
+                              "stopSubmit": [Function],
+                              "submit": [Function],
+                              "submitFailed": false,
+                              "submitSucceeded": false,
+                              "submitting": false,
+                              "syncErrors": Object {
+                                "title": "Field is required",
+                              },
+                              "syncWarnings": Object {},
+                              "touch": [Function],
+                              "touchOnBlur": true,
+                              "touchOnChange": false,
+                              "triggerSubmit": undefined,
+                              "unregister": [Function],
+                              "unregisterField": [Function],
+                              "untouch": [Function],
+                              "updateSyncErrors": [Function],
+                              "updateSyncWarnings": [Function],
+                              "updateUnregisteredFields": false,
+                              "valid": false,
+                              "validExceptSubmit": false,
+                              "validate": [Function],
+                              "values": Object {
+                                "visibility": false,
+                              },
+                              "warning": undefined,
+                            }
+                          }
+                          asyncValidating={false}
+                          color="primary"
+                          component={[Function]}
+                          data-test-id="betVisibility"
+                          dirty={false}
+                          dispatch={[Function]}
+                          initial={false}
+                          inputProps={
+                            Object {
+                              "aria-label": "Visibility",
+                            }
+                          }
+                          label="Visibility"
+                          name="visibility"
+                          normalize={[Function]}
+                          pristine={true}
+                          value={false}
+                        >
+                          <MuiSwitch
+                            color="primary"
+                            data-test-id="betVisibility"
+                            input={
+                              Object {
+                                "name": "visibility",
+                                "onBlur": [Function],
+                                "onChange": [Function],
+                                "onDragStart": [Function],
+                                "onDrop": [Function],
+                                "onFocus": [Function],
+                                "value": false,
+                              }
+                            }
+                            inputProps={
+                              Object {
+                                "aria-label": "Visibility",
+                              }
+                            }
+                            label="Visibility"
+                            meta={
+                              Object {
+                                "active": false,
+                                "asyncValidating": false,
+                                "autofilled": false,
+                                "dirty": false,
+                                "dispatch": [Function],
+                                "error": undefined,
+                                "form": "CreateBetForm",
+                                "initial": false,
+                                "invalid": false,
+                                "pristine": true,
+                                "submitFailed": false,
+                                "submitting": false,
+                                "touched": false,
+                                "valid": true,
+                                "visited": false,
+                                "warning": undefined,
+                              }
+                            }
+                          >
+                            <WithStyles(Switch)
+                              checked={false}
+                              color="primary"
+                              data-test-id="betVisibility"
+                              inputProps={
+                                Object {
+                                  "aria-label": "Visibility",
+                                }
+                              }
+                              label="Visibility"
+                              name="visibility"
+                              onBlur={[Function]}
+                              onChange={[Function]}
+                              onDragStart={[Function]}
+                              onDrop={[Function]}
+                              onFocus={[Function]}
+                            >
+                              <Switch
+                                checked={false}
+                                classes={
+                                  Object {
+                                    "bar": "MuiSwitch-bar-43",
+                                    "checked": "MuiSwitch-checked-47",
+                                    "checkedPrimary": "MuiSwitch-checkedPrimary-48",
+                                    "checkedSecondary": "MuiSwitch-checkedSecondary-49",
+                                    "default": "MuiSwitch-default-46",
+                                    "disabled": "MuiSwitch-disabled-50",
+                                    "icon": "MuiSwitch-icon-44",
+                                    "iconChecked": "MuiSwitch-iconChecked-45",
+                                    "root": "MuiSwitch-root-42",
+                                  }
+                                }
+                                color="primary"
+                                data-test-id="betVisibility"
+                                inputProps={
+                                  Object {
+                                    "aria-label": "Visibility",
+                                  }
+                                }
+                                label="Visibility"
+                                name="visibility"
+                                onBlur={[Function]}
+                                onChange={[Function]}
+                                onDragStart={[Function]}
+                                onDrop={[Function]}
+                                onFocus={[Function]}
+                              >
+                                <span
+                                  className="MuiSwitch-root-42"
+                                >
+                                  <WithStyles(SwitchBase)
+                                    checked={false}
+                                    checkedIcon={
+                                      <span
+                                        className="MuiSwitch-icon-44 MuiSwitch-iconChecked-45"
+                                      />
+                                    }
+                                    classes={
+                                      Object {
+                                        "checked": "MuiSwitch-checked-47 MuiSwitch-checkedPrimary-48",
+                                        "default": "MuiSwitch-default-46",
+                                        "disabled": "MuiSwitch-disabled-50",
+                                      }
+                                    }
+                                    data-test-id="betVisibility"
+                                    icon={
+                                      <span
+                                        className="MuiSwitch-icon-44"
+                                      />
+                                    }
+                                    inputProps={
+                                      Object {
+                                        "aria-label": "Visibility",
+                                      }
+                                    }
+                                    label="Visibility"
+                                    name="visibility"
+                                    onBlur={[Function]}
+                                    onChange={[Function]}
+                                    onDragStart={[Function]}
+                                    onDrop={[Function]}
+                                    onFocus={[Function]}
+                                  >
+                                    <SwitchBase
+                                      checked={false}
+                                      checkedIcon={
+                                        <span
+                                          className="MuiSwitch-icon-44 MuiSwitch-iconChecked-45"
+                                        />
+                                      }
+                                      classes={
+                                        Object {
+                                          "checked": "MuiSwitchBase-checked-54 MuiSwitch-checked-47 MuiSwitch-checkedPrimary-48",
+                                          "default": "MuiSwitchBase-default-53 MuiSwitch-default-46",
+                                          "disabled": "MuiSwitchBase-disabled-55 MuiSwitch-disabled-50",
+                                          "input": "MuiSwitchBase-input-52",
+                                          "root": "MuiSwitchBase-root-51",
+                                        }
+                                      }
+                                      data-test-id="betVisibility"
+                                      icon={
+                                        <span
+                                          className="MuiSwitch-icon-44"
+                                        />
+                                      }
+                                      inputProps={
+                                        Object {
+                                          "aria-label": "Visibility",
+                                        }
+                                      }
+                                      label="Visibility"
+                                      name="visibility"
+                                      onBlur={[Function]}
+                                      onChange={[Function]}
+                                      onDragStart={[Function]}
+                                      onDrop={[Function]}
+                                      onFocus={[Function]}
+                                      type="checkbox"
+                                    >
+                                      <WithStyles(IconButton)
+                                        className="MuiSwitchBase-root-51 MuiSwitchBase-default-53 MuiSwitch-default-46"
+                                        component="span"
+                                        data-test-id="betVisibility"
+                                        label="Visibility"
+                                        onBlur={[Function]}
+                                        onDragStart={[Function]}
+                                        onDrop={[Function]}
+                                        onFocus={[Function]}
+                                        tabIndex={null}
+                                      >
+                                        <IconButton
+                                          className="MuiSwitchBase-root-51 MuiSwitchBase-default-53 MuiSwitch-default-46"
+                                          classes={
+                                            Object {
+                                              "colorInherit": "MuiIconButton-colorInherit-57",
+                                              "colorPrimary": "MuiIconButton-colorPrimary-58",
+                                              "colorSecondary": "MuiIconButton-colorSecondary-59",
+                                              "disabled": "MuiIconButton-disabled-60",
+                                              "label": "MuiIconButton-label-61",
+                                              "root": "MuiIconButton-root-56",
+                                            }
+                                          }
+                                          color="default"
+                                          component="span"
+                                          data-test-id="betVisibility"
+                                          disabled={false}
+                                          label="Visibility"
+                                          onBlur={[Function]}
+                                          onDragStart={[Function]}
+                                          onDrop={[Function]}
+                                          onFocus={[Function]}
+                                          tabIndex={null}
+                                        >
+                                          <WithStyles(ButtonBase)
+                                            centerRipple={true}
+                                            className="MuiIconButton-root-56 MuiSwitchBase-root-51 MuiSwitchBase-default-53 MuiSwitch-default-46"
+                                            component="span"
+                                            data-test-id="betVisibility"
+                                            disabled={false}
+                                            focusRipple={true}
+                                            label="Visibility"
+                                            onBlur={[Function]}
+                                            onDragStart={[Function]}
+                                            onDrop={[Function]}
+                                            onFocus={[Function]}
+                                            tabIndex={null}
+                                          >
+                                            <ButtonBase
+                                              centerRipple={true}
+                                              className="MuiIconButton-root-56 MuiSwitchBase-root-51 MuiSwitchBase-default-53 MuiSwitch-default-46"
+                                              classes={
+                                                Object {
+                                                  "disabled": "MuiButtonBase-disabled-63",
+                                                  "keyboardFocused": "MuiButtonBase-keyboardFocused-64",
+                                                  "root": "MuiButtonBase-root-62",
+                                                }
+                                              }
+                                              component="span"
+                                              data-test-id="betVisibility"
+                                              disableRipple={false}
+                                              disabled={false}
+                                              focusRipple={true}
+                                              label="Visibility"
+                                              onBlur={[Function]}
+                                              onDragStart={[Function]}
+                                              onDrop={[Function]}
+                                              onFocus={[Function]}
+                                              tabIndex={null}
+                                              type="button"
+                                            >
+                                              <span
+                                                className="MuiButtonBase-root-62 MuiIconButton-root-56 MuiSwitchBase-root-51 MuiSwitchBase-default-53 MuiSwitch-default-46"
+                                                data-test-id="betVisibility"
+                                                label="Visibility"
+                                                onBlur={[Function]}
+                                                onDragStart={[Function]}
+                                                onDrop={[Function]}
+                                                onFocus={[Function]}
+                                                onKeyDown={[Function]}
+                                                onKeyUp={[Function]}
+                                                onMouseDown={[Function]}
+                                                onMouseLeave={[Function]}
+                                                onMouseUp={[Function]}
+                                                onTouchEnd={[Function]}
+                                                onTouchMove={[Function]}
+                                                onTouchStart={[Function]}
+                                                tabIndex={null}
+                                              >
+                                                <span
+                                                  className="MuiIconButton-label-61"
+                                                >
+                                                  <span
+                                                    className="MuiSwitch-icon-44"
+                                                  />
+                                                  <input
+                                                    aria-label="Visibility"
+                                                    checked={false}
+                                                    className="MuiSwitchBase-input-52"
+                                                    name="visibility"
+                                                    onChange={[Function]}
+                                                    type="checkbox"
+                                                  />
+                                                </span>
+                                                <WithStyles(TouchRipple)
+                                                  center={true}
+                                                  innerRef={[Function]}
+                                                >
+                                                  <TouchRipple
+                                                    center={true}
+                                                    classes={
+                                                      Object {
+                                                        "child": "MuiTouchRipple-child-69",
+                                                        "childLeaving": "MuiTouchRipple-childLeaving-70",
+                                                        "childPulsate": "MuiTouchRipple-childPulsate-71",
+                                                        "ripple": "MuiTouchRipple-ripple-66",
+                                                        "ripplePulsate": "MuiTouchRipple-ripplePulsate-68",
+                                                        "rippleVisible": "MuiTouchRipple-rippleVisible-67",
+                                                        "root": "MuiTouchRipple-root-65",
+                                                      }
+                                                    }
+                                                  >
+                                                    <TransitionGroup
+                                                      childFactory={[Function]}
+                                                      className="MuiTouchRipple-root-65"
+                                                      component="span"
+                                                      enter={true}
+                                                      exit={true}
+                                                    >
+                                                      <span
+                                                        className="MuiTouchRipple-root-65"
+                                                      />
+                                                    </TransitionGroup>
+                                                  </TouchRipple>
+                                                </WithStyles(TouchRipple)>
+                                              </span>
+                                            </ButtonBase>
+                                          </WithStyles(ButtonBase)>
+                                        </IconButton>
+                                      </WithStyles(IconButton)>
+                                    </SwitchBase>
+                                  </WithStyles(SwitchBase)>
+                                  <span
+                                    className="MuiSwitch-bar-43"
+                                  />
+                                </span>
+                              </Switch>
+                            </WithStyles(Switch)>
+                          </MuiSwitch>
+                        </ConnectedField>
+                      </Connect(ConnectedField)>
+                    </Field>
+                    <WithStyles(Typography)
+                      color="inherit"
+                      component="span"
+                      noWrap={true}
+                    >
+                      <Typography
+                        align="inherit"
+                        classes={
+                          Object {
+                            "alignCenter": "MuiTypography-alignCenter-85",
+                            "alignJustify": "MuiTypography-alignJustify-87",
+                            "alignLeft": "MuiTypography-alignLeft-84",
+                            "alignRight": "MuiTypography-alignRight-86",
+                            "body1": "MuiTypography-body1-81",
+                            "body2": "MuiTypography-body2-80",
+                            "button": "MuiTypography-button-83",
+                            "caption": "MuiTypography-caption-82",
+                            "colorError": "MuiTypography-colorError-95",
+                            "colorInherit": "MuiTypography-colorInherit-91",
+                            "colorPrimary": "MuiTypography-colorPrimary-92",
+                            "colorSecondary": "MuiTypography-colorSecondary-93",
+                            "colorTextSecondary": "MuiTypography-colorTextSecondary-94",
+                            "display1": "MuiTypography-display1-76",
+                            "display2": "MuiTypography-display2-75",
+                            "display3": "MuiTypography-display3-74",
+                            "display4": "MuiTypography-display4-73",
+                            "gutterBottom": "MuiTypography-gutterBottom-89",
+                            "headline": "MuiTypography-headline-77",
+                            "noWrap": "MuiTypography-noWrap-88",
+                            "paragraph": "MuiTypography-paragraph-90",
+                            "root": "MuiTypography-root-72",
+                            "subheading": "MuiTypography-subheading-79",
+                            "title": "MuiTypography-title-78",
+                          }
+                        }
+                        color="inherit"
+                        component="span"
+                        gutterBottom={false}
+                        headlineMapping={
+                          Object {
+                            "body1": "p",
+                            "body2": "aside",
+                            "display1": "h1",
+                            "display2": "h1",
+                            "display3": "h1",
+                            "display4": "h1",
+                            "headline": "h1",
+                            "subheading": "h3",
+                            "title": "h2",
+                          }
+                        }
+                        noWrap={true}
+                        paragraph={false}
+                        variant="body1"
+                      >
+                        <span
+                          className="MuiTypography-root-72 MuiTypography-body1-81 MuiTypography-colorInherit-91 MuiTypography-noWrap-88"
+                        >
+                          private
+                        </span>
+                      </Typography>
+                    </WithStyles(Typography)>
+                  </div>
+                  <WithStyles(Button)
+                    aria-label="create bet"
+                    className="Form-button-2"
+                    color="primary"
+                    data-test-id="betSubmit"
+                    disabled={false}
+                    type="submit"
+                    variant="raised"
+                  >
+                    <Button
+                      aria-label="create bet"
+                      className="Form-button-2"
+                      classes={
+                        Object {
+                          "colorInherit": "MuiButton-colorInherit-100",
+                          "disabled": "MuiButton-disabled-105",
+                          "fab": "MuiButton-fab-106",
+                          "flatPrimary": "MuiButton-flatPrimary-98",
+                          "flatSecondary": "MuiButton-flatSecondary-99",
+                          "fullWidth": "MuiButton-fullWidth-110",
+                          "keyboardFocused": "MuiButton-keyboardFocused-102",
+                          "label": "MuiButton-label-97",
+                          "mini": "MuiButton-mini-107",
+                          "raised": "MuiButton-raised-101",
+                          "raisedPrimary": "MuiButton-raisedPrimary-103",
+                          "raisedSecondary": "MuiButton-raisedSecondary-104",
+                          "root": "MuiButton-root-96",
+                          "sizeLarge": "MuiButton-sizeLarge-109",
+                          "sizeSmall": "MuiButton-sizeSmall-108",
+                        }
+                      }
+                      color="primary"
+                      data-test-id="betSubmit"
+                      disableFocusRipple={false}
+                      disabled={false}
+                      fullWidth={false}
+                      mini={false}
+                      size="medium"
+                      type="submit"
+                      variant="raised"
+                    >
+                      <WithStyles(ButtonBase)
+                        aria-label="create bet"
+                        className="MuiButton-root-96 MuiButton-raised-101 MuiButton-raisedPrimary-103 Form-button-2"
+                        classes={
+                          Object {
+                            "keyboardFocused": "MuiButton-keyboardFocused-102",
+                          }
+                        }
+                        data-test-id="betSubmit"
+                        disabled={false}
+                        focusRipple={true}
+                        type="submit"
+                      >
+                        <ButtonBase
+                          aria-label="create bet"
+                          centerRipple={false}
+                          className="MuiButton-root-96 MuiButton-raised-101 MuiButton-raisedPrimary-103 Form-button-2"
+                          classes={
+                            Object {
+                              "disabled": "MuiButtonBase-disabled-63",
+                              "keyboardFocused": "MuiButtonBase-keyboardFocused-64 MuiButton-keyboardFocused-102",
+                              "root": "MuiButtonBase-root-62",
+                            }
+                          }
+                          data-test-id="betSubmit"
+                          disableRipple={false}
+                          disabled={false}
+                          focusRipple={true}
+                          tabIndex="0"
+                          type="submit"
+                        >
+                          <button
+                            aria-label="create bet"
+                            className="MuiButtonBase-root-62 MuiButton-root-96 MuiButton-raised-101 MuiButton-raisedPrimary-103 Form-button-2"
+                            data-test-id="betSubmit"
+                            disabled={false}
+                            onBlur={[Function]}
+                            onFocus={[Function]}
+                            onKeyDown={[Function]}
+                            onKeyUp={[Function]}
+                            onMouseDown={[Function]}
+                            onMouseLeave={[Function]}
+                            onMouseUp={[Function]}
+                            onTouchEnd={[Function]}
+                            onTouchMove={[Function]}
+                            onTouchStart={[Function]}
+                            tabIndex="0"
+                            type="submit"
+                          >
+                            <span
+                              className="MuiButton-label-97"
+                            >
+                              Create
+                              <pure(Create)
+                                className="Form-rightIcon-5"
+                              >
+                                <Create
+                                  className="Form-rightIcon-5"
+                                >
+                                  <WithStyles(SvgIcon)
+                                    className="Form-rightIcon-5"
+                                  >
+                                    <SvgIcon
+                                      className="Form-rightIcon-5"
+                                      classes={
+                                        Object {
+                                          "colorAction": "MuiSvgIcon-colorAction-114",
+                                          "colorDisabled": "MuiSvgIcon-colorDisabled-115",
+                                          "colorError": "MuiSvgIcon-colorError-116",
+                                          "colorPrimary": "MuiSvgIcon-colorPrimary-112",
+                                          "colorSecondary": "MuiSvgIcon-colorSecondary-113",
+                                          "root": "MuiSvgIcon-root-111",
+                                        }
+                                      }
+                                      color="inherit"
+                                      viewBox="0 0 24 24"
+                                    >
+                                      <svg
+                                        aria-hidden="true"
+                                        className="MuiSvgIcon-root-111 Form-rightIcon-5"
+                                        focusable="false"
+                                        viewBox="0 0 24 24"
+                                      >
+                                        <path
+                                          d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                                        />
+                                      </svg>
+                                    </SvgIcon>
+                                  </WithStyles(SvgIcon)>
+                                </Create>
+                              </pure(Create)>
+                            </span>
+                            <WithStyles(TouchRipple)
+                              center={false}
+                              innerRef={[Function]}
+                            >
+                              <TouchRipple
+                                center={false}
+                                classes={
+                                  Object {
+                                    "child": "MuiTouchRipple-child-69",
+                                    "childLeaving": "MuiTouchRipple-childLeaving-70",
+                                    "childPulsate": "MuiTouchRipple-childPulsate-71",
+                                    "ripple": "MuiTouchRipple-ripple-66",
+                                    "ripplePulsate": "MuiTouchRipple-ripplePulsate-68",
+                                    "rippleVisible": "MuiTouchRipple-rippleVisible-67",
+                                    "root": "MuiTouchRipple-root-65",
+                                  }
+                                }
+                              >
+                                <TransitionGroup
+                                  childFactory={[Function]}
+                                  className="MuiTouchRipple-root-65"
+                                  component="span"
+                                  enter={true}
+                                  exit={true}
+                                >
+                                  <span
+                                    className="MuiTouchRipple-root-65"
+                                  />
+                                </TransitionGroup>
+                              </TouchRipple>
+                            </WithStyles(TouchRipple)>
+                          </button>
+                        </ButtonBase>
+                      </WithStyles(ButtonBase)>
+                    </Button>
+                  </WithStyles(Button)>
+                </div>
+              </form>
+            </Form>
+          </WithStyles(Form)>
+        </Connect(WithStyles(Form))>
+      </Form(Connect(WithStyles(Form)))>
+    </Connect(Form(Connect(WithStyles(Form))))>
+  </ReduxForm>
+</Provider>
+`;

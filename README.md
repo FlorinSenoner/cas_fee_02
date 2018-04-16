@@ -33,7 +33,7 @@ Wettemer was tested on all major browsers:
 The App was tested by three users (two female, one male). The users were given no specific task, nor a description of the app.
 They received the URL with the words: "this is pretty dope. check it out!"
 
-![user testing](https://wettemer.com/img/user_testing.jpg)
+![user testing](http://res.cloudinary.com/duhriq6qo/image/upload/c_scale,h_680/v1523910289/user_testing.jpg)
 
 Results were:
 
