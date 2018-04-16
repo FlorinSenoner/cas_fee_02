@@ -1,6 +1,6 @@
 import { MY_BETS_CHANGED, INVITES_CHANGED, GUESSES_CHANGED } from './betConstants'
 
-const initialState = {
+export const initialState = {
   invites: [],
   myBets: [],
   guesses: [],

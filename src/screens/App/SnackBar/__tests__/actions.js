@@ -1,7 +1,7 @@
 import reducer, { initialState } from '../reducer'
 import * as actions from '../constants'
 
-describe('snackBar reducer', () => {
+describe('test snackBar reducer', () => {
   it('should return the initial state', () => {
     expect(reducer(initialState, {})).toEqual({ betId: '', isOpen: false, text: '' })
   })
