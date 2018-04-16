@@ -97,13 +97,19 @@ class View extends React.PureComponent {
                   color="primary"
                   aria-label="invite more people"
                   onClick={this.goToInvite}
+                  data-test-id="invitePeople"
                 >
                   Manage Invites <GroupIcon className={classes.rightIcon} />
                 </Button>
               )}
             {this.canTakeGuess() && <TakeAGuess handleGuess={this.addGuess} />}
             {this.isAdmin() && (
-              <Button className={classes.deleteBtn} aria-label="delete bet" onClick={this.deleteBetHandler}>
+              <Button
+                className={classes.deleteBtn}
+                aria-label="delete bet"
+                onClick={this.deleteBetHandler}
+                data-test-id="deleteBet"
+              >
                 Delete bet<DeleteIcon />
               </Button>
             )}

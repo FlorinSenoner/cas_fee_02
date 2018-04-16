@@ -27,6 +27,7 @@ const CreateBtn = ({ classes, changePage }) => (
     aria-label="create bet"
     className={classes.addBtnRightCorner}
     onClick={() => changePage('/create')}
+    data-test-id="createBtn"
   >
     <AddIcon className={classes.button} />
   </Button>

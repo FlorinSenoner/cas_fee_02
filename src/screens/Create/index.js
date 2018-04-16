@@ -54,7 +54,7 @@ class CreateBet extends React.Component {
   render() {
     return (
       <DefaultPage linkToDashboard>
-        <h1>Create a bet</h1>
+        <h1 data-test-id="createHeader">Create a bet</h1>
         <CreateBetForm onSubmit={this.handleSubmit} />
       </DefaultPage>
     )

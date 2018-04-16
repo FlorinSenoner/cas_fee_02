@@ -4,7 +4,7 @@ import { CardHeader, CardContent } from 'material-ui/Card'
 import PropTypes from 'prop-types'
 import { format } from 'date-fns'
 import { propTypesBet } from '../../customPropTypes'
-import WithParticipants from '../WithParticipants'
+import WithParticipants from '../App/WithParticipants'
 import Guesses from './Guesses'
 
 class BetDetails extends React.PureComponent {

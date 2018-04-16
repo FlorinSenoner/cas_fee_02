@@ -55,7 +55,7 @@ class SignInScreen extends React.PureComponent {
           </Grid>
           <Grid item xs={12}>
             <Paper className={classes.paper}>
-              <h1 data-testid="h1">
+              <h1 data-test-id="h1">
                 Welcome
                 <span role="img" aria-label="vulcan welcome">
                   🖖

@@ -7,10 +7,13 @@ import List from 'material-ui/List'
 import { propTypesBet } from '../../../customPropTypes'
 import BetCard from './BetCard'
 
-const BetsList = ({ bets }) => <List>{bets.map(bet => <BetCard key={bet.id} bet={bet} />)}</List>
+const BetsList = ({ bets, selector }) => (
+  <List data-test-id={selector}>{bets.map(bet => <BetCard key={bet.id} bet={bet} />)}</List>
+)
 
 BetsList.propTypes = {
   bets: PropTypes.arrayOf(propTypesBet.isRequired),
+  selector: PropTypes.string.isRequired,
 }
 
 const enhance = branch(({ bets }) => isEmpty(bets), renderNothing)

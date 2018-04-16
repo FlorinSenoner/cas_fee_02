@@ -7,7 +7,7 @@ import { reset } from 'redux-form'
 
 import DefaultPage from '../../components/DefaultPage'
 import InviteForm from './InviteForm'
-import WithParticipants from '../WithParticipants'
+import WithParticipants from '../App/WithParticipants'
 import Participants from './Participants'
 import { userSelector } from '../SignIn/selectors'
 import { addParticipant, removeParticipant } from '../../services/bet.service'

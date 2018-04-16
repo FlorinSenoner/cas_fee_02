@@ -25,7 +25,7 @@ class Participants extends PureComponent {
       <div className={classes.root}>
         <List>
           {users.map(user => (
-            <ListItem key={user.uid} dense className={classes.listItem}>
+            <ListItem key={user.uid} dense className={classes.listItem} data-test-id="betParticipant">
               <Avatar alt="Participant profile image" src={user.photoURL || '/img/unknown_50x50.jpg'} />
               <ListItemText primary={user.displayName} />
               {!user.participations[betId] && (
@@ -33,6 +33,7 @@ class Participants extends PureComponent {
                   <IconButton
                     aria-label="delete user from participants"
                     onClick={() => removeParticipant(user.uid, betId)}
+                    data-test-id="deleteParticipant"
                   >
                     <DeleteIcon />
                   </IconButton>

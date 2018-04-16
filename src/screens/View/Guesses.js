@@ -34,7 +34,7 @@ class Guesses extends PureComponent {
         {users.length ? (
           users
             .map(user => (
-              <ListItem key={user.uid} dense>
+              <ListItem key={user.uid} data-test-id="betGuess" dense>
                 <Avatar
                   className={this.isCurrentUser(user.uid) ? classes.userAvatarCurrent : undefined}
                   alt="User profile image"

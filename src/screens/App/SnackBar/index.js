@@ -64,7 +64,11 @@ class SnackBar extends Component {
         SnackbarContentProps={{
           'aria-describedby': 'message-id',
         }}
-        message={<span id="message-id">{text}</span>}
+        message={
+          <span id="message-id" data-test-id="snackBarMessage">
+            {text}
+          </span>
+        }
         action={[
           <Button
             key="undo"

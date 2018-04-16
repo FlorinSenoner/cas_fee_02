@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import Switch from 'material-ui/Switch'
 import { compose, withState, withHandlers } from 'recompose'
 
-import BetsList from './BetList'
+import BetList from './BetList'
 import CreateBtn from './CreateBtn'
 import { propTypesBet } from '../../customPropTypes'
 import DefaultPage from '../../components/DefaultPage'
@@ -24,12 +24,12 @@ class Dashboard extends PureComponent {
       <DefaultPage>
         Show ended bets?
         <Switch checked={this.props.showEnded} onChange={this.props.toggleEnded} color="primary" />
-        <h3 data-testid="h3-invites">Invites</h3>
-        <BetsList bets={this.props.invites} />
-        <h3>My Bets</h3>
-        <BetsList bets={this.props.myBets} />
+        <h3>Invites</h3>
+        <BetList bets={this.props.invites} selector="invitesList" />
+        <h3 data-test-id="myBetHeader">My Bets</h3>
+        <BetList bets={this.props.myBets} selector="myBetList" />
         <h3>My Guesses</h3>
-        <BetsList bets={this.props.guesses} />
+        <BetList bets={this.props.guesses} selector="guessesList" />
         <CreateBtn />
       </DefaultPage>
     )

@@ -31,8 +31,16 @@ const InviteForm = ({ submitting, handleSubmit, classes }) => (
         }}
         component={MuiTextField}
         className={classes.textField}
+        data-test-id="betParticipantField"
       />
-      <Button type="submit" disabled={submitting} variant="raised" color="primary" className={classes.button}>
+      <Button
+        type="submit"
+        disabled={submitting}
+        variant="raised"
+        color="primary"
+        className={classes.button}
+        data-test-id="betSubmit"
+      >
         <AddIcon />
       </Button>
     </div>

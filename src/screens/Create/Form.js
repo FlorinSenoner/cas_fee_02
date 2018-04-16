@@ -65,6 +65,7 @@ const Form = ({ submitting, handleSubmit, classes, visibilityValue }) => (
         }}
         component={MuiTextField}
         className={classes.textField}
+        data-test-id="betTitle"
       />
       <Field
         name="description"
@@ -75,6 +76,7 @@ const Form = ({ submitting, handleSubmit, classes, visibilityValue }) => (
         multiline
         component={MuiTextField}
         className={classes.textField}
+        data-test-id="betDescription"
       />
       <div className={classes.endDateTimeWrapper}>
         <Field
@@ -89,6 +91,7 @@ const Form = ({ submitting, handleSubmit, classes, visibilityValue }) => (
           }}
           component={MuiTextField}
           className={classes.date}
+          data-test-id="betEndDate"
         />
         <Field
           name="endTime"
@@ -102,6 +105,7 @@ const Form = ({ submitting, handleSubmit, classes, visibilityValue }) => (
           }}
           component={MuiTextField}
           className={classes.time}
+          data-test-id="betEndTime"
         />
       </div>
       <div className={classes.visibilityWrapper}>
@@ -113,6 +117,7 @@ const Form = ({ submitting, handleSubmit, classes, visibilityValue }) => (
           }}
           color="primary"
           component={MuiSwitch}
+          data-test-id="betVisibility"
         />
         <Typography color="inherit" component="span" noWrap>
           {visibilityValue ? 'public' : 'private'}
@@ -126,6 +131,7 @@ const Form = ({ submitting, handleSubmit, classes, visibilityValue }) => (
         variant="raised"
         color="primary"
         className={classes.button}
+        data-test-id="betSubmit"
       >
         Create
         <Create className={classes.rightIcon} />

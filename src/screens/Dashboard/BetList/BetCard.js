@@ -57,7 +57,12 @@ class BetCard extends PureComponent {
   render() {
     const { bet, classes } = this.props
     return (
-      <Card component="li" className={`${classes.card} ${bet.result && classes.cardEnd}`} elevation={4}>
+      <Card
+        component="li"
+        className={`${classes.card} ${bet.result && classes.cardEnd}`}
+        elevation={4}
+        data-test-id="betCard"
+      >
         <Button component={Link} className={classes.button} to={`/bet/${bet.id}/view`}>
           {Object.keys(bet.participants).length > 0 && (
             <Badge

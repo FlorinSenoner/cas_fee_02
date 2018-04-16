@@ -69,6 +69,7 @@ const NavBar = ({ classes, open, handleOpen, goToDashboard, goBack }) => (
           aria-label="back to dashboard"
           onClick={goBack}
           className={classNames(classes.backButton)}
+          data-test-id="goBackButton"
         >
           <ArrowBack />
         </IconButton>
