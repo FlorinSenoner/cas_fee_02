@@ -26,7 +26,7 @@ const waitFor = async ms => new Promise(resolve => setTimeout(resolve, ms))
 const isDebugging = () => {
   const debuggingMode = {
     headless: false,
-    slowMo: 0,
+    slowMo: 15,
     devtools: true,
   }
 
