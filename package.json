@@ -30,6 +30,7 @@
     "lodash": "^4.17.5",
     "material-ui": "^1.0.0-beta.41",
     "material-ui-icons": "^1.0.0-beta.36",
+    "pixelmatch": "^4.0.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-firebaseui": "^1.2.3",
@@ -47,6 +48,7 @@
     "deploy": "yarn build && firebase deploy",
     "e2eDebug": "MODE=debug npm test '__tests__/.*\\.e2e.test\\.js$'",
     "e2e": "npm test '__tests__/.*\\.e2e.test\\.js$'",
+    "pixel": "npm test '__tests__/.*\\.pixel.test\\.js$'",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
