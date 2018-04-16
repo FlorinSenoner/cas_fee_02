@@ -1,7 +1,24 @@
 service cloud.firestore {
   match /databases/{database}/documents {
-    function isPublicOrAdmin() {
-        return isAdmin() || isPublic();
+
+    // *** GENERAL
+    function isAuthenticated() {
+        return request.auth.uid != null;
+    }
+
+    // *** BETS
+    match /bets/{bet} {
+       // reading data is allowed for logged in users or public bets
+       allow read: if isAuthenticated() || isPublic();
+
+       // a logged in user can create a bet
+       allow create: if isAuthenticated();
+
+       // a admin user can update the bet. Another user can only change his participant info and not change any other data.
+       allow update: if isAdmin() || betDataIsUnchanged();
+
+       // only admins can delete a bet
+       allow delete: if isAdmin();
     }
 
     function isPublic() {
@@ -12,29 +29,40 @@ service cloud.firestore {
         return request.auth.uid == resource.data.admin;
     }
 
-    function isAuthenticated() {
-        return request.auth.uid != null;
+    function betDataIsUnchanged() {
+        return request.resource.data.admin == resource.data.admin &&
+                request.resource.data.dateCreated == resource.data.dateCreated &&
+                request.resource.data.dateEnd == resource.data.dateEnd &&
+                request.resource.data.description == resource.data.description &&
+                request.resource.data.title == resource.data.title &&
+                request.resource.data.visibility == resource.data.visibility;
     }
 
-    function isParticipant() {
-        return resource.data.participants[request.auth.uid] != undefined;
+    // *** USER
+    match /users/{user} {
+        // reading user data is allowed for any logged in user
+        allow read: if isAuthenticated();
+
+        // a logged in user must be able to create it's user object
+        allow create: if isAuthenticated();
+
+        // a user can update it's data. Another user can only invite him to a bet and not change any other data.
+        allow update: if isUserData() || userDataIsUnchanged();
+
+        // a user can only delete his own user data
+        allow delete: if isUserData();
     }
 
     function isUserData() {
         return resource.data.uid == request.auth.uid;
     }
 
-    // TODO this needs more work
-    match /bets/{bet} {
-       allow read: if isAuthenticated() || isPublic();
-       allow write: if isAuthenticated();
-    }
-
-    match /users/{user} {
-        allow read: if isAuthenticated();
-        allow create: if isAuthenticated();
-        allow update: if isUserData();
-        allow delete: if isUserData();
+    function userDataIsUnchanged() {
+        return request.resource.data.displayName == resource.data.displayName &&
+                request.resource.data.email == resource.data.email &&
+                request.resource.data.emailVerified == resource.data.emailVerified &&
+                request.resource.data.photoURL == resource.data.photoURL &&
+                request.resource.data.uid == resource.data.uid;
     }
   }
 }
