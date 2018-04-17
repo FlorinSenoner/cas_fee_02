@@ -8,6 +8,7 @@ see: 🌈 [About](./about.md)
 
 #### Yeaah, we know...
 * Redux warning in Production. Even though node-env is set to 'production' correctly by Webpack
-* Create a bet offline
+* FirebaseUI widget problem (FirebaseUI widget element on the page)
+* Better Firestore Rules
 * No loading spinners when loading data from Firebase
 * Errorhandling for Firebase 

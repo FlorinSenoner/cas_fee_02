@@ -30,23 +30,27 @@ Wettemer was tested on all major browsers:
 * Internet Explorer
 
 ## 👩‍💻 User Testing
-The App was tested by three users (two female, one male). The users were given no specific task, nor a description of the app.
-They received the URL with the words: "this is pretty dope. check it out!"
-
+### Overview
+* **Head of Test:** Dennis Briner
+* **Date of Tests:** 13.04.2018 - 16.04.2018
+* **Test Object:** Wettemer.com as a platform
+* **Business Case:** We want to see if the app is intuitive, user friend and fun
+* **Main Objectives:** Test persons have to be able to use the app as intended without any instructions
+* **Tester:** Choosen were people from our private environment. Three testers were recruited, two female one male.
+* **Equipment:** The testers mobile phone (two iOS, one Android Device)
+* **Task:** On purpouse, no specific task was given. Just the URL with the words "go ahead and check it out".
 ![user testing](http://res.cloudinary.com/duhriq6qo/image/upload/c_scale,h_680/v1523910289/user_testing.jpg)
 
-Results were:
-
-### Positive
+### Positive Results
 * the app is almost self explaining and very intuitive
-* they liked the app
+* they liked the app and thought it's fun
 * offline and real time features impressed
 
 ### Room for Improvement
 * more features were requested
 * the determination who has won a bet should be improved
 * adding users is hart, cause the exact email has to be entered
-* add button not always perfectly visible on mobile
+* add button not always perfectly visible on mobile browser
 * make it an app (by adding site to home screen) should be more advertised
 
 ## 🚀 Setup
