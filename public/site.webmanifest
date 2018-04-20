@@ -20,5 +20,5 @@
     ],
     "theme_color": "#ff72a7",
     "background_color": "#65cccc",
-    "display": "fullscreen"
+    "display": "standalone"
 }
