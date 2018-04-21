@@ -1,3 +1,6 @@
+// to deploy .rules file
+// firebase deploy --only firestore:rules
+
 service cloud.firestore {
   match /databases/{database}/documents {
 
@@ -7,7 +10,7 @@ service cloud.firestore {
     }
 
     // *** BETS
-    match /bets/{bet} {
+    match /bets/{betId} {
        // reading data is allowed for logged in users or public bets
        allow read: if isAuthenticated() || isPublic();
 
@@ -39,22 +42,22 @@ service cloud.firestore {
     }
 
     // *** USER
-    match /users/{user} {
+    match /users/{userId} {
         // reading user data is allowed for any logged in user
         allow read: if isAuthenticated();
 
-        // a logged in user must be able to create it's user object
-        allow create: if isAuthenticated();
+        // a logged in user is be able to create its and (only its!) user object
+        allow create: if request.auth.uid == userId;
 
         // a user can update it's data. Another user can only invite him to a bet and not change any other data.
-        allow update: if isUserData() || userDataIsUnchanged();
+        allow update: if isUserData(userId) || userDataIsUnchanged();
 
         // a user can only delete his own user data
-        allow delete: if isUserData();
+        allow delete: if isUserData(userId);
     }
 
-    function isUserData() {
-        return resource.data.uid == request.auth.uid;
+    function isUserData(userId) {
+        return resource.data.uid == request.auth.uid == userId;
     }
 
     function userDataIsUnchanged() {
