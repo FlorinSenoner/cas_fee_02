@@ -32,8 +32,8 @@ service cloud.firestore {
        // a admin user can update the bet. Another user can only change his participant info and not change any other data.
        allow update: if isAdmin() || betDataIsUnchanged();
 
-       // only admins can delete a bet
-       allow delete: if isAdmin();
+       // only admin can delete a bet and only if no participants
+       allow delete: if isAdmin() && existingData().participants.size() == 0;
     }
 
     function isPublic() {
