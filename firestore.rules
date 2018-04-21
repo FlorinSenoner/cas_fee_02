@@ -15,7 +15,7 @@ service cloud.firestore {
        allow read: if isAuthenticated() || isPublic();
 
        // a logged in user can create a bet
-       allow create: if isAuthenticated();
+       allow create: if isAuthenticated() && request.resource.data.admin == request.auth.uid
 
        // a admin user can update the bet. Another user can only change his participant info and not change any other data.
        allow update: if isAdmin() || betDataIsUnchanged();
