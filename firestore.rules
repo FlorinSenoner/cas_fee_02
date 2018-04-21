@@ -5,8 +5,20 @@ service cloud.firestore {
   match /databases/{database}/documents {
 
     // *** GENERAL
+    function currentUserId() {
+        return request.auth.uid;
+    }
+
     function isAuthenticated() {
-        return request.auth.uid != null;
+        return currentUserId() != null;
+    }
+
+    function incomingData() {
+        return request.resource.data;
+    }
+
+    function existingData() {
+        return resource.data;
     }
 
     // *** BETS
@@ -15,7 +27,7 @@ service cloud.firestore {
        allow read: if isAuthenticated() || isPublic();
 
        // a logged in user can create a bet
-       allow create: if isAuthenticated() && request.resource.data.admin == request.auth.uid
+       allow create: if isAuthenticated() && incomingData().admin == currentUserId()
 
        // a admin user can update the bet. Another user can only change his participant info and not change any other data.
        allow update: if isAdmin() || betDataIsUnchanged();
@@ -25,20 +37,20 @@ service cloud.firestore {
     }
 
     function isPublic() {
-        return resource.data.visibility == 'public'
+        return existingData().visibility == 'public'
     }
 
     function isAdmin() {
-        return request.auth.uid == resource.data.admin;
+        return currentUserId() == existingData().admin;
     }
 
     function betDataIsUnchanged() {
-        return request.resource.data.admin == resource.data.admin &&
-                request.resource.data.dateCreated == resource.data.dateCreated &&
-                request.resource.data.dateEnd == resource.data.dateEnd &&
-                request.resource.data.description == resource.data.description &&
-                request.resource.data.title == resource.data.title &&
-                request.resource.data.visibility == resource.data.visibility;
+        return incomingData().admin == existingData().admin &&
+                incomingData().dateCreated == existingData().dateCreated &&
+                incomingData().dateEnd == existingData().dateEnd &&
+                incomingData().description == existingData().description &&
+                incomingData().title == existingData().title &&
+                incomingData().visibility == existingData().visibility;
     }
 
     // *** USER
@@ -47,7 +59,7 @@ service cloud.firestore {
         allow read: if isAuthenticated();
 
         // a logged in user is be able to create its and (only its!) user object
-        allow create: if request.auth.uid == userId;
+        allow create: if currentUserId() == userId;
 
         // a user can update it's data. Another user can only invite him to a bet and not change any other data.
         allow update: if isUserData(userId) || userDataIsUnchanged();
@@ -57,15 +69,15 @@ service cloud.firestore {
     }
 
     function isUserData(userId) {
-        return resource.data.uid == request.auth.uid == userId;
+        return existingData().uid == currentUserId() == userId;
     }
 
     function userDataIsUnchanged() {
-        return request.resource.data.displayName == resource.data.displayName &&
-                request.resource.data.email == resource.data.email &&
-                request.resource.data.emailVerified == resource.data.emailVerified &&
-                request.resource.data.photoURL == resource.data.photoURL &&
-                request.resource.data.uid == resource.data.uid;
+        return incomingData().displayName == existingData().displayName &&
+                incomingData().email == existingData().email &&
+                incomingData().emailVerified == existingData().emailVerified &&
+                incomingData().photoURL == existingData().photoURL &&
+                incomingData().uid == existingData().uid;
     }
   }
 }
