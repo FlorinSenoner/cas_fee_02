@@ -12,7 +12,7 @@ Most features that Wettemer🄬 offers are also available **offline**.
 * Using latest JavaScript features thanks to Babel
 
 ## ☔ What's not
-* Using beta software (Firestore, Firebase Functions, Material UI) took a lot of time and effort. Even though we learned a lot :)
+* Using beta software (Firestore, Firebase Functions, Material UI, Puppeteer) took a lot of time and effort. Even though we learned a lot :)
 * React is awesome and fun, but there are too many add-on libraries to choose from. That takes a lot of time just for research.
 * During the CAS FEE only little practical knowledge on how to build **real react apps** (not counters) was given.
 * Real-time and offline is awesome. But there's no such thing as a free lunch -> `devtime++`
@@ -20,23 +20,6 @@ Most features that Wettemer🄬 offers are also available **offline**.
 
 ## 🤓 Demo
 http://wettemer.com
-
-## 💻 Setup:
-clone or download the repository and install the dependencies with `yarn install`
-
-the following commands are supported
-
-`yarn <script>`|explanation
-------------------|-----------
-`start`|start the application in dev mode on `localhost:3000`.
-`build`|build the app for production and deployment.
-`test`|run all tests.
-`test:components`|start component tests.
-`test:e2e`|start e2e tests.
-`test:e2eDebug`|start e2e tests in debug mode (opens browser window and dev console).
-`test:pixel`|start screenshot tests.
-`test:redux`|test redux components.
-
 
 ## 💻 Browser Support
 Wettemer was tested on all major browsers:
@@ -84,7 +67,13 @@ Wettemer was tested on all major browsers:
 * `yarn start`  to start app on http://localhost:3000
 
 #### test
-* `yarn test` to run tests
+------------------|-----------
+`test`|run all tests.
+`test:components`|start component tests.
+`test:e2e`|start e2e tests.
+`test:e2eDebug`|start e2e tests in debug mode (opens browser window and dev console).
+`test:pixel`|start screenshot tests.
+`test:redux`|test redux actions.
 
 ### Deployment
 
