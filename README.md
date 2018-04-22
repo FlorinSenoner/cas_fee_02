@@ -79,7 +79,7 @@ Wettemer was tested on all major browsers:
 ### Deployment
 
 #### Prerequisites
-* Wettemer🄬 Authorized Google Account
+* Wettemer Authorized Google Account
 * firebase-tools > 3.18 `npm i firebase-tools -g`
 
 #### deploy firebase functions
