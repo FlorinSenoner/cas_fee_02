@@ -67,7 +67,8 @@ Wettemer was tested on all major browsers:
 * `yarn start`  to start app on http://localhost:3000
 
 #### test
-------------------|-----------
+`yarn <script>`|explanation
+------------------|-------------
 `test`|run all tests.
 `test:components`|start component tests.
 `test:e2e`|start e2e tests.
