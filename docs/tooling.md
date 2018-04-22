@@ -21,6 +21,8 @@
     * makes selectors faster
 * [recompose](https://github.com/acdlite/recompose)
     * helper library for creating HOC
+* [date-fns](https://date-fns.org/)
+    * functional time/date helper library
 * [redux-form](https://github.com/erikras/redux-form/)
     * syncs forms with the redux store
     * easy form validation
