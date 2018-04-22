@@ -68,7 +68,7 @@ const NavBar = ({ classes, open, handleOpen, goToDashboard, goBack }) => (
           color="inherit"
           aria-label="back to dashboard"
           onClick={goBack}
-          className={classNames(classes.backButton)}
+          className={classes.backButton}
           data-test-id="goBackButton"
         >
           <ArrowBack />
@@ -79,7 +79,7 @@ const NavBar = ({ classes, open, handleOpen, goToDashboard, goBack }) => (
           color="inherit"
           aria-label="back to dashboard"
           onClick={goToDashboard}
-          className={classNames(classes.backButton)}
+          className={classes.backButton}
         >
           <Clear />
         </IconButton>
