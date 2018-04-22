@@ -21,6 +21,23 @@ Most features that Wettemer🄬 offers are also available **offline**.
 ## 🤓 Demo
 http://wettemer.com
 
+## 💻 Setup:
+clone or download the repository and install the dependencies with `yarn install`
+
+the following commands are supported
+
+`yarn <script>`|explanation
+------------------|-----------
+`start`|start the application in dev mode on `localhost:3000`.
+`build`|build the app for production and deployment.
+`test`|run all tests.
+`test:components`|start component tests.
+`test:e2e`|start e2e tests.
+`test:e2eDebug`|start e2e tests in debug mode (opens browser window and dev console).
+`test:pixel`|start screenshot tests.
+`test:redux`|test redux components.
+
+
 ## 💻 Browser Support
 Wettemer was tested on all major browsers:
 * Google Chrome
