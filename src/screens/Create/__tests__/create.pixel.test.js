@@ -7,8 +7,6 @@ const path = 'testImages/'
 const userReturning = {
   email: 'puppeteer@gmail.com',
   password: '123456',
-  firstName: 'puppeteer',
-  lastName: 'puppeteer',
 }
 
 let browser
@@ -18,13 +16,11 @@ beforeAll(async () => {
   browser = await puppeteer.launch({ headless: false })
   page = await browser.newPage()
   await page.emulate(iPhone)
+  await page.goto('http://localhost:3000/create')
 })
 
 describe('screenshots are correct', () => {
   test('create bet screen', async () => {
-    await page.goto('http://localhost:3000/create')
-    await page.waitForSelector('[data-provider-id="password"]')
-
     const emailButton = await page.$('[data-provider-id="password"]')
     await emailButton.click()
 

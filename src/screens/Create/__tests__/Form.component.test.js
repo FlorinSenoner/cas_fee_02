@@ -57,7 +57,7 @@ const renderedComponent = mount(
 )
 
 describe('<Form />', () => {
-  test.only('renders a Form', () => {
+  test('renders a Form', () => {
     expect(renderedComponent).toMatchSnapshot()
   })
 })

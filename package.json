@@ -46,10 +46,13 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "deploy": "yarn build && firebase deploy",
-    "e2eDebug": "MODE=debug npm test '__tests__/.*\\.e2e.test\\.js$'",
-    "e2e": "npm test '__tests__/.*\\.e2e.test\\.js$'",
-    "pixel": "npm test '__tests__/.*\\.pixel.test\\.js$'",
+    "__test__":"",
     "test": "react-scripts test --env=jsdom",
+    "test:component": "npm test '__tests__/.*\\.component.test\\.js$'",
+    "test:e2eDebug": "MODE=debug npm test '__tests__/.*\\.e2e.test\\.js$'",
+    "test:e2e": "npm test '__tests__/.*\\.e2e.test\\.js$'",
+    "test:pixel": "npm test '__tests__/.*\\.pixel.test\\.js$'",
+    "test:redux": "npm test '__tests__/.*\\.redux.test\\.js$'",
     "eject": "react-scripts eject"
   },
   "jest": {

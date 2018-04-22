@@ -93,8 +93,6 @@ describe('successful login new user', () => {
 const userReturning = {
   email: 'puppeteer@gmail.com',
   password: '123456',
-  firstName: 'puppeteer',
-  lastName: 'puppeteer',
 }
 describe('successful login returning user', () => {
   test(
